@@ -1,0 +1,21 @@
+mixin footer()
+	// start footer
+	footer.footer&attributes(attributes)
+		.footer__in.container
+			a.footer__logo.logo(href="#")
+				img.logo__image(src='assets/images/general/logo-black.png', srcset='assets/images/general/logo-black@2x.png 2x, assets/images/general/logo-black@3x.png 3x' alt='myquietnewcar')
+
+
+			nav.footer__nav.nav.nav_secondary
+				ul.nav__list
+					li.nav__item
+						a.nav__link(href="#") Contact us
+					li.nav__item
+						a.nav__link(href="#") Request adding data
+					li.nav__item
+						a.nav__link(href="#") Privacy Policy
+
+			.footer__copyright © 2019
+	
+
+	// end footer

@@ -1,0 +1,17 @@
+extends /blocks/layout-default/layout-default
+
+include /blocks/header/header
+
+
+include /blocks/footer/footer
+
+
+block head
+    - var pageTitle = 'MYQUIETNEWCAR';
+
+block content
+    +header()
+    .page__inner
+    +footer()
+    
+    
