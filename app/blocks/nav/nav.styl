@@ -1,0 +1,22 @@
+.nav
+	display flex
+	&__list
+		display flex
+
+	&__item
+		margin-right 30px
+		&:last-child
+			margin-right 0
+
+	&__link
+		color #787878
+		text-decoration none
+		tr(color .3s ease)
+		
+		&:hover
+			color darken(#787878, 10)
+			tr(color .3s ease)
+
+.nav_top
+	.nav__item
+		margin-right 30px

@@ -1,57 +1,81 @@
 .page
-    min-height 100vh
-    display flex
-    flex-direction column
-    background-color #f7f7f7
-    color #626262
-    font-display swap
-    
-    &__inner
-        // flex 0 1 auto
-        flex 1 0 auto
+	min-height 100vh
+	display flex
+	flex-direction column
+	background-color #ffffff
+	color #555555
+	font-display swap
+	font-family $o
+	font-size 14px
+	font-weight 400
+	line-height 1
+	&__inner
+		// flex 0 1 auto
+		flex 1 0 auto
 
 .title
-    color #2f3437
-    font-size 33px
-    font-weight 500
-    letter-spacing 0.01px
-    line-height 1.3
+	color #333333
+	font-size 24px
+	font-weight 600
+	font-family $a 
+	line-height 1.5
+	a
+		position relative
+		color #268ae1
+		text-decoration none
+		&:after
+			position absolute
+			content "" 
+			top 100%
+			left 0
+			width 100%
+			height 1px
+			background #268AE1 
+					
+	
 
+.button
+	border 2px solid #d3d3d3
+	height 40px
+	display inline-block
+	vertical-align middle
+	color #0d62ad
+	font-weight 600
+	border-radius 4px
+	text-decoration none
+	tr(color .3s ease)
+	&:hover
+		color darken(#0d62ad, 10)
+		tr(color .3s ease)
+	
 
 .wysiwyg
-    h2,
-    h3
-        margin-top 60px
+	h2,
+	h3
+		margin-top 60px
 
-        margin-bottom 24px
-        color #000000
-        font-size 22px
-        font-weight 400
-        letter-spacing 1px
-        line-height 1.3
-    h2,
-    h3
-        &:first-child
-            margin-top 0
-    h3
-        margin-top 30px
+		margin-bottom 24px
+		color #000000
+		font-size 22px
+		font-weight 400
+		letter-spacing 1px
+		line-height 1.3
+	h3
+		margin-top 30px
 
-    p
-        margin-top 30px
-        color #817f7f
-        font-size 18px
-        font-weight 400
-        line-height 1.38
-    
+	p
+		margin-top 30px
+		color #817f7f
+		font-size 18px
+		font-weight 400
+		line-height 1.38
 
-    ul
-        margin-top 30px
-        margin-bottom 35px
-        margin-left 30px
-        li
-            color #817f7f
-            font-size 18px
-            font-weight 400
-            line-height 1.38
-        
-
+	ul
+		margin-top 30px
+		margin-bottom 35px
+		margin-left 30px
+		li
+			color #817f7f
+			font-size 18px
+			font-weight 400
+			line-height 1.38

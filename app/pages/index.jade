@@ -1,17 +1,34 @@
 extends /blocks/layout-default/layout-default
 
+include /blocks/icon/icon
 include /blocks/header/header
 
+
+include /blocks/map/map
+include /blocks/brands/brands
+include /blocks/featured/featured
+include /blocks/news/news
+include /blocks/popular-cars/popular-cars
+include /blocks/popular-sizes/popular-sizes
+include /blocks/text/text
 
 include /blocks/footer/footer
 
 
 block head
-    - var pageTitle = 'MYQUIETNEWCAR';
+	- var pageTitle = 'Index';
 
 block content
-    +header()
-    .page__inner
-    +footer()
-    
-    
+	+header()
+	.page__inner
+		+map()
+		+brands()
+		+featured()
+		+news()
+		+popular-cars()
+		+popular-sizes()
+		+text()
+
+	+footer()
+	
+	

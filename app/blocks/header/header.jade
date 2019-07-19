@@ -1,21 +1,94 @@
+//- include ../icon/icon
+//- include ../form/form
+//- include ../social/social
+
 mixin header()
 	// start header
 	header.header&attributes(attributes)
-		.header__in.container
-			a.header__logo.logo(href="#")
-				img.logo__image(src='assets/images/general/logo.png', srcset='assets/images/general/logo@2x.png 2x, assets/images/general/logo@3x.png 3x' alt='myquietnewcar')
+		.header__topline.topline
+			.topline__container.container
+				.topline__city
+					+icon('city-icon', true).topline__city-icon
+					.topline__city-text Ваш город:
+					a.topline__city-link(href="#") Санкт-Петербург?
+					
+				a.topline__phone.topline__phone_state(href="tel:+78123252121") 8 (812) 325-21-21
 
-			nav.header__nav.nav
+				nav.topline__nav.nav.nav_top
+					ul.nav__list
+						li.nav__item
+							a.nav__link(href="#") Для оптовых клиентов
+						li.nav__item
+							a.nav__link(href="#") Для корпоративных клиентов
+
+
+				.topline__personal-w
+					a.topline__button.button(href="#") Личный кабинет
+					.topline__personal
+						a.topline__user(href="#")
+							+icon('user-icon', true).topline__user-icon
+							| Евгений
+						a.topline__user-logout(href="#") Выход
+		
+		.header__body
+			a.header__logo(href="#")
+				img(src="assets/images/general/logo.png", alt="Эксклюзив")
+			.header__search.form.form_search
+				form.form__w(action="", method="get")
+					.form__field.form__field_search
+						input.form__input(type="text", value="", placeholder="Поиск по № стр.")
+						input.form__input.form__input_hide(type="text", value="", placeholder="Поиск по тексту")
+
+					button.form__submit(type="submit")
+						+icon('search-icon').form__submit-icon
+						| Найти
+
+			.header__social.social
+				a.social__link(href="#")
+					+icon('facebook-icon', true).social__icon
+					span.social__text Facebook
+				a.social__link(href="#")
+					+icon('vk-icon', true).social__icon
+					span.social__text Vk
+				a.social__link(href="#")
+					+icon('instagram-icon', true).social__icon
+					span.social__text Instagram
+				a.social__link(href="#")
+					+icon('youtube-icon', true).social__icon
+					span.social__text Youtube
+				a.social__link.social__link_drive(href="#")
+					.social__icon
+					span.social__text Drive 2
+
+			
+			.header__contacts.contacts
+				a.contacts__phone(href="tel:+78123252121") 8 (812) 325-21-21
+				a.contacts__emain(href="mailto:shop@tyres.spb.ru") shop@tyres.spb.ru
+
+			nav.header__nav.nav.nav_main
 				ul.nav__list
 					li.nav__item
-						a.nav__link(href="#") my search
+						a.nav__link(href="#") Шины
 					li.nav__item
-						a.nav__link(href="#") my options (3)
-
-			a.header__h-user.h-user(href="#")
-				.h-user__email vanone@gmail.com
-				.h-user__user-pic
-					img(src="assets/images/content/user.jpg", alt="")
+						a.nav__link(href="#") Диски
+					li.nav__item
+						a.nav__link(href="#") Подбор по авто
+					li.nav__item
+						a.nav__link(href="#") Шиномонтаж
+					li.nav__item
+						a.nav__link(href="#") Аккумуляторы
+					li.nav__item
+						a.nav__link(href="#") Автотовары
+					li.nav__item
+						a.nav__link(href="#") Услуги
+					li.nav__item
+						a.nav__link(href="#") Акции
+					li.nav__item
+						a.nav__link(href="#") Распродажа
+					li.nav__item
+						a.nav__link(href="#") Магазины
+					li.nav__item
+						a.nav__link(href="#") Инфо
 
 	// end header
 

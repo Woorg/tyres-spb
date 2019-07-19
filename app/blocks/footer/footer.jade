@@ -1,21 +1,91 @@
 mixin footer()
 	// start footer
 	footer.footer&attributes(attributes)
-		.footer__in.container
-			a.footer__logo.logo(href="#")
-				img.logo__image(src='assets/images/general/logo-black.png', srcset='assets/images/general/logo-black@2x.png 2x, assets/images/general/logo-black@3x.png 3x' alt='myquietnewcar')
+		.footer__body
+			.footer__container
+				nav.footer__nav
+					h3.footer__title Каталог
+					ul.footer__list
+						li.footer__item
+							a.footer__link(href="#") Link 1
+						li.footer__item
+							a.footer__link(href="#") Link 2
+						li.footer__item
+							a.footer__link(href="#") Link 3
+						li.footer__item
+							a.footer__link(href="#") Link 4
+						li.footer__item
+							a.footer__link(href="#") Link 5
+				nav.footer__nav
+					h3.footer__title Услуги
+					ul.footer__list
+						li.footer__item
+							a.footer__link(href="#") Link 1
+						li.footer__item
+							a.footer__link(href="#") Link 2
+						li.footer__item
+							a.footer__link(href="#") Link 3
+						li.footer__item
+							a.footer__link(href="#") Link 4
+						li.footer__item
+							a.footer__link(href="#") Link 5
+				nav.footer__nav
+					h3.footer__title Компания
+					ul.footer__list
+						li.footer__item
+							a.footer__link(href="#") Link 1
+						li.footer__item
+							a.footer__link(href="#") Link 2
+						li.footer__item
+							a.footer__link(href="#") Link 3
+						li.footer__item
+							a.footer__link(href="#") Link 4
+						li.footer__item
+							a.footer__link(href="#") Link 5
+				nav.footer__nav
+					h3.footer__title Покупателю
+					ul.footer__list
+						li.footer__item
+							a.footer__link(href="#") Link 1
+						li.footer__item
+							a.footer__link(href="#") Link 2
+						li.footer__item
+							a.footer__link(href="#") Link 3
+						li.footer__item
+							a.footer__link(href="#") Link 4
+						li.footer__item
+							a.footer__link(href="#") Link 5
+				nav.footer__nav
+					h3.footer__title Популярное
+					ul.footer__list
+						li.footer__item
+							a.footer__link(href="#") Link 1
+						li.footer__item
+							a.footer__link(href="#") Link 2
+						li.footer__item
+							a.footer__link(href="#") Link 3
+						li.footer__item
+							a.footer__link(href="#") Link 4
+						li.footer__item
+							a.footer__link(href="#") Link 5
 
+				.footer__contacts.contacts.contacts_secondary
+					h3.contacts__title Контакты
+						a.contacts__phone(href="tel:+78123252121") 8 (812) 325-21-21
+						a.contacts__phone(href="tel:+78003332222") 8 (800) 333-22-22
+						a.contacts__button.button.button_big(href="mailto:shop@tyres.spb.ru") Написать нам
+		.footer__bottom
+			.footer__container.container
+				.footer__copyright &copy; 2005 – 2019 ООО «Эксклюзив»
+				a.footer__privacy(href="#") Политика обработки персональных данных
 
-			nav.footer__nav.nav.nav_secondary
-				ul.nav__list
-					li.nav__item
-						a.nav__link(href="#") Contact us
-					li.nav__item
-						a.nav__link(href="#") Request adding data
-					li.nav__item
-						a.nav__link(href="#") Privacy Policy
-
-			.footer__copyright © 2019
-	
-
+				.footer__payments
+					span.footer__payments-text Принимаем к оплате:
+					.footer__payments-options
+						.footer__payments-option
+							+icon('visa-icon', true).footer__payments-icon
+						.footer__payments-option
+							+icon('mastercard-icon', true).footer__payments-icon
+						.footer__payments-option
+							+icon('ymoney-icon', true).footer__payments-icon
 	// end footer

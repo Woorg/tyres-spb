@@ -1,0 +1,131 @@
+mixin featured()
+	section.featured&attributes(attributes)
+		.featured__container.container
+			h2.featured__title Хиты продаж
+
+			.featured__.tabs.tabs
+				ul.tabs__nav.service__tabs-nav
+					li.tabs__item.tabs__item_active
+						a.tabs__link(href="#tab-1") Популярное
+					li.tabs__item
+						a.tabs__link(href="#tab-2") Акция
+					li.tabs__item
+						a.tabs__link(href="#tab-1") Рекомендуем
+					li.tabs__item.tabs__item_active
+						a.tabs__link(href="#tab-2") Шины
+					li.tabs__item
+						a.tabs__link(href="#tab-2") Диски
+
+
+
+				#tab-1.tabs__tab.tabs__tab_active
+
+					
+				#tab-2.tabs__tab
+
+			
+
+			.featured__list
+				article.featured__card.card
+					.card__size 13-17"
+					figure
+						img(src="assets/images/content/tyre.jpg", alt="tyre")
+
+					.card__season
+						+icon('types-winter', true).card__season-icon
+						.card__season-text Зимняя
+
+					.card__badges
+						.card__badge.badge.badge_sale акция
+
+					a.card__title(href="#") Nokian Hakka Black 205/50 ZR16 91W XL
+
+					.card__availability 
+						+icon('presence-low').card__availability-icon
+						| В наличии: мало
+
+					.card__bottom
+						.card__price 5 230 руб.
+						a.card__button(href="#") Купить
+
+
+				article.featured__card.card
+					.card__size 13-17"
+					figure
+						img(src="assets/images/content/tyre.jpg", alt="tyre")
+
+					.card__season
+						+icon('tyres-all', true).card__season-icon
+						.card__season-text Всесезонная
+
+					.card__badge
+						.card__badge.badge.badge_sale акция
+						.card__badge.badge.badge_best лучшая цена
+						.card__badge.badge.badge_recommend рекомендуем
+
+					a.card__title(href="#") Nokian Hakka Black 195/50 ZR16 91W XL
+
+					.card__availability
+						+icon('presence-high', true).card__availability-icon
+						| В наличии: много
+
+					.card__bottom
+						.card__price 3 230 руб.
+						a.card__button(href="#") Купить
+
+
+				article.featured__card.card.card_none
+					.card__size 13-17"
+					figure
+						img(src="assets/images/content/tyre.jpg", alt="tyre")
+
+					.card__season
+						+icon('tyres-all', true).card__season-icon
+						.card__season-text Летняя
+
+					a.card__title(href="#") Yokohama 107ZL 315/70 R22,5 156/152L 
+
+					.card__availability
+						+icon('presence-none', true).card__availability-icon 
+						| нет в наличии
+
+					.card__bottom
+						.card__price 4 230 руб.
+						a.card__button(href="#") Уведомить
+
+
+				article.featured__card.card
+					.card__size 13-17"
+					figure
+						img(src="assets/images/content/tyre.jpg", alt="tyre")
+
+					.card__season
+						+icon('tyres-all', true).card__season-icon
+						.card__season-text Всесезонная
+
+					.card__badge
+						.card__badge.badge.badge_sale акция
+
+					.card__badge
+						.card__badge.badge.badge_sale акция
+						.card__badge.badge.badge_best лучшая цена
+						.card__badge.badge.badge_recommend рекомендуем
+
+					a.card__title(href="#") Goodyear Wrangler SilentArmor 275/60 R20
+
+					.card__availability
+						+icon('presence-high', true).card__availability-icon 
+						| В наличии: 12 шт
+
+					.card__bottom
+						.card__price 6 230 руб.
+						a.card__button(href="#") Купить
+		
+	
+
+
+	
+
+
+
+
