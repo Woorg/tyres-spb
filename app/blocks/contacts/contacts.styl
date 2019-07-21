@@ -1,2 +1,46 @@
 .contacts
-	display block
+	position relative
+	padding-left 32px
+
+	&__icon
+		position absolute
+		top 5px
+		left 0
+		width 16px
+		height 16px
+	
+	&__phone,
+	&__email
+		display block
+		text-decoration none
+		white-space nowrap
+
+	&__phone
+		margin-bottom 5px
+		padding-right 20px
+		color #222223
+		font-family $a
+		font-size 18px
+		font-weight 600
+		line-height 1.333
+		&:hover
+			color lighten(#222223, 10)
+		
+	&__phone-icon
+		position absolute
+		top 8px
+		right 0
+		width 10px
+		height 7px
+		
+	&__email
+		color #8b9095
+		font-family $r
+		font-size 16px
+		font-weight 400
+		line-height 1.5
+		tr(color .3s ease)
+		&:hover
+			color darken(#8b9095, 10)
+			tr(color .3s ease)
+			

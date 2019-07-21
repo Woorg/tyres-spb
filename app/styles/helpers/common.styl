@@ -1,4 +1,5 @@
 .page
+	position relative
 	min-height 100vh
 	display flex
 	flex-direction column
@@ -12,12 +13,56 @@
 	&__inner
 		// flex 0 1 auto
 		flex 1 0 auto
+		
+	&__nav-bg
+		position absolute
+		content "" 
+		z-index 0
+		top 0
+		left 0
+		width 100%
+		height 100%
+		display none
+		background-color rgba(0, 0, 0, .5)
+		box-shadow 0 0 16px rgba(0, 0, 0, 0.08)
+	
+	&__nav-bg_active
+		display block
+
+	&__popup-bg
+		box-shadow 0 0 16px rgba(0, 0, 0, 0.08)
+		background-color rgba(0, 0, 0, .4)
+
+.in
+	margin-right auto
+	margin-left auto
+	padding-left 15px
+	padding-right 15px
+	width 100%
+	+r($sm)
+		padding-left 0
+		padding-right 0
+		max-width 100%
+	+rmin($sm)
+		// max-width 540px
+		padding-left 15px
+		padding-right 15px
+		max-width 100%
+	+rmin($md)
+		// max-width 720px 
+		max-width 100%
+			
+	+rmin($lg)
+		max-width 960px
+	+rmin($xl)
+		max-width 1200px
+		
 
 .title
 	color #333333
 	font-size 24px
 	font-weight 600
-	font-family $a 
+	font-family $a
 	line-height 1.5
 	a
 		position relative
@@ -31,7 +76,10 @@
 			width 100%
 			height 1px
 			background #268AE1 
-					
+			
+img
+	max-width 100%
+	height auto
 	
 
 .button
@@ -48,6 +96,23 @@
 		color darken(#0d62ad, 10)
 		tr(color .3s ease)
 	
+	&.button_biggest
+		height 50px
+		background-color #268ae1
+		color #ffffff
+		font-family $aB
+		font-size 14px
+		font-weight 700
+		letter-spacing 1.12px
+		line-height 1
+		text-transform uppercase
+		border-radius 4px
+		box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
+		tr(background-color .3s ease)
+		&:hover
+			color #ffffff
+			background-color darken(#268ae1, 10)
+			tr(background-color .3s ease)
 
 .wysiwyg
 	h2,

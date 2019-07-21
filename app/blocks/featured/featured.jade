@@ -3,27 +3,31 @@ mixin featured()
 		.featured__container.container
 			h2.featured__title Хиты продаж
 
-			.featured__.tabs.tabs
+			.featured__tabs.tabs
 				ul.tabs__nav.service__tabs-nav
 					li.tabs__item.tabs__item_active
-						a.tabs__link(href="#tab-1") Популярное
+						a.tabs__link() Популярное
 					li.tabs__item
-						a.tabs__link(href="#tab-2") Акция
+						a.tabs__link() Акция
 					li.tabs__item
-						a.tabs__link(href="#tab-1") Рекомендуем
+						a.tabs__link() Рекомендуем
 					li.tabs__item.tabs__item_active
-						a.tabs__link(href="#tab-2") Шины
+						a.tabs__link() Шины
 					li.tabs__item
-						a.tabs__link(href="#tab-2") Диски
+						a.tabs__link() Диски
+
+				.tabs__content
+					#tab-1.tabs__tab.tabs__tab_active 1
+
+					#tab-2.tabs__tab 2
+
+					#tab-3.tabs__tab 3
+
+					#tab-4.tabs__tab 4
+
+					#tab-5.tabs__tab 5
 
 
-
-				#tab-1.tabs__tab.tabs__tab_active
-
-					
-				#tab-2.tabs__tab
-
-			
 
 			.featured__list
 				article.featured__card.card

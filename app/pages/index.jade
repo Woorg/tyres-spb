@@ -13,12 +13,15 @@ include /blocks/popular-sizes/popular-sizes
 include /blocks/text/text
 
 include /blocks/footer/footer
+include /blocks/popup/popup
+
 
 
 block head
 	- var pageTitle = 'Index';
 
 block content
+	.page__nav-bg
 	+header()
 	.page__inner
 		+map()
@@ -30,5 +33,6 @@ block content
 		+text()
 
 	+footer()
+	+popup-auth()#auth.mfp-hide
 	
 	

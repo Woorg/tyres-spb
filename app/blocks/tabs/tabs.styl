@@ -1,81 +1,63 @@
 .tabs
 	display block
 	&__nav
-		margin-bottom 0
-		display inline-block
-		vertical-align middle
-		font-size 0
-		white-space normal
-		+r($tL)
-			vertical-align top
-		+r($t)
-			display block
+		margin-bottom 20px
+		border-bottom 1px solid #ececec 
+		display flex
+				
 	&__item
 		position relative
-		display inline-block
-		vertical-align top
+		margin-right 40px
 		&.tabs__item_active
 			.tabs__link
-				color #000
-		&:last-child
-			.tabs__link
+				color #333333
+				font-weight 600
 				&:before
-					display none
+					background-color #268ae1
+		&:last-child
+			margin-right 0
+			
 	&__link
 		position relative
-		margin-right 18px
-		padding-right 16px
+		padding-bottom 10px
 		display block
-		vertical-align middle
-		color #B3B3B3
-		font-family $s
-		font-size 24px
-		line-height 1.8
-		text-transform uppercase
+		color #8b9095
+		font-family $o
+		font-size 14px
+		font-weight 400
+		line-height 1.714
+		cursor pointer
 		tr(all .3s ease)
-		+r($tL)
-			font-size 18px
-			line-height 1.7
-		+r($t)
-			padding-left 0
 		&:before
 			position absolute
 			z-index 1
-			top 50%
-			right 0
-			display block
-			width 12px
-			height 16px
-			color #b3b3b3
-			font-size 24px
-			font-family $s
-			font-weight normal
-			text-transform uppercase
-			opacity 1
-			line-height 1
-			transform translateY(calc(-50% - 4px))
-			content '/'
-			+r($tL)
-				font-size 18px
-				transform translateY(calc(-50% - 1px))
-			+r($t)
-				transform translateY(calc(-50% - 1px))
+			content "" 
+			top calc(100% - 3px)
+			left 0
+			width 100%
+			height 3px
+			background-color transparent
+			
 		&:hover,
 		&:focus
-			color #000
+			color #333333
 			text-decoration none
-		+r($t)
-			margin-right 6px
-			padding-right 21px
-			padding-left 0
-			font-size 18px
-		+r($m)
-			margin-right 6px
-			padding-left 0
+			
+	&__content
+		overflow hidden
+		
 	&__tab
 		display none
+		// visibility hidden
+		// opacity 0
 		tr(all .3s ease)
 	&__tab_active
 		display block
-		font-size 14px
+		// visibility visible
+		// opacity 1
 		tr(all .3s ease)
+
+
+
+// .tabs_popup
+	

@@ -1,22 +1,342 @@
 .nav
 	display flex
+	+rmin($sm)
+		position relative
+		width 100%
+	&:after
+		position absolute
+		content "" 
+		top 0
+		left -100%
+		right -100%
+		width 1000%
+		height 1px
+		background-color #ececec
+		
+
+	.header__button,
+	.header__nav-second,
+	.header__email
+		+rmin($sm)
+			display none
+
+	&__trigger
+		position relative
+		border-right 1px solid #ececec
+		padding 20px
+		+rmin($sm)
+			display none
+			
+	&__burger,
+	&__burder-close
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+		tr(opacity .6s ease)
+	&__burger
+		width 16px
+		height 14px
+		opacity 1
+		visibility visible
+	&__burger-close
+		visibility hidden
+		opacity 0
+		width 16px
+		height 16px
+		
+	&__list-w
+		display none
+		+rmin($sm)
+			width 100%
+			display block
+		
 	&__list
 		display flex
+		+rmin($sm)
+			flex-flow row nowrap
+			justify-content space-between
 
 	&__item
-		margin-right 30px
+		position relative
+		+rmin($sm)
+			margin-right 16px
+			
 		&:last-child
 			margin-right 0
+	&__item_active
+		.nav__link
+			color #268AE1 
+			.nav__link-text
+				&:after
+					position absolute
+					content "" 
+					top calc(100% - 2px)
+					left 0
+					width 100%
+					height 2px
+					background-color #268ae1
+				
+		&.nav__item_sub
+			.nav__drop-icon
+				fill #268ae1
+				
+
+	&__item_sub
+		position relative
+		.nav__link
+			padding-right 16px
+			&:hover
+				.nav__drop-icon
+					fill #268ae1
+			
+		.nav__drop-icon
+			fill #383D42
+			
+		&:hover
+			.subnav__list
+				position absolute
+				display block
+				white-space nowrap
+				
+	&__item_more
+		
+		.nav__link
+			position relative
+			padding-right 15px
+			cursor pointer
+			&:hover
+				.nav__drop-icon
+					fill #268ae1		
+		.nav__drop-icon
+			top calc(50% + 6px)
+			fill #383D42
+			
+		ul
+			position relative
+			display none
+			padding-top 10px
+			padding-right 24px
+			padding-bottom 16px
+			padding-left 24px
+			background #FFFFFF
+			box-shadow 0px 12px 48px rgba(19, 60, 84, 0.08)
+			border-radius 0px 0px 4px 4px
+			// &:after
+			// 	position absolute
+			// 	content '' 
+			// 	top -10px
+			// 	left 0
+			// 	width 100%
+			// 	height 20px
+			// 	background #FFF 
+				
+			.nav__item
+				border-bottom 1px solid #EEE 
+				padding-left 10px
+				white-space wrap
+				&:last-child
+					border-bottom 1px solid transparent 
+					
+			.nav__link
+				padding-top 8px
+				padding-bottom 8px
+				display block
+				color #383D42
+				font-family $a
+				font-weight 600
+				font-size 14px
+				line-height 1.714
+				letter-spacing 0.02em
+				white-space wrap
+				text-transform uppercase
+				text-decoration none 
+				tr(color .3s ease)
+				&:hover
+					color #268AE1
+					tr(color .3s ease)
+					
+			.nav__link-text
+				padding-bottom 0
+
+		&.nav__item-show
+			.nav__link-more
+				color #268AE1
+			.nav__drop-icon
+				fill #268AE1
+			ul
+				position absolute
+				top calc(100% + 1px)
+				right 0
+				max-width 310px
+				display block
+				background #FFFFFF
+				box-shadow 0px 12px 48px rgba(19, 60, 84, 0.08)
+				border-radius 0px 0px 4px 4px
+		
+		
+	&__drop-icon
+		position absolute
+		top calc(50% - 2px)
+		right 0
+		width 10px
+		height 6px
+		fill #268ae1
 
 	&__link
+		position relative
 		color #787878
 		text-decoration none
 		tr(color .3s ease)
-		
+		+rmin($sm)
+			padding-top 18px
+			display block
+			color #383d42
+			font-family $a
+			font-size 15px
+			font-weight 600
+			line-height 1.6
+			white-space nowrap
 		&:hover
-			color darken(#787878, 10)
+			color #268AE1
 			tr(color .3s ease)
-
+	&__link-text
+		position relative
+		display inline-block
+		+rmin($sm)
+			padding-bottom 16px
+		
 .nav_top
 	.nav__item
 		margin-right 30px
+		
+
+.nav_main
+	.nav__list
+		+rmin($sm)
+			display flex
+			flex-flow row nowrap
+			
+					
+
+
+
+.nav_open
+	.nav__burger
+		visibility hidden
+		opacity 0
+	.nav__burger-close
+		visibility visible
+		opacity 1	
+	.nav__burder,
+	.nav__burder-close
+		tr(opacity .6s ease)
+		
+
+	.nav__list-w
+		position absolute
+		top calc(100% + 1px)
+		left 0
+		right 0
+		padding-top 20px
+		padding-left 24px
+		padding-right 24px
+		padding-bottom 15px
+		display block
+		background #fff
+		&:after
+			position absolute
+			z-index -1
+			content "" 
+			bottom 0
+			left 0
+			width 100%
+			height 30px
+			box-shadow 0 0 16px rgba(0, 0, 0, 0.08)
+	
+
+	.nav__list
+		position relative
+		padding-bottom 20px
+		display block
+		&:after
+			position absolute
+			content "" 
+			top 100%
+			left -100%
+			right -100%
+			width -100%
+			height 1px
+			background-color #ececec
+		
+	.nav__item
+		margin-bottom 15px
+		&:last-child
+			margin-bottom 0
+
+	.nav__item_sub
+		.subnav__list
+			margin-top -16px
+			margin-left -4px
+			margin-right -4px
+		&:hover
+			.subnav__list
+				display block
+			
+	.nav__link
+		color #383d42
+		font-family $a
+		font-size 15px
+		font-weight 600
+		line-height 1.6
+		
+
+	.header__nav-second
+		&:after
+			position absolute
+			content "" 
+			top 100%
+			left -100%
+			right -100%
+			width -100%
+			height 1px
+			display none
+			background-color #ececec
+		.nav__list
+			
+			padding-top 15px
+			padding-bottom 15px
+			width 100%
+
+
+		.nav__item
+			margin-bottom 10px
+			&:last-child
+				margin-bottom 0
+				
+		.nav__link
+			color #787878
+			font-family $o
+			font-size 14px
+			font-weight 400
+			line-height 1.714
+			
+
+	.header__social-menu
+		padding-top 15px
+		padding-bottom 8px
+		display flex
+		
+	.header__email
+		color #8b9095
+		font-family $r
+		font-size 16px
+		font-weight 400
+		line-height 1.5
+		text-decoration none
+		
+
+
+
+
+

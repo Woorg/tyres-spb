@@ -6,13 +6,15 @@ mixin header()
 	// start header
 	header.header&attributes(attributes)
 		.header__topline.topline
-			.topline__container.container
+			.topline__container
 				.topline__city
 					+icon('city-icon', true).topline__city-icon
 					.topline__city-text Ваш город:
 					a.topline__city-link(href="#") Санкт-Петербург?
+						+icon('arrow-down', true).topline__city-arrow 
 					
 				a.topline__phone.topline__phone_state(href="tel:+78123252121") 8 (812) 325-21-21
+					+icon('arrow-down', true).topline__phone-icon
 
 				nav.topline__nav.nav.nav_top
 					ul.nav__list
@@ -31,64 +33,149 @@ mixin header()
 						a.topline__user-logout(href="#") Выход
 		
 		.header__body
-			a.header__logo(href="#")
-				img(src="assets/images/general/logo.png", alt="Эксклюзив")
-			.header__search.form.form_search
-				form.form__w(action="", method="get")
-					.form__field.form__field_search
-						input.form__input(type="text", value="", placeholder="Поиск по № стр.")
-						input.form__input.form__input_hide(type="text", value="", placeholder="Поиск по тексту")
+			.header__container
 
-					button.form__submit(type="submit")
-						+icon('search-icon').form__submit-icon
-						| Найти
+				.header__w
 
-			.header__social.social
-				a.social__link(href="#")
-					+icon('facebook-icon', true).social__icon
-					span.social__text Facebook
-				a.social__link(href="#")
-					+icon('vk-icon', true).social__icon
-					span.social__text Vk
-				a.social__link(href="#")
-					+icon('instagram-icon', true).social__icon
-					span.social__text Instagram
-				a.social__link(href="#")
-					+icon('youtube-icon', true).social__icon
-					span.social__text Youtube
-				a.social__link.social__link_drive(href="#")
-					.social__icon
-					span.social__text Drive 2
+					a.header__logo(href="#")
+						img(src="assets/images/general/logo.png", alt="Эксклюзив")
+					.header__search.form.form_search
+						form.form__w(action="", method="get")
+							.form__field.form__field_search
+								.form__drop-w
+									+icon('arrow-down', true).form__drop-icon
+								input.form__input(type="text", value="", placeholder="Поиск по № стр.")
+								input.form__input.form__input_drop.form__input_hide(type="text", value="", placeholder="Поиск по тексту")
+							button.form__submit(type="submit")
+								+icon('search-icon', true).form__submit-icon
+								| Найти
 
-			
-			.header__contacts.contacts
-				a.contacts__phone(href="tel:+78123252121") 8 (812) 325-21-21
-				a.contacts__emain(href="mailto:shop@tyres.spb.ru") shop@tyres.spb.ru
+					.header__social.social
+						a.social__link(href="#")
+							+icon('facebook-icon', true).social__icon
+							span.social__text Facebook
+						a.social__link(href="#")
+							+icon('vk-icon', true).social__icon
+							span.social__text Vk
+						a.social__link(href="#")
+							+icon('instagram-icon', true).social__icon
+							span.social__text Instagram
+						a.social__link(href="#")
+							+icon('youtube-icon', true).social__icon
+							span.social__text Youtube
+						a.social__link.social__link_drive(href="#")
+							.social__icon
+							span.social__text Drive 2
 
-			nav.header__nav.nav.nav_main
-				ul.nav__list
-					li.nav__item
-						a.nav__link(href="#") Шины
-					li.nav__item
-						a.nav__link(href="#") Диски
-					li.nav__item
-						a.nav__link(href="#") Подбор по авто
-					li.nav__item
-						a.nav__link(href="#") Шиномонтаж
-					li.nav__item
-						a.nav__link(href="#") Аккумуляторы
-					li.nav__item
-						a.nav__link(href="#") Автотовары
-					li.nav__item
-						a.nav__link(href="#") Услуги
-					li.nav__item
-						a.nav__link(href="#") Акции
-					li.nav__item
-						a.nav__link(href="#") Распродажа
-					li.nav__item
-						a.nav__link(href="#") Магазины
-					li.nav__item
-						a.nav__link(href="#") Инфо
+					.header__contacts.contacts
+						+icon('phone-icon', true).contacts__icon
+						a.contacts__phone(href="tel:+78123252121") 8 (812) 325-21-21
+							+icon('arrow-down', true).contacts__phone-icon
+						a.contacts__email(href="mailto:shop@tyres.spb.ru") shop@tyres.spb.ru
+
+				
+
+				nav#main-nav.header__nav.nav.nav_main
+					a.nav__trigger(href="#")
+						+icon('burger-icon', true).nav__burger
+						+icon('burger-close-icon', true).nav__burger-close
+
+					.nav__list-w
+
+						a.header__button.open-popup.button(href="#auth") Личный кабинет
+
+						ul.nav__list.nav__list_main
+							li.nav__item.nav__item_active.nav__item_sub.subnav
+								a.nav__link(href="#") 
+									+icon('arrow-down', true).nav__drop-icon
+									span.nav__link-text Шины
+
+								ul.subnav__list
+									li.subnav__item.subnav__item_active
+										a.subnav__link(href="#") Все шины
+									li.subnav__item
+										a.subnav__link(href="#") Летние шины
+									li.subnav__item
+										a.subnav__link(href="#") Зимние шины
+									li.subnav__item
+										a.subnav__link(href="#") Всесезонные шины
+
+							li.nav__item.nav__item_sub.subnav
+								a.nav__link(href="#")
+									+icon('arrow-down', true).nav__drop-icon
+									span.nav__link-text Диски
+
+								ul.subnav__list
+									li.subnav__item.subnav__item_active
+										a.subnav__link(href="#") Все Диски
+									li.subnav__item
+										a.subnav__link(href="#") Летние Диски
+									li.subnav__item
+										a.subnav__link(href="#") Зимние Диски
+									li.subnav__item
+										a.subnav__link(href="#") Всесезонные Диски
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Подбор по авто
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Шиномонтаж
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Аккумуляторы
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Автотовары
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Услуги
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Акции
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Распродажа
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Магазины
+							li.nav__item
+								a.nav__link(href="#")
+									span.nav__link-text Инфо
+					
+							li.nav__item.nav__item_more(data-width="80")
+								a.nav__link.nav__link-more Еще
+									+icon('arrow-down', true).nav__drop-icon
+								ul
+
+						//- ul.nav__list.nav__list_priority.nav__list_hidden
+
+						.header__nav-second.nav.nav_top
+							ul.nav__list
+								li.nav__item
+									a.nav__link(href="#") Для оптовых клиентов
+								li.nav__item
+									a.nav__link(href="#") Для корпоративных клиентов
+
+
+						.header__social.header__social-menu.social
+							a.social__link(href="#")
+								+icon('facebook-icon', true).social__icon
+								span.social__text Facebook
+							a.social__link(href="#")
+								+icon('vk-icon', true).social__icon
+								span.social__text Vk
+							a.social__link(href="#")
+								+icon('instagram-icon', true).social__icon
+								span.social__text Instagram
+							a.social__link(href="#")
+								+icon('youtube-icon', true).social__icon
+								span.social__text Youtube
+							a.social__link.social__link_drive(href="#")
+								.social__icon
+								span.social__text Drive 2
+
+						a.header__email(href="mailto:shop@tyres.spb.ru") shop@tyres.spb.ru
+
 
 	// end header
 

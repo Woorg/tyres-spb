@@ -1,0 +1,45 @@
+mixin popup-auth()
+	.popup&attributes(attributes)
+		h2.popup__title.title Вход в личный кабинет
+		.popup__tabs.tabs.tabs_popup
+
+			ul.tabs__nav.popup__tabs-nav
+				li.tabs__item.tabs__item_active
+					a.tabs__link() Войти
+				li.tabs__item
+					a.tabs__link() Зарегистрироваться
+
+			.tabs__content
+				.tabs__tab.tabs__tab_active 
+					.popup__auth.form.form_auth
+						form.form__w(action="", method="post")
+
+							.form__field.form__field_label_true
+								label.form__label Логин:
+									input.form__input(type="text", value="", placeholder="" name="")
+
+							.form__field.form__field_label_true
+								label.form__label Пароль
+									input.form__input(type="password", value="", placeholder="" name="")
+
+
+							input.form__submit.button.button_biggest(type="submit", value="Войти")
+
+					
+				.tabs__tab 
+					.popup__auth.form.form_auth
+						form.form__w(action="", method="post")
+
+							.form__field.form__field_label_true
+								label.form__label Логин:
+									input.form__input(type="text", value="", placeholder="" name="")
+
+							.form__field.form__field_label_true
+								label.form__label Пароль
+									input.form__input(type="password", value="", placeholder="" name="")
+
+							.form__field.form__field_label_true
+								label.form__label Пароль
+									input.form__input(type="password", value="", placeholder="")
+
+							input.form__submit.button.button_biggest(type="submit", value="Зарегистрироваться")

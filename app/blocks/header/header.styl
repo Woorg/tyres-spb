@@ -1,10 +1,97 @@
 .header
+	position relative
+	z-index 2
 	background-color #ffffff
 	box-shadow 0 0 16px rgba(0, 0, 0, 0.08)
-	// &__topline
-		
-			
-	// &__body
+	&__topline
+		padding-left 15px
+		padding-right 15px
+		+rmin($sm)
+			padding-left 0
+			padding-right 0
+	&__body
+		position relative
+		z-index 3
+		border-top 1px solid #E1E1E1
+		border-bottom 1px solid #E1E1E1
+		// padding-left 15px
+		// padding-right 15px 
+		height 58px
+		+r($sm)
+			padding-top 0
+			padding-bottom 0 
+		+rmin($sm)
+			padding-top 15px
+			padding-bottom 0
+			height auto
 		
 
-	// &__logo
+	&__container
+		@extends .in
+		display flex
+		+rmin($sm)
+			flex-wrap wrap
+		
+	&__logo
+		margin-top 14px
+		margin-right 10px
+		margin-bottom 10px
+		margin-left 10px
+		max-width 128px
+		display flex
+		flex-grow 1
+		flex-shrink 0
+		flex-basis 128px
+		width 100%
+		display block
+		+rmin($sm)
+			margin-top 0
+			margin-right 20px
+			margin-bottom 0
+			margin-left 0
+			max-width 206px
+			
+	
+	&__search
+		min-width 104px
+		+rmin($sm)
+			margin-right 26px
+			min-width 170px
+			max-width 240px
+			height 44px
+		
+	&__social
+		display none
+
+	&__contacts
+		display none
+		+rmin($sm)
+			margin-left auto
+			display block
+			
+	&__w
+		display flex
+		flex-grow 1
+		align-items center
+		+rmin($sm)
+			flex-wrap nowrap
+
+	&__nav
+		order -1
+		+rmin($sm)
+			margin-top 18px
+			order unset
+		
+	&__button
+		margin-bottom 20px
+		padding-top 12px
+		padding-right 10px
+		padding-bottom 9px
+		padding-left 10px
+
+
+.header_fixed_true
+	position fixed
+	top 0
+	left 0
+	width 100%
