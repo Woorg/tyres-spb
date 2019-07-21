@@ -1,0 +1,68 @@
+.payments
+	+rmin($sm)
+		display flex
+		align-items center
+	&__text
+		font-family $a
+		font-weight 500
+		line-height 1.714 
+		+rmin($sm)
+			margin-right 20px
+	&__variants
+		margin-top 10px
+		display flex
+		flex-flow row nowrap
+		flex-grow 1
+		+rmin($sm)
+			margin-top 0
+		+rmin($lg)
+			flex-grow 0
+		
+	&__variant
+		position relative
+		margin-right 10px
+		border 1px solid #efefef
+		padding-top 5px
+		padding-right 10px
+		padding-bottom 5px
+		padding-left 10px
+		height 36px
+		flex-shrink 0
+		flex-grow 0
+		flex-basis 65px
+		background-color #ffffff
+		border-radius 5px
+		box-shadow 0 4px 8px rgba(0, 0, 0, 0.04)
+		&:last-child
+			margin-right 0
+			
+	&__variant_visa
+		.payments__icon
+			width 41px
+			height 14px
+			+rmin($sm)
+				width 45px
+				height 26px
+	&__variant_master
+		.payments__icon
+			width 26px
+			height 21px
+			+rmin($sm)
+				width 27px
+				height 21px
+	&__variant_yd
+		.payments__icon
+			width 18px
+			height 23px
+			
+
+		
+	&__icon
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+	
+
+		
+		

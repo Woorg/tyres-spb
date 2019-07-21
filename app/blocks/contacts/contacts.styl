@@ -44,3 +44,94 @@
 			color darken(#8b9095, 10)
 			tr(color .3s ease)
 			
+
+.contacts_secondary
+	padding-left 0
+	+rmin($sm)
+		display flex
+		flex-wrap wrap
+		align-items center
+		
+
+	+rmin($lg)
+		position relative
+		padding-left 60px
+		padding-right 22px
+		align-items flex-start
+		
+		
+	&:after
+		+rmin($lg)
+			position absolute
+			top 0
+			left 0
+			content ''
+			width 1px
+			height 210px
+			background-color #eeeeee 
+		
+			
+		
+	.contacts__title
+		margin-bottom 10px
+		+rmin($sm)
+			margin-bottom 20px
+			width 100%
+		
+	.contacts__w
+		+rmin($sm)
+			position relative
+		
+
+	.contacts__phone
+		font-weight 500
+		+rmin($sm)
+			margin-bottom 10px
+		&:last-child
+			+rmin($sm)
+				margin-bottom 0
+	.contacts__email
+		margin-top 10px
+		color #8b9095
+		+rmin($sm)
+			position absolute
+			top calc(50% - 10px)
+			right -174px
+			margin-top 0
+			transform translateY(-50%)
+			
+		+rmin($lg)
+			position static
+			margin-top 20px
+			display block
+			
+		
+	.contacts__button
+		margin-top 20px
+		border none
+		padding-top 16px
+		padding-right 20px
+		padding-bottom 10px
+		padding-left 20px
+		display flex
+		justify-content center
+		font-family $a 
+		font-weight 600 
+		font-size 15px
+		letter-spacing 0
+		text-align center
+		text-transform none
+		box-shadow none
+		+rmin($sm)
+			
+			margin-top -20px
+			margin-left auto
+			padding-left 30px
+			padding-right 30px
+			font-size 16px
+		
+		+rmin($lg)
+			margin-top 20px
+			margin-left 0
+	
+		

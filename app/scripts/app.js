@@ -83,7 +83,7 @@ import 'magnific-popup';
 		});
 		
 
-		// Nav more
+		// Priority Nav
 
 		function calcWidth() {
 			let navwidth = 0;
@@ -117,8 +117,10 @@ import 'magnific-popup';
 		$(window).on('resize load',function(){
 			if ( $(window).width() > 576 )  {
 				calcWidth();
-			} 
+			}
 		});
+
+		
 
 		$('.nav__item_more').on('click', function () {
 			$(this).toggleClass('nav__item-show');

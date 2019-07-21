@@ -49,7 +49,7 @@ mixin header()
 
 
 				.topline__personal-w
-					a.topline__button.button(href="#") Личный кабинет
+					a.topline__button.button.open-popup(href="#auth") Личный кабинет
 					.topline__personal
 						a.topline__user(href="#")
 							+icon('user-icon', true).topline__user-icon
@@ -165,7 +165,6 @@ mixin header()
 							li.nav__item
 								a.nav__link(href="#")
 									span.nav__link-text Инфо
-					
 							li.nav__item.nav__item_more(data-width="80")
 								a.nav__link.nav__link-more Еще
 									+icon('arrow-down', true).nav__drop-icon

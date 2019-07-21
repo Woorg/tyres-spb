@@ -4,88 +4,94 @@ mixin footer()
 		.footer__body
 			.footer__container
 				nav.footer__nav
-					h3.footer__title Каталог
+					h3.footer__title.title.title_small Каталог
 					ul.footer__list
 						li.footer__item
-							a.footer__link(href="#") Link 1
+							a.footer__link(href="#") Шины
 						li.footer__item
-							a.footer__link(href="#") Link 2
+							a.footer__link(href="#") Диски
 						li.footer__item
-							a.footer__link(href="#") Link 3
+							a.footer__link(href="#") Аккумуляторы
 						li.footer__item
-							a.footer__link(href="#") Link 4
+							a.footer__link(href="#") Автотовары
 						li.footer__item
-							a.footer__link(href="#") Link 5
+							a.footer__link(href="#") Датчики давления
+
 				nav.footer__nav
-					h3.footer__title Услуги
+					h3.footer__title.title.title_small Услуги
 					ul.footer__list
 						li.footer__item
-							a.footer__link(href="#") Link 1
+							a.footer__link(href="#") Шиномонтаж
 						li.footer__item
-							a.footer__link(href="#") Link 2
+							a.footer__link(href="#") Ремонт шин и дисков
 						li.footer__item
-							a.footer__link(href="#") Link 3
+							a.footer__link(href="#") Заправка кондиционеров
 						li.footer__item
-							a.footer__link(href="#") Link 4
+							a.footer__link(href="#") Мойка
 						li.footer__item
-							a.footer__link(href="#") Link 5
+							a.footer__link(href="#") Развал схождение
+						li.footer__item
+							a.footer__link(href="#") Покраска дисков
+						li.footer__item
+							a.footer__link(href="#") Сезонное хранение
+
 				nav.footer__nav
-					h3.footer__title Компания
+					h3.footer__title.title.title_small Компания
 					ul.footer__list
 						li.footer__item
-							a.footer__link(href="#") Link 1
+							a.footer__link(href="#") О компании
 						li.footer__item
-							a.footer__link(href="#") Link 2
+							a.footer__link(href="#") Вакансии
 						li.footer__item
-							a.footer__link(href="#") Link 3
+							a.footer__link(href="#") Магазины
 						li.footer__item
-							a.footer__link(href="#") Link 4
+							a.footer__link(href="#") Отзывы
 						li.footer__item
-							a.footer__link(href="#") Link 5
+							a.footer__link(href="#") Партнеры
+
 				nav.footer__nav
-					h3.footer__title Покупателю
+					h3.footer__title.title.title_small Покупателю
 					ul.footer__list
 						li.footer__item
-							a.footer__link(href="#") Link 1
+							a.footer__link(href="#") Личный кабинет
 						li.footer__item
-							a.footer__link(href="#") Link 2
+							a.footer__link(href="#") Акции / новости
 						li.footer__item
-							a.footer__link(href="#") Link 3
-						li.footer__item
-							a.footer__link(href="#") Link 4
-						li.footer__item
-							a.footer__link(href="#") Link 5
+							a.footer__link(href="#") Распродажа
+						
 				nav.footer__nav
-					h3.footer__title Популярное
+					h3.footer__title.title.title_small Популярное
 					ul.footer__list
 						li.footer__item
-							a.footer__link(href="#") Link 1
+							a.footer__link(href="#") Летние шины
 						li.footer__item
-							a.footer__link(href="#") Link 2
-						li.footer__item
-							a.footer__link(href="#") Link 3
-						li.footer__item
-							a.footer__link(href="#") Link 4
-						li.footer__item
-							a.footer__link(href="#") Link 5
+							a.footer__link(href="#") Зимние шины
+						
 
 				.footer__contacts.contacts.contacts_secondary
-					h3.contacts__title Контакты
+					h3.contacts__title.title.title_small Контакты
+
+					.contacts__w
 						a.contacts__phone(href="tel:+78123252121") 8 (812) 325-21-21
 						a.contacts__phone(href="tel:+78003332222") 8 (800) 333-22-22
-						a.contacts__button.button.button_big(href="mailto:shop@tyres.spb.ru") Написать нам
+						a.contacts__email(href="mailto:shop@tyres.spb.ru") shop@tyres.spb.ru
+
+					a.contacts__button.button.button_biggest(href="mailto:shop@tyres.spb.ru") Написать нам
+
 		.footer__bottom
-			.footer__container.container
+			.footer__container
 				.footer__copyright &copy; 2005 – 2019 ООО «Эксклюзив»
+
 				a.footer__privacy(href="#") Политика обработки персональных данных
 
-				.footer__payments
-					span.footer__payments-text Принимаем к оплате:
-					.footer__payments-options
-						.footer__payments-option
-							+icon('visa-icon', true).footer__payments-icon
-						.footer__payments-option
-							+icon('mastercard-icon', true).footer__payments-icon
-						.footer__payments-option
-							+icon('ymoney-icon', true).footer__payments-icon
+				.footer__payments.payments
+					span.payments__text Принимаем к оплате:
+					.payments__variants
+						.payments__variant.payments__variant_visa
+							+icon('visa-icon', true).payments__icon
+						.payments__variant.payments__variant_master
+							+icon('mastercard-icon', true).payments__icon
+						.payments__variant.payments__variant_yd
+							+icon('ymoney-icon', true).payments__icon
+							
 	// end footer

@@ -60,10 +60,13 @@
 	&__item
 		position relative
 		+rmin($sm)
-			margin-right 16px
+			margin-left 16px
 			
-		&:last-child
-			margin-right 0
+		&:first-child
+			margin-left 0
+			+rmin($sm)
+				margin-left 0
+			
 	&__item_active
 		.nav__link
 			color #268AE1 
@@ -100,7 +103,8 @@
 				white-space nowrap
 				
 	&__item_more
-		
+		+r($sm)
+			display none
 		.nav__link
 			position relative
 			padding-right 15px
@@ -132,9 +136,11 @@
 			// 	background #FFF 
 				
 			.nav__item
-				border-bottom 1px solid #EEE 
+				border-bottom 1px solid #EEE
+				margin-left 0 
 				padding-left 10px
 				white-space wrap
+				text-align left
 				&:last-child
 					border-bottom 1px solid transparent 
 					
@@ -232,6 +238,8 @@
 			
 	.nav__item
 		margin-right 30px
+		+rmin($sm)
+			margin-left 0
 
 	.nav__link
 		padding-top 0
