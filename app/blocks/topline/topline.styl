@@ -1,4 +1,6 @@
 .topline
+	position relative
+	z-index 4
 	background-color #fbfbfb 
 	&__container
 		@extends .in
@@ -10,9 +12,15 @@
 		+r($sm)
 			padding-top 18px
 			padding-bottom 18px
+		+rmin($sm)
+			padding-top 10px
+			padding-bottom 10px
+			padding-left 0
+			
 	// &__col
 	// 	display flex
 	// 	align-items center
+		
 	&__city
 		position relative
 		margin-right 16px
@@ -33,7 +41,13 @@
 		white-space nowrap 
 		// overflow hidden
 		+rmin($sm)
+			margin-left 18px
 			margin-right 40px
+		+rmin($xl)
+			min-width 200px 
+			max-width 370px
+			flex-grow 0
+			flex-basis auto
 			
 	&__city-icon
 		position absolute
@@ -48,8 +62,15 @@
 		
 	&__city-text
 		padding-right 5px
+		color #787878
+		font-weight 400
 		+r($sm)
 			display none
+		+rmin($sm)
+			display none
+			
+		+rmin($xl)
+			display block
 		
 	&__city-link
 		position relative
@@ -58,15 +79,33 @@
 		font-weight 500
 		text-decoration none
 		text-overflow ellipsis
-		&:after
-			position absolute
-			content '' 
-			top 100%
-			left 0
-			width 100%
-			height 1px
-			background #CED3D7
-			tr(background .3s ease)
+		// +rmin($sm)
+		// 	overflow inherit
+		span
+			position relative
+			overflow hidden
+			text-overflow ellipsis
+			
+			+rmin($sm)
+				padding-bottom 2px
+				height 100%
+				overflow inherit
+				display block
+			&:after
+				position absolute
+				content '' 
+				top 100%
+				left 0
+				width 100%
+				height 1px
+				display none
+				background #ced3d7
+				tr(background .3s ease)
+				+rmin($sm)
+					top auto
+					bottom 0
+					display block
+				
 		&:hover
 			&:after
 				background transparent
@@ -80,6 +119,8 @@
 		height 6px
 		fill #000000
 		transform translateY(-50%)
+		+rmin($xl)
+			display none
 				
 		// 	border-bottom 1px solid transparent 
 		
@@ -119,6 +160,21 @@
 	&__nav
 		+r($sm)
 			display none
+		+rmin($sm)
+			order -1
+			
+		+rmin($xl)
+			order unset
+
+
+	&__social
+		display none
+		+rmin($sm)
+			margin-right 20px
+			display flex	
+		+rmin($xl)
+			display none
+
 
 	&__personal-w
 		margin-left auto
@@ -150,7 +206,12 @@
 		padding-left 32px
 		color #0d62ad
 		font-weight 500
-		text-decoration none	
+		text-decoration none
+		+rmin($sm)
+			padding-right 0	
+		+rmin($xl)
+			padding-right 15px
+
 		&:after
 			position absolute
 			content ''	
@@ -160,8 +221,10 @@
 			height 20px
 			background-color #c4c4c4
 			transform translateY(-50%)
-
-
+			+rmin($sm)
+				display none
+			+rmin($xl)
+				display block
 				
 	&__user-icon
 		position absolute
@@ -175,8 +238,12 @@
 	&__user-logout
 		padding-left 15px
 		color #333333
-		text-decoration none	
-			
+		text-decoration none
+		+rmin($sm)	
+			display none
+		
+		+rmin($xl)
+			display block
 		
 		
 		

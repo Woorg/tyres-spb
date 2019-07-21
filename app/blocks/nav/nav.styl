@@ -207,9 +207,75 @@
 			padding-bottom 16px
 		
 .nav_top
+	width auto
+	&:after
+		+rmin($sm)
+			display none
+			
+	.nav__trigger-top
+		display none
+		+rmin($sm)
+			display block
+			position relative
+			border-right 1px solid #ececec
+			padding 20px
+		+rmin($xl)
+			display none
+	
+	.nav__list
+		position absolute
+		+rmin($sm)
+			display none
+		+rmin($xl)
+			position static
+			display flex
+			
 	.nav__item
 		margin-right 30px
-		
+
+	.nav__link
+		padding-top 0
+		+rmin($xl)
+			color #787878
+			font-family $o
+			font-size 14px
+			font-weight 400
+			line-height 1.571
+
+
+	&.nav_open
+		.nav__list
+			+rmin($sm)
+				position absolute
+				top calc(100% + 11px)
+				left 0
+				padding-top 15px
+				padding-left 20px
+				padding-right 20px
+				padding-bottom 15px
+				background #fbfbfb 
+				border-radius 0 0 4px 4px
+				box-shadow 0px 12px 48px rgba(19,60,84,0.08) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .nav_main
 	.nav__list

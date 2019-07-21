@@ -24,7 +24,8 @@
 			padding-top 15px
 			padding-bottom 0
 			height auto
-		
+		+rmin($xl)
+			padding-top 12px
 
 	&__container
 		@extends .in
@@ -50,6 +51,9 @@
 			margin-bottom 0
 			margin-left 0
 			max-width 206px
+		+rmin($xl)
+			max-width 245px
+			
 			
 	
 	&__search
@@ -59,9 +63,15 @@
 			min-width 170px
 			max-width 240px
 			height 44px
+		+rmin($xl)
+			max-width 400px
 		
 	&__social
 		display none
+	&__social_show
+		+rmin($xl)
+			display flex
+			
 
 	&__contacts
 		display none
@@ -74,6 +84,8 @@
 		flex-grow 1
 		align-items center
 		+rmin($sm)
+			position relative
+			z-index 1
 			flex-wrap nowrap
 
 	&__nav
@@ -81,6 +93,8 @@
 		+rmin($sm)
 			margin-top 18px
 			order unset
+		+rmin($xl)
+			margin-top 12px
 		
 	&__button
 		margin-bottom 20px

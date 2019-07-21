@@ -62,6 +62,27 @@ import 'magnific-popup';
 			} 
 		});
 
+
+		// Trigger topmenu
+
+		let $navTriggerTop = $('.nav__trigger-top');
+
+		$navTriggerTop.on('click', function () {
+			$(this).parent('.nav').toggleClass('nav_open');
+		});
+
+
+		// Close topmenu 
+
+		let $navTop = $('.nav_top');
+
+		$(document).on('click', function(e) {
+			if (!$(e.target).closest('.nav_top').length) {
+				$navTop.removeClass('nav_open');
+			}
+		});
+		
+
 		// Nav more
 
 		function calcWidth() {

@@ -10,18 +10,42 @@ mixin header()
 				.topline__city
 					+icon('city-icon', true).topline__city-icon
 					.topline__city-text Ваш город:
-					a.topline__city-link(href="#") Санкт-Петербург?
+					a.topline__city-link(href="#") 
+						span Санкт-Петербург?
 						+icon('arrow-down', true).topline__city-arrow 
 					
 				a.topline__phone.topline__phone_state(href="tel:+78123252121") 8 (812) 325-21-21
 					+icon('arrow-down', true).topline__phone-icon
 
 				nav.topline__nav.nav.nav_top
+					
+					a.nav__trigger-top(href="#")
+						+icon('burger-icon', true).nav__burger
+						+icon('burger-close-icon', true).nav__burger-close
+
+
 					ul.nav__list
 						li.nav__item
 							a.nav__link(href="#") Для оптовых клиентов
 						li.nav__item
 							a.nav__link(href="#") Для корпоративных клиентов
+
+				.topline__social.social
+					a.social__link(href="#")
+						+icon('facebook-icon', true).social__icon
+						span.social__text Facebook
+					a.social__link(href="#")
+						+icon('vk-icon', true).social__icon
+						span.social__text Vk
+					a.social__link(href="#")
+						+icon('instagram-icon', true).social__icon
+						span.social__text Instagram
+					a.social__link(href="#")
+						+icon('youtube-icon', true).social__icon
+						span.social__text Youtube
+					a.social__link.social__link_drive(href="#")
+						.social__icon
+						span.social__text Drive 2
 
 
 				.topline__personal-w
@@ -50,7 +74,7 @@ mixin header()
 								+icon('search-icon', true).form__submit-icon
 								| Найти
 
-					.header__social.social
+					.header__social.header__social_show.social
 						a.social__link(href="#")
 							+icon('facebook-icon', true).social__icon
 							span.social__text Facebook
