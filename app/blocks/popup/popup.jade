@@ -1,4 +1,6 @@
 mixin popup-auth()
+
+	// start popup
 	.popup&attributes(attributes)
 		h2.popup__title.title Вход в личный кабинет
 		.popup__tabs.tabs.tabs_popup
@@ -43,3 +45,5 @@ mixin popup-auth()
 									input.form__input(type="password", value="", placeholder="")
 
 							input.form__submit.button.button_biggest(type="submit", value="Зарегистрироваться")
+
+	// end popup

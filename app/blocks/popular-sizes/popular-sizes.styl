@@ -1,4 +1,146 @@
 .popular-sizes
-	display block
+	background-color #f5f6f8
+	&__container
+		padding-top 30px
+		padding-bottom 30px
+		+rmin($sm)
+			padding-top 40px
+			padding-bottom 40px
 
+	&__col
+		position relative
+		
+
+	&__title
+		margin-bottom 20px
+
+	&__list
+		max-height 100px
+		overflow hidden
+		+rmin($sm)
+			max-height 100%
+			
+	&__list_full
+		max-height 100%
+
+	&__item
+		margin-bottom 10px
+		padding 15px
+		background-color #ffffff
+		border-radius 4px
+		box-shadow 0 2px 5px rgba(64, 76, 84, 0.06)
+		+rmin($sm)
+			padding-bottom 10px
+			display flex
+		+rmin($xl)
+			padding-right 0
+			
+		&:nth-child(2),
+		&:nth-child(3)
+			+rmin($sm)
+				padding-right 200px
+
+	&__size
+		margin-bottom 10px
+		color #0d62ad
+		font-family $a
+		font-size 20px
+		font-weight 600
+		line-height 1.5
+		text-transform uppercase
+		+rmin($sm)
+			margin-right 10px
+
+	&__links
+		display flex
+		flex-wrap wrap
+		+rmin($xl) 
+			flex-wrap nowrap
+		
+
+	&__link
+		margin-bottom 5px
+		margin-right 5px
+		border 1px solid #dbdddf
+		padding-top 8px
+		padding-right 8px
+		padding-bottom 6px
+		padding-left 8px
+		height 30px
+		background-color #ffffff
+		color #585c5f
+		font-size 12px
+		font-weight 600
+		line-height 1
+		white-space nowrap
+		text-transform uppercase
+		text-decoration none
+		border-radius 4px
+		tr(all .3s ease)
+		+rmin($xl) 
+			padding-left 8px
+			padding-right 7px
+
+		&:last-child
+			margin-right 0
+			
+		&:hover
+			color #268ae1
+			box-shadow 0 1px 2px rgba(64, 76, 84, 0.1)
+			tr(all .3s ease)
+			
+
+	&__more
+		resetbutton()
+		padding-top 20px
+		padding-bottom 20px
+		width 100%
+		display block
+		color #268AE1
+		font-family $a
+		font-weight 600
+		font-size 14px
+		line-height 1.714
+		text-align center
+		tr(all .3s ease)
+		+rmin($sm)
+			display none
+
+		&:hover
+			color darken(#268AE1, 10)
+			tr(all .3s ease)
+			.popular-sizes__icon
+				fill darken(#268AE1, 10)
+				tr(all .3s ease)
+
+		span
+			position relative
+			padding-bottom 2px
+			border-bottom 1px dotted #268AE1
+			
+	&__more_true 
+		.popular-sizes__icon
+			transform translateY(-50%) rotate(180deg)
+	
+			
+	&__icon
+		position absolute
+		top 50%
+		right -30px
+		width 15px
+		height 10px
+		fill #268AE1
+		transform translateY(-50%)
+		tr(all .3s ease)
+	
+	&__stamp
+		margin auto
+		display flex
+		justify-content center
+		min-width 184px
+		+rmin($sm)
+			position absolute
+			top 86px
+			right 30px
+		
 

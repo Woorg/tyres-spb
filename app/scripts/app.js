@@ -120,7 +120,7 @@ import 'magnific-popup';
 			}
 		});
 
-		
+
 
 		$('.nav__item_more').on('click', function () {
 			$(this).toggleClass('nav__item-show');
@@ -212,6 +212,18 @@ import 'magnific-popup';
 			if (!$(e.target).closest('.form_search').length) {
 				$formInputDrop.addClass('form__input_hide');
 			}
+		});
+
+
+		// Sizes Show more
+
+		const $popularSizesMoreButton = $('.popular-sizes__more');
+		const $popularSizesList = $('.popular-sizes__list');
+
+
+		$('.popular-sizes__more').on('click', function () {
+			$(this).toggleClass('popular-sizes__more_true');
+			$popularSizesList.toggleClass('popular-sizes__list_full');
 		});
 
 
