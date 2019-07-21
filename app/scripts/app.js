@@ -26,18 +26,7 @@ import 'magnific-popup';
 
 		console.log('%c developed by igor gorlov https://webjeb.ru', styles);
 
-		// var $factsSlider = $('.facts__slider');
-
-		// if( $factsSlider.length > 0 ) {
-		// 	$factsSlider.slick({
-		// 		dots: true,
-		// 		arrows: true,
-		// 		infinite: true,
-		// 		slidesToShow: 1,
-		// 		speed: 500,
-		// 		adaptiveHeight: false,
-		// 	});
-		// }
+		
 
 		// Trigger main menu
 
@@ -167,13 +156,12 @@ import 'magnific-popup';
 		// Fixed header
 
 		let $header = $('.header');
-		let $hHeader = $('.header').outerHeight();
 		let $page = $('.page');
 		let $windowWidth = $(window).width();
 
 		if ( $windowWidth <= 576 )  {
 			$page.css({
-				'padding-top': $hHeader
+				'padding-top': $('.header').outerHeight()
 			});
 			$header.addClass('header_fixed_true');
 		} else {
@@ -186,7 +174,7 @@ import 'magnific-popup';
 		$(window).resize(function() {
 			if ( $(window).width() <= 576 )  {
 				$page.css({
-					'padding-top': $hHeader
+					'padding-top': $('.header').outerHeight()
 				});
 				$header.addClass('header_fixed_true');
 			} else {
@@ -225,6 +213,40 @@ import 'magnific-popup';
 			$(this).toggleClass('popular-sizes__more_true');
 			$popularSizesList.toggleClass('popular-sizes__list_full');
 		});
+
+
+
+		const $popularAuto = $('.popular-cars__carousel');
+
+		if( $popularAuto.length > 0 ) {
+			$popularAuto.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 2,
+				speed: 300,
+				adaptiveHeight: false,
+
+				prevArrow: '<button class="popular-cars__arrow popular-cars__arrow_prev"><svg class="popular-cars__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="popular-cars__arrow popular-cars__arrow_next"><svg class="popular-cars__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 577,
+					settings: {
+						slidesToShow: 4
+					}
+				},
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 6
+					}
+				}]
+			});
+		}
+
+
 
 
 	});
