@@ -1,39 +1,62 @@
 mixin news()
+	// start news
+
 	section.news&attributes(attributes)
 		.news__container.container
+
 			h2.news__title.title Новости и акции
-			.news__articles
-				article.news__article.article
-					figure.article__image
-						img(src="assets/images/content/news-1.jpg", alt="")
-					h3.article__title Выиграй 2,5 тонны топлива Continental!
-					.article__text При покупке комплекта летних шин Continental, каждый имеет шанс выиграть поездку...
-					.article__meta
-						.article__data 23 Октября 2018
+
+			.row.news__articles
 
 				article.news__article.article
-					figure.article__image
-						img(src="assets/images/content/news-2.jpg", alt="")
-					h3.article__title ТОТАЛЬНАЯ РАСПРОДАЖА ДИСКОВ SKAD
-					.article__text Акция! При покупке комплекта дисков SKAD - скидка 20% на шиномонтаж !...
-					.article__meta
-						.article__data 19 Октября 2018
+
+					.article__inner
+
+						figure.article__image
+							img(src="assets/images/content/news-1.jpg", alt="")
+						.article__w
+							h3.article__title Выиграй 2,5 тонны топлива Continental!
+							.article__text При покупке комплекта летних шин Continental, каждый имеет шанс выиграть поездку...
+							.article__meta
+								.article__date 23 Октября 2018
+					.article__link(href="#")
 
 				article.news__article.article
-					figure.article__image
-						img(src="assets/images/content/news-3.jpg", alt="")
-					h3.article__title Выиграй 2,5 тонны топлива Nordman! 
-					.article__text При покупке комплекта летних шин Nordman, каждый имеет шанс выиграть поездку...
-					.article__meta
-						.article__data 11 Октября 2018
+					.article__inner
+
+						figure.article__image
+							img(src="assets/images/content/news-1.jpg", alt="")
+						.article__w
+							h3.article__title ТОТАЛЬНАЯ РАСПРОДАЖА ДИСКОВ SKAD
+							.article__text Акция! При покупке комплекта дисков SKAD - скидка 20% на шиномонтаж !...
+							.article__meta
+								.article__date 19 Октября 2018
+					.article__link(href="#")
 
 				article.news__article.article
-					figure.article__image
-						img(src="assets/images/content/news-4.jpg", alt="")
-					h3.article__title Скидка 10% на шины Cordiant
-					.article__text Акция! При покупке летних шин Cordiant - скидка 10% ! Сроки проведения...
-					.article__meta
-						.article__data 23 Октября 2018
+					.article__inner
+						figure.article__image
+							img(src="assets/images/content/news-1.jpg", alt="")
+						.article__w
+							h3.article__title Выиграй 2,5 тонны топлива Nordman! 
+							.article__text При покупке комплекта летних шин Nordman, каждый имеет шанс выиграть поездку...
+							.article__meta
+								.article__date 11 Октября 2018
+					.article__link(href="#")
+
+				article.news__article.article
+					.article__inner
+						figure.article__image
+							img(src="assets/images/content/news-1.jpg", alt="")
+						.article__w
+							h3.article__title Скидка 10% на шины Cordiant
+							.article__text Акция! При покупке летних шин Cordiant - скидка 10% ! Сроки проведения...
+							.article__meta
+								.article__date 23 Октября 2018
+					.article__link(href="#")
+
 
 			.news__button-w
 				a.news__button.button.button_biggest(href="#") Смотреть все новости
+
+	// end news

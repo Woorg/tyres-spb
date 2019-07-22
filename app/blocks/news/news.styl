@@ -1,2 +1,77 @@
 .news
-	display block
+	background-color #f9fafb
+	&__container
+		padding-top 40px
+		padding-bottom 40px
+		+rmin($lg)
+			padding-top 50px
+			padding-bottom 50px
+	&__title
+		margin-bottom 20px
+		
+	&__articles
+		position relative
+	
+		
+	&__article
+		margin-bottom 30px
+		height 370px
+		background transparent 
+		+rmin($sm)
+			height 380px
+		
+		+rmin($lg)
+			margin-bottom 40px
+			
+			
+		
+	&__button-w
+		text-align center
+
+	&__button
+		// background-color #268ae1
+		padding-top 16px
+		padding-right 25px
+		padding-bottom 10px
+		padding-left 25px
+		font-family $a 
+		font-weight 500
+		text-transform none
+		letter-spacing 0
+
+		
+
+	&__arrow 
+		resetbutton()
+		position absolute
+		z-index 1
+		top calc(50% - 20px)
+		width 40px
+		height 40px
+		box-shadow 0 6px 14px rgba(0, 0, 0, 0.08)
+		background-color #ffffff
+		border-radius 50%
+		transform translateY(-50%)
+		+rmin($sm)
+			// width 40px
+			// height 40px
+			display none
+	&__arrow-icon
+		position absolute
+		top 50%
+		left 50%
+		width 8px
+		height 12px
+		transform translate(-50%, -50%) 
+		
+	&__arrow_prev
+		left 0
+		.news__arrow-icon
+			left calc(50% - 2px)
+			// left 50%
+	&__arrow_next
+		right 0
+		.news__arrow-icon
+			left calc(50% + 2px)
+			// left 50%
+			transform translate(-50%, -50%) rotate(180deg) 

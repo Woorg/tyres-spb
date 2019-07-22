@@ -215,6 +215,8 @@ import 'magnific-popup';
 		});
 
 
+		// Popular auto carousel
+
 
 		const $popularAuto = $('.popular-cars__carousel');
 
@@ -246,6 +248,49 @@ import 'magnific-popup';
 			});
 		}
 
+
+
+		// Popular auto carousel
+
+
+		const $newsCarousel = $('.news__articles');
+
+		if( $newsCarousel.length > 0 ) {
+			$newsCarousel.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 1,
+				speed: 300,
+				adaptiveHeight: false,
+
+				prevArrow: '<button class="news__arrow news__arrow_prev"><svg class="news__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="news__arrow news__arrow_next"><svg class="news__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 321,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 3,
+						arrows: false
+					}
+				},
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 4,
+						arrows: false
+					}
+					// settings: "unslick"
+				}]
+			});
+		}
 
 
 
