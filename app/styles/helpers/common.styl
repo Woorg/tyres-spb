@@ -101,10 +101,23 @@ img
 	text-align center
 	text-decoration none
 	border-radius 4px
-	tr(color .3s ease)
+	tr(all .3s ease)
 	&:hover
 		color darken(#0d62ad, 10)
-		tr(color .3s ease)
+		tr(all .3s ease)
+
+.button_big
+	resetbutton()
+	background-color #268ae1
+	color #ffffff
+	font-family $aB 
+	letter-spacing 0.88px
+	text-transform uppercase
+	box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
+	&:hover
+		color #fff
+		background-color darken(#268ae1, 10)
+		
 	
 .button_biggest
 	resetbutton()
@@ -119,11 +132,11 @@ img
 	text-transform uppercase
 	border-radius 4px
 	box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
-	tr(background-color .3s ease)
+	tr(all .3s ease)
 	&:hover
 		color #ffffff
 		background-color darken(#268ae1, 10)
-		tr(background-color .3s ease)
+		tr(all .3s ease)
 
 .wysiwyg
 	color #555555

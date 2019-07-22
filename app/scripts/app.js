@@ -282,7 +282,7 @@ import 'magnific-popup';
 					}
 				},
 				{
-					breakpoint: 992,
+					breakpoint: 991,
 					settings: {
 						slidesToShow: 4,
 						arrows: false
@@ -292,6 +292,70 @@ import 'magnific-popup';
 			});
 		}
 
+
+		// Featured carousel
+
+		const $featuredCarousel = $('.featured__list');
+
+		if( $featuredCarousel.length > 0 ) {
+			$featuredCarousel.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				// centerMode: true,
+				// centerPadding: '20px',
+				slidesToShow: 1,
+				speed: 300,
+				adaptiveHeight: false,
+				appendArrows: '.featured__nav',
+				prevArrow: '<button class="featured__arrow featured__arrow_prev"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="featured__arrow featured__arrow_next"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 321,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+						// arrows: false
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 3,
+						// arrows: false
+					}
+				},
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 4,
+						arrows: false
+					}
+					// settings: "unslick"
+				}]
+			});
+		}
+
+
+
+		// ToggleFav
+
+
+		const $fav = $('.card__fav'); 
+
+		$fav.on('click', function (e) {
+			e.preventDefault();
+
+			$(this).toggleClass('card__fav_active');
+
+		});
 
 
 	});

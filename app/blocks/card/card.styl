@@ -1,2 +1,212 @@
 .card
-	display block
+	// margin-left 10px
+	// margin-right 10px
+	// padding-top 15px
+	padding-bottom 30px
+	padding-left 0
+	padding-right 0
+	// height 360px
+	+rmin($sm)
+		padding-left 0
+		padding-right 0
+	&:hover
+		.card__inner
+			position relative
+			z-index 1
+			box-shadow 0 10px 36px rgba(64, 78, 84, 0.15)
+			tr(all .3s ease)
+	&__inner
+		position relative
+		// margin-left 10px
+		// margin-right 10px
+		padding-top 15px
+		padding-right 25px
+		padding-bottom 20px
+		padding-left 25px
+		border 1px solid #e9ecee
+		display flex
+		height 100%
+		flex-direction column
+
+		background-color #ffffff
+		box-shadow none
+		tr(all .3s ease)
+		+rmin($sm)
+			padding-top 25px
+			padding-left 15px
+			padding-right 15px
+			padding-bottom 15px
+			box-shadow none
+	&__size
+		position absolute
+		top 15px
+		right 25px
+		color #7f878e
+		font-weight 600 
+	&__meta
+		position absolute
+		top 60px
+		right 25px
+
+	&__fav
+		margin-bottom 18px
+		display block
+		cursor pointer
+	&__fav_active
+		.card__fav-icon
+			stroke #268AE1
+			// stroke red
+		
+	&__fav-icon
+		width 20px
+		height 20px
+		fill transparent
+		stroke #93A2AD
+	&__views
+		margin-bottom 12px
+		display block
+		cursor pointer		
+	&__views-icon
+		width 18px
+		height 13px
+		fill transparent
+			
+	&__compare
+		display block
+		cursor pointer
+		
+	&__compare-icon
+		
+		width 20px
+		height 20px
+
+	&__image
+		margin auto
+		margin-bottom 20px
+		
+	&__season
+		position absolute
+		top calc(50% - 10px)
+		left 25px
+		width 21px
+		height 18px
+		transform translateY(-50%)
+		&:hover
+			.card__season-text
+				visibility visible
+				opacity 1
+				// transform translateX(0%)
+				tr(all .3s ease)
+		
+	&__season-icon
+		width 21px
+		height 18px
+		
+	&__season-text
+		position absolute
+		top 50%
+		left calc(100% + 15px)
+		padding-top 5px
+		padding-bottom 5px
+		padding-right 6px
+		padding-left 6px
+		box-shadow 0 4px 16px rgba(0, 0, 0, 0.1)
+		background-color #ffffff
+		font-size 12px
+		visibility hidden
+		opacity 0
+		transform translateY(-50%)
+		tr(all .3s ease)
+		&:after
+			position absolute
+			top 50%
+			left -4px
+			content ''
+			width 0
+			height 0
+			border-style solid
+			border-width 4px 4px 4px 0
+			border-color transparent #ffffff transparent transparent
+			transform translateY(-50%)
+ 
+	&__badges
+		position absolute
+		top 20px
+		left 0
+		max-width 96px
+
+	&__badge
+		margin-bottom 5px
+
+	&__title
+		margin-bottom 10px
+		color #333333
+		font-family $a
+		font-size 16px
+		font-weight 500
+		line-height 1.5
+		text-decoration none
+		tr(all .3s ease)
+		span
+			padding-bottom 2px
+			box-shadow none
+		
+		&:hover
+			color #0d62ad
+			tr(all .3s ease)
+			span
+				box-shadow inset 0 -1px 0 0 #DADDE0 
+				
+	&__availability
+		position relative
+		margin-bottom 11px
+		padding-left 17px
+		font-size 12px
+		line-height 1.5
+		&:after
+			position absolute
+			top 50%
+			left 0
+			content ''
+			width 11px
+			height 7px 
+			transform translateY(-50%)
+		
+	&__availability_low
+		color #ff9d0a
+		&:after
+			retinaSprite($presence_low_group)
+	&__availability_high
+		color #6bbe38
+		&:after
+			retinaSprite($presence_high_group)
+	&__availability_none
+		color #ff4e4e
+		&:after
+			retinaSprite($presence_none_group)
+	
+	&__bottom
+		margin-top auto
+		display flex
+		justify-content space-between
+		align-items center
+		
+	&__price
+		color #212121
+		font-family $a
+		font-size 18px
+		font-weight 600
+		white-space nowrap
+		// line-height 24px
+			
+	&__button
+		padding-top 15px
+		padding-right 20px
+		padding-bottom 8px
+		padding-left 20px
+		font-size 11px
+		white-space nowrap
+		+rmin($sm)
+			padding-left 13px
+			padding-right 12px
+		
