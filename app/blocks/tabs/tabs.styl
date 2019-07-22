@@ -47,20 +47,20 @@
 		overflow hidden
 		
 	&__tab
-		display none
+		display block
+		height 0
+		opacity 0
 		// visibility hidden
 		// opacity 0
 		tr(all .3s ease)
 	&__tab_active
-		display block
+		// display block
+		height auto
 		// visibility visible
-		// opacity 1
+		opacity 1
 		tr(all .3s ease)
 
-
-
 // .tabs_popup
-	
 
 .tabs_featured
 	
@@ -92,4 +92,10 @@
 			color #268ae1
 			
 			
-	
+	.tabs__tab
+		&.tabs__tab_active
+			// position relative
+			z-index 1
+			
+			.featured__nav
+				display block

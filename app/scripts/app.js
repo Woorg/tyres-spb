@@ -250,7 +250,7 @@ import 'magnific-popup';
 
 
 
-		// Popular auto carousel
+		// News carousel
 
 
 		const $newsCarousel = $('.news__articles');
@@ -293,22 +293,21 @@ import 'magnific-popup';
 		}
 
 
-		// Featured carousel
+		// Popular carousel
 
-		const $featuredCarousel = $('.featured__list');
 
-		if( $featuredCarousel.length > 0 ) {
-			$featuredCarousel.slick({
+		let $popularSlider = $('#popularSlider');
+
+		if( $popularSlider.length > 0 ) {
+			$popularSlider.slick({
 				mobileFirst: true,
 				dots: false,
 				arrows: true,
 				infinite: true,
-				// centerMode: true,
-				// centerPadding: '20px',
 				slidesToShow: 1,
 				speed: 300,
 				adaptiveHeight: false,
-				appendArrows: '.featured__nav',
+				appendArrows: '#popularNav',
 				prevArrow: '<button class="featured__arrow featured__arrow_prev"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
 				nextArrow: '<button class="featured__arrow featured__arrow_next"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
 
@@ -322,28 +321,199 @@ import 'magnific-popup';
 					breakpoint: 576,
 					settings: {
 						slidesToShow: 1,
-						// arrows: false
 					}
 				},
 				{
 					breakpoint: 767,
 					settings: {
 						slidesToShow: 3,
-						// arrows: false
 					}
 				},
 				{
 					breakpoint: 991,
 					settings: {
 						slidesToShow: 4,
-						arrows: false
 					}
-					// settings: "unslick"
 				}]
 			});
 		}
 
 
+		// Sale carousel
+
+		let $salesSlider = $('#salesSlider');
+
+		if( $salesSlider.length > 0 ) {
+			$salesSlider.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 1,
+				speed: 300,
+				adaptiveHeight: false,
+				appendArrows: '#salesNav',
+				prevArrow: '<button class="featured__arrow featured__arrow_prev"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="featured__arrow featured__arrow_next"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 321,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 4,
+					}
+				}]
+			});
+		}
+
+		// Recommend carousel
+
+		let $recommendSlider = $('#recommendSlider');
+
+		if( $recommendSlider.length > 0 ) {
+			$recommendSlider.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 1,
+				speed: 300,
+				adaptiveHeight: false,
+				appendArrows: '#recommendNav',
+				prevArrow: '<button class="featured__arrow featured__arrow_prev"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="featured__arrow featured__arrow_next"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 321,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 4,
+					}
+				}]
+			});
+		}
+
+		// Tyres carousel
+
+		let $tyresSlider = $('#tyresSlider');
+
+		if( $tyresSlider.length > 0 ) {
+			$tyresSlider.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 1,
+				speed: 300,
+				adaptiveHeight: false,
+				appendArrows: '#tyresNav',
+				prevArrow: '<button class="featured__arrow featured__arrow_prev"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="featured__arrow featured__arrow_next"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 321,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 4,
+					}
+				}]
+			});
+		}
+
+		// Disks carousel
+
+		let $disksSlider = $('#disksSlider');
+
+		if( $disksSlider.length > 0 ) {
+			$disksSlider.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 1,
+				speed: 300,
+				adaptiveHeight: false,
+				appendArrows: '#disksNav',
+				prevArrow: '<button class="featured__arrow featured__arrow_prev"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="featured__arrow featured__arrow_next"><svg class="featured__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 321,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 4,
+					}
+				}]
+			});
+		}
 
 		// ToggleFav
 
@@ -356,6 +526,60 @@ import 'magnific-popup';
 			$(this).toggleClass('card__fav_active');
 
 		});
+
+
+		// Brands carousel
+
+		const $brandsCarousel = $('.brands__brands');
+
+		if( $brandsCarousel.length > 0 ) {
+			$brandsCarousel.slick({
+				mobileFirst: true,
+				dots: false,
+				arrows: true,
+				infinite: true,
+				// centerMode: true,
+				// centerPadding: '20px',
+				slidesToShow: 2,
+				speed: 300,
+				adaptiveHeight: false,
+				appendArrows: '.brands__nav',
+
+				prevArrow: '<button class="brands__arrow brands__arrow_prev"><svg class="brands__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="brands__arrow brands__arrow_next"><svg class="brands__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				responsive: [{
+					breakpoint: 321,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 4,
+						// arrows: false
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 4,
+						// arrows: false
+					}
+				},
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 6,
+						// arrows: false
+					}
+					// settings: "unslick"
+				}]
+			});
+		}
+
+
 
 
 	});

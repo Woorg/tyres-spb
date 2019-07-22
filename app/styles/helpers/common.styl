@@ -113,11 +113,21 @@ img
 	font-family $aB 
 	letter-spacing 0.88px
 	text-transform uppercase
-	box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
 	&:hover
 		color #fff
+		box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
 		background-color darken(#268ae1, 10)
 		
+.button_disabled
+	resetbutton()
+	background-color #eaf4fc
+	color #268ae1
+	font-family $aB 
+	letter-spacing 0.88px
+	text-transform uppercase
+	&:hover
+		color #268ae1
+		background-color #eaf4fc
 	
 .button_biggest
 	resetbutton()
@@ -131,11 +141,11 @@ img
 	line-height 1
 	text-transform uppercase
 	border-radius 4px
-	box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
 	tr(all .3s ease)
 	&:hover
 		color #ffffff
 		background-color darken(#268ae1, 10)
+		box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
 		tr(all .3s ease)
 
 .wysiwyg

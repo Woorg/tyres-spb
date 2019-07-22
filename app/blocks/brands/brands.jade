@@ -1,36 +1,51 @@
 mixin brands()
 	section.brands&attributes(attributes)
+
 		.brands__container.container
-			h2.brands__title.title Популярные бренды шин и <a href="#">дисков</a>
+			.row
+				h2.col-12.brands__title.title Популярные бренды шин и <a href="#">дисков</a>
 
-			.brands__brands
-				a.brands__brand(href="#")
-					figure.brands__image
-						img(src="assets/images/content/car-brand-1.png", alt="brand")
-					span.brands__name Continental
+			.row.brands__brands
+				.brands__brands-nav
+				a.col-12.brands__brand(href="#")
+					.brands__brand-w
+						figure.brand__image
+							img(src="assets/images/content/car-brand-1.png", alt="brand")
+						span.brand__name Continental
 
-				a.brands__brand(href="#")
-					figure.brands__image
-						img(src="assets/images/content/car-brand-2.png", alt="brand")
-					span.brands__name Yokohama
+				a.col-12.brands__brand(href="#")
+					.brands__brand-w
+						figure.brand__image
+							img(src="assets/images/content/car-brand-2.png", alt="brand")
+						span.brand__name Yokohama
 
-				a.brands__brand(href="#")
-					figure.brands__image
-						img(src="assets/images/content/car-brand-3.png", alt="brand")
-					span.brands__name Hankook
-				a.brands__brand(href="#")
-					figure.brands__image
-						img(src="assets/images/content/car-brand-4.png", alt="brand")
-					span.brands__name Nokian
-				a.brands__brand(href="#")
-					figure.brands__image
-						img(src="assets/images/content/car-brand-5.png", alt="brand")
-					span.brands__name Matador
-				a.brands__brand(href="#")
-					figure.brands__image
-						img(src="assets/images/content/car-brand-6.png", alt="brand")
-					span.brands__name Cordiant
-				a.brands__brand(href="#")
-					figure.brands__image
-						img(src="assets/images/content/car-brand-1.png", alt="brand")
-					span.brands__name Continental
+				a.col-12.brands__brand(href="#")
+					.brands__brand-w
+						figure.brand__image
+							img(src="assets/images/content/car-brand-3.png", alt="brand")
+						span.brand__name Hankook
+
+				a.col-12.brands__brand(href="#")
+					.brands__brand-w
+						figure.brand__image
+							img(src="assets/images/content/car-brand-4.png", alt="brand")
+						span.brand__name Nokian
+
+				a.col-12.brands__brand(href="#")
+					.brands__brand-w
+						figure.brand__image
+							img(src="assets/images/content/car-brand-5.png", alt="brand")
+						span.brand__name Matador
+
+				a.col-12.brands__brand(href="#")
+					.brands__brand-w
+						figure.brand__image
+							img(src="assets/images/content/car-brand-6.png", alt="brand")
+						span.brand__name Cordiant
+
+				a.col-12.brands__brand(href="#")
+					.brands__brand-w
+						figure.brand__image
+							img(src="assets/images/content/car-brand-1.png", alt="brand")
+						span.brand__name Continental
+
