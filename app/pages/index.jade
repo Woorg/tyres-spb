@@ -21,24 +21,25 @@ block head
 	- var pageTitle = 'Index';
 
 block content
-	.page__nav-bg
-	+header()
+	.page__w
+		.page__nav-bg
+		+header()
 
 
-	// start page inner
-	.page__inner
-		+map()
-		+brands()
-		+featured()
-		+news()
-		+popular-cars()
-		+popular-sizes()
+		// start page inner
+		.page__inner
+			+map()
+			+brands()
+			+featured()
+			+news()
+			+popular-cars()
+			+popular-sizes()
 
-		+text()
+			+text()
 
-	// end page inner
+		// end page inner
 
-	+footer()
-	+popup-auth()#auth.mfp-hide
-	
+		+footer()
+		+popup-auth()#auth.mfp-hide
+		
 	

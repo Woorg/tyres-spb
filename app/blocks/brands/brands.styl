@@ -1,29 +1,133 @@
 .brands
 	background-color #f3f4f6
 	&__container
+		position relative
 		padding-top 30px
-		padding-bottom 30px
+		padding-bottom 10px
+		+rmin($md)
+			padding-top 40px
+			padding-bottom 20px
+		
+		+rmin($lg)
+			padding-top 50px
+			padding-bottom 30px
 
 	&__title
 		margin-bottom 14px
-
-	// &__brands
-		
-
-	// &__brands
+		padding-right 110px
+		+rmin($sm)
+			margin-bottom 30px
 		
 	&__brand
-		height 90px
-		
-		
-	&__brand-w
 		padding-left 3px
 		padding-right 3px
+		padding-bottom 20px
+		height 110px
+		color #636a71
+		text-decoration none
+		+rmin($sm)
+			padding-left 8px
+			padding-right 8px
+		+rmin($lg)
+			padding-left 15px
+			padding-right 15px
+			height 120px
+
+		&:hover
+			.brands__w
+				box-shadow 0 10px 36px rgba(64, 78, 84, 0.15)
+				tr(all .3s ease)
+			.brands__name
+				color #268ae1
+				box-shadow inset 0 -1px 0 0 #268ae1
+				tr(all .3s ease)
 		
+	&__w
+		padding-top 24px
+		padding-left 24px
+		padding-right 24px
+		padding-bottom 18px
+		height 100%
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		background-color #ffffff
+		text-align center
+		border-radius 4px
+		box-shadow 0 2px 5px rgba(64, 76, 84, 0.06)
+		tr(all .3s ease)
+
+	&__image
+		margin-bottom 10px
 		
+	&__name
+		margin-top auto
+		padding-bottom 2px
+		color #636a71
+		font-size 14px
+		line-height 1 
+		tr(all .3s ease)
+		
+
+	&__list-nav
+		position absolute
+		top 30px
+		right 15px
+		width 82px
+		display flex 
+		+rmin($sm)
+			top 40px
+
+	&__arrow 
+		resetbutton()
+		position relative 
+		z-index 1
+		top 0
+		right 0
+		
+		width 41px
+		height 40px
+		box-shadow 0 2px 2px rgba(0, 0, 0, 0.05)
 		background-color #ffffff
 		border-radius 4px
-		box-shadow 0 10px 36px rgba(64, 78, 84, 0.15)
-	// &__image
+		+rmin($sm)
+			// width 40px
+			// height 40px
+			display none
+		&:hover
+			.brands__arrow-icon
+				opacity 0.6
+				tr(opacity .3s ease)
+				
+	&__arrow-icon
+		position absolute
+		top 50%
+		left 50%
+		width 8px
+		height 12px
+		opacity 1
+		transform translate(-50%, -50%) 
+		tr(opacity .3s ease)
 		
-	// &__name
+	&__arrow_prev
+		left 0
+		border-right 1px solid #eeeeee 
+		border-radius 4px 0 0 4px
+		// +rmin($sm)
+		// 	left -5px
+		.brands__arrow-icon
+			left calc(50% - 2px)
+			// left 50%
+	&__arrow_next
+		right 0
+		border-radius 0 4px 4px 0
+		// +rmin($sm)
+		// 	right -5px
+		.brands__arrow-icon
+			left calc(50% + 2px)
+			// left 50%
+			transform translate(-50%, -50%) rotate(180deg) 
+			
+
+

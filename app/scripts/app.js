@@ -530,7 +530,7 @@ import 'magnific-popup';
 
 		// Brands carousel
 
-		const $brandsCarousel = $('.brands__brands');
+		const $brandsCarousel = $('.brands__list');
 
 		if( $brandsCarousel.length > 0 ) {
 			$brandsCarousel.slick({
@@ -538,12 +538,10 @@ import 'magnific-popup';
 				dots: false,
 				arrows: true,
 				infinite: true,
-				// centerMode: true,
-				// centerPadding: '20px',
 				slidesToShow: 2,
 				speed: 300,
 				adaptiveHeight: false,
-				appendArrows: '.brands__nav',
+				appendArrows: '.brands__list-nav',
 
 				prevArrow: '<button class="brands__arrow brands__arrow_prev"><svg class="brands__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
 				nextArrow: '<button class="brands__arrow brands__arrow_next"><svg class="brands__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
@@ -551,7 +549,7 @@ import 'magnific-popup';
 				responsive: [{
 					breakpoint: 321,
 					settings: {
-						slidesToShow: 3,
+						slidesToShow: 2,
 					}
 				},
 				{

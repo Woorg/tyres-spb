@@ -10,6 +10,8 @@
 	font-size 14px
 	font-weight 400
 	line-height 1
+	&__w
+		overflow hidden
 	&__inner
 		// flex 0 1 auto
 		flex 1 0 auto
@@ -68,16 +70,15 @@
 		font-size 24px
 	a
 		position relative
+		padding-bottom 2px
 		color #268ae1
 		text-decoration none
-		&:after
-			position absolute
-			content "" 
-			top 100%
-			left 0
-			width 100%
-			height 1px
-			background #268AE1 
+		box-shadow inset 0 -1px 0 0 #268AE1 
+		tr(all .3s ease)
+		&:hover
+			box-shadow none
+			tr(all .3s ease)
+			
 			
 .title_small
 	color #000000
