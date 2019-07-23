@@ -1,0 +1,141 @@
+.address
+	padding-top 20px
+	padding-right 15px
+	padding-left 15px
+	padding-bottom 20px
+	display block
+	border-radius 5px
+	background #FFF 
+	
+	&__street
+		position relative
+		margin-bottom 10px
+		display block
+		color #383d42
+		font-size 16px
+		font-weight 600
+		line-height 1.5
+		text-decoration none
+	&__phone
+		position relative
+		margin-bottom 7px
+		padding-left 33px
+		color #383d42
+		font-size 16px
+		font-weight 400
+		line-height 1.5
+		text-decoration none
+	&__phone-icon
+		position absolute
+		top 50%
+		left 0
+		fill transparent
+	&__work
+		position relative
+		margin-bottom 15px
+		padding-left 33px
+		font-size 14px
+		line-height 1.5
+		color #667887
+
+	&__work-icon
+		fill transparent
+		
+	&__phone-icon,
+	&__work-icon
+		position absolute
+		top 50%
+		left 0
+		width 17px
+		height 17px
+		fill transparent
+		transform translateY(-50%)
+		
+	&__buttons
+		display flex
+		
+	&__button
+		margin-right 20px
+		padding-top 10px
+		padding-right 18px
+		padding-bottom 11px
+		padding-left 18px
+		font-size 12px
+		letter-spacing 0.96px
+		color #667887
+		text-transform uppercase
+		&:last-child
+			margin-right 0
+			
+		&:hover
+			border 2px solid #268ae1
+			color #268ae1
+			
+			
+
+.address_balloon
+	position static
+	border 1px solid #dadadf
+	padding-top 10px
+	width 330px
+	min-height 180px
+	display flex
+	flex-shrink 1
+	flex-direction column
+	background-color #ffffff
+	box-shadow 0 8px 16px rgba(0, 0, 0, 0.1)
+	// +rmin($md)
+	// 	width 350px
+	// +rmin($lg)
+	// 	width 370px 
+	
+	.address__close
+		position absolute
+		z-index 1
+		top 0
+		right 0
+		// width 20px
+		// height 20px
+		color #8B9095
+		font-family $a
+		font-weight 600  
+		font-size 14px
+		text-decoration none
+	.address__close-icon
+		width 20px
+		height 20px
+
+	.address__street
+		padding-bottom 10px
+		border-bottom 1px solid #dadadf
+
+	.address__w
+		position relative
+		margin auto
+		flex-grow 1
+		// +rmin($lg)
+	.address__arrow
+		position absolute
+		// right 40px
+		left 90px
+		// bottom -10px
+		bottom -28px
+		width 0
+		height 0
+		border-style solid
+		border-width 10px 10px 0 10px
+		border-color #ffffff transparent transparent transparent
+		+rmin($sm)
+			left 78px
+		+rmin($lg)
+			left 68px
+		
+	.address__buttons
+		margin-top auto
+
+	.address__button
+		flex-grow 1
+		&:hover
+			background-color #268ae1
+			color #FFF 
+			

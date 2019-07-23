@@ -2,8 +2,10 @@ import svg4everybody from 'svg4everybody';
 // import $ from 'jquery';
 import slick from 'slick-carousel';
 import select2 from 'select2';
-import scrollbar from 'jquery.scrollbar/jquery.scrollbar.min.js';
+// import scrollbar from 'jquery.scrollbar/jquery.scrollbar.min.js';
+import 'simplebar';
 import 'magnific-popup';
+
 
 (function ($) {
 
@@ -576,6 +578,268 @@ import 'magnific-popup';
 				}]
 			});
 		}
+
+
+
+
+
+		var myMap;
+		var placemarkCollections = {};
+		var placemarkList = {};
+		 
+		// Список городов и магазинов в них
+		var shopList = [
+			{
+				// 'cityName': 'Санкт-Петербург',
+				'shops': [
+					{'coordinates': [59.861446, 30.287999], 'name': 'Краснопутиловская улица, 46А', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
+					{'coordinates': [59.862227, 30.287230], 'name': 'Броневая улица, 6БК', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
+					{'coordinates': [59.862033, 30.289065], 'name': 'Краснопутиловская улица, 46к2', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
+					{'coordinates': [59.863123, 30.288736], 'name': 'Броневая улица, 6ВУ', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
+					{'coordinates': [59.860261, 30.294834], 'name': 'Кубинская улица, 42', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'}
+
+				]
+			}
+		];
+		 
+		ymaps.ready(init);
+		 
+		function init() {
+		 
+			// Создаем карту
+			myMap = new ymaps.Map("map", {
+				center: [59.861446, 30.287999],
+				zoom: 13,
+				controls: [ 'smallMapDefaultSet'],
+				zoomMargin: [20]
+			});
+
+			// Создание макета балуна
+			var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
+				'<div class="address address_balloon"><div class="address__w">' +
+				'<a class="address__close" href="#"><svg class="address__close-icon"><use xlink:href="assets/images/icon.svg#icon_close-icon"></use></svg></a><div class="address__arrow"></div>' +			
+				 '$[[options.contentLayout observeSize ]]' +
+				 '' +
+				'</div></div>', {
+				/**
+				* Строит экземпляр макета на основе шаблона и добавляет его в родительский HTML-элемент.
+				* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#build
+				* @function
+				* @name build
+				*/
+				build: function () {
+					 this.constructor.superclass.build.call(this);
+					 this._$element = $('.address_balloon', this.getParentElement());
+					 this.applyElementOffset();
+				this._$element.find('.address__close')
+							 .on('click', $.proxy(this.onCloseClick, this));
+				},
+
+				/**
+				* Удаляет содержимое макета из DOM.
+				* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#clear
+				* @function
+				* @name clear
+				*/
+				 clear: function () {
+					 this._$element.find('.address__close')
+							.off('click');
+					 this.constructor.superclass.clear.call(this);
+				},
+
+				/**
+				* Метод будет вызван системой шаблонов АПИ при изменении размеров вложенного макета.
+				* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+				* @function
+				* @name onSublayoutSizeChange
+				*/
+				onSublayoutSizeChange: function () {
+					 MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+					 if(!this._isElement(this._$element)) {
+							 return;
+						}
+						this.applyElementOffset();
+						this.events.fire('shapechange');
+				 },
+
+				/**
+				* Сдвигаем балун, чтобы середина указывала на точку привязки.
+				* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+				* @function
+				* @name applyElementOffset
+				*/
+				 applyElementOffset: function () {
+						this._$element.css({
+							 left: -(this._$element[0].offsetWidth / 2),
+							 top: -(this._$element[0].offsetHeight + this._$element.find('.address__close')[0].offsetHeight)
+						});
+				 },
+
+				/**
+				* Закрывает балун при клике на крестик, кидая событие "userclose" на макете.
+				* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/IBalloonLayout.xml#event-userclose
+				* @function
+				* @name onCloseClick
+				*/
+				 onCloseClick: function (e) {
+						e.preventDefault();
+						this.events.fire('userclose');
+				 },
+
+				/**
+				* Используется для автопозиционирования (balloonAutoPan).
+				* @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ILayout.xml#getClientBounds
+				* @function
+				* @name getClientBounds
+				* @returns {Number[][]} Координаты левого верхнего и правого нижнего углов шаблона относительно точки привязки.
+				*/
+				 getShape: function () {
+						if(!this._isElement(this._$element)) {
+							 return MyBalloonLayout.superclass.getShape.call(this);
+						}
+						var position = this._$element.position();
+						return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
+							 [position.left, position.top], [
+							 position.left + this._$element[0].offsetWidth,
+							 position.top + this._$element[0].offsetHeight + this._$element.find('.address__arrow')[0].offsetHeight]
+						]));
+				 },
+				/**
+				* Проверяем наличие элемента (в ИЕ и Опере его еще может не быть).
+				* @function
+				* @private
+				* @name _isElement
+				* @param {jQuery} [element] Элемент.
+				* @returns {Boolean} Флаг наличия.
+				*/
+				 _isElement: function (element) {
+						return element && element[0] && element.find('.address__arrow')[0];
+				 }
+			});
+
+			// Создание вложенного макета содержимого балуна.
+			var MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+				 '$[properties.balloonContentHeader]' +
+				 '$[properties.balloonContentBody]' +
+				 '$[properties.balloonContentFooter]'
+			);
+
+		 
+			for (var i = 0; i < shopList.length; i++) {
+		 
+				// Добавляем название города в выпадающий список
+				$('.map__list').append('<div class="map__item" data-value="' + i + '" data-city="' + shopList[i].cityName + '"></div>');
+		 
+				// Создаём коллекцию меток для города
+				var cityCollection = new ymaps.GeoObjectCollection();
+		 
+
+				for (var c = 0; c < shopList[i].shops.length; c++) {
+					var shopInfo = shopList[i].shops[c];
+		 
+				 	var	shopPhone = shopInfo.phone.replace(/[-+()\s]/g, '');
+
+					var shopPlacemark = new ymaps.Placemark(
+						shopInfo.coordinates,
+						{
+							balloonContentHeader: '<a href="#" class="address__street">' + shopInfo.name + '</a>',
+
+							// Зададим содержимое основной части балуна.
+							balloonContentBody: '<div class="address__phone"><svg class="address__phone-icon"><use xlink:href="assets/images/icon.svg#icon_phone"></use></svg>' + shopInfo.phone + '</div>' +
+							'<div class="address__work"><svg class="address__work-icon"><use xlink:href="assets/images/icon.svg#icon_work"></use></svg>' +
+									shopInfo.hours + '</div>',
+
+							// Зададим содержимое нижней части балуна.
+							balloonContentFooter: '<div class="address__buttons"><a href="#" class="address__button button">Маршрут</a>' +
+												'<a href="tel:+' + shopPhone + '" class="address__button button">Позвонить</a></div>',
+
+							// Зададим содержимое всплывающей подсказки.
+							hintContent: shopInfo.name,
+							balloonContent: shopInfo.name
+
+
+						}, {
+
+							iconLayout: 'default#imageWithContent',
+							// Своё изображение иконки метки.
+							iconImageHref: 'assets/images/general/marker-icon.png', // картинка иконки
+							iconImageSize: [39, 39], // размеры картинки
+							iconImageOffset: [-6, -10], // смещение картинки
+							balloonShadow: false,
+							balloonLayout: MyBalloonLayout,
+							balloonContentLayout: MyBalloonContentLayout,
+							balloonPanelMaxMapArea: 0,
+							// Не скрываем иконку при открытом балуне.
+							hideIconOnBalloonOpen: false,
+							// И дополнительно смещаем балун, для открытия над иконкой.
+							balloonOffset: [-100, -230]
+
+						}
+					);
+		 
+					if (!placemarkList[i]) placemarkList[i] = {};
+					placemarkList[i][c] = shopPlacemark;
+		 
+					// Добавляем метку в коллекцию
+					cityCollection.add(shopPlacemark);
+		 
+				}
+		 
+				placemarkCollections[i] = cityCollection;
+		 
+				// Добавляем коллекцию на карту
+				myMap.geoObjects.add(cityCollection);
+		 
+			}
+		 
+			$('select#cities').trigger('change');
+		}
+		 
+		 
+		// Переключение города
+		$(document).on('change', $('select#city'), function () {
+			var cityId = $('select#cities').val();
+		 
+			// Масштабируем и выравниваем карту так, чтобы были видны метки для выбранного города
+			myMap.setBounds(placemarkCollections[cityId].getBounds(), {checkZoomRange:true}).then(function(){
+				if(myMap.getZoom() > 15) myMap.setZoom(15); // Если значение zoom превышает 15, то устанавливаем 15.
+			});
+		 
+			$('#shops').html('');
+			for (var c = 0; c < shopList[cityId].shops.length; c++) {
+				$('#shops').append('<li value="' + c + '">' + shopList[cityId].shops[c].name + '</li>');
+			}
+		 
+		});
+		 
+
+		// Клик на адрес
+		$(document).on('click', '.address__street', function () {
+		 
+			var cityId = $('select#cities').val();
+			var shopId = $(this).data('shop');
+		 
+			placemarkList[0][shopId].events.fire('click');
+		});
+
+
+		// Hide addresses
+
+
+		$('.map__close').on( 'click', function () {
+			$(this).toggleClass('map__close_active');
+			// $(this).next('.map__w').toggleClass('map__w_hide');
+			$(this).parent().toggleClass('map__addresses_hide');
+			$(this).text('Развернуть');
+
+		});
+
+
+		// Map scrollbar
+
+
+
 
 
 

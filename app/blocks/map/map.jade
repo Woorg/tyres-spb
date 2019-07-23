@@ -1,4 +1,79 @@
 mixin map()
 	section.map&attributes(attributes)
-		.map__object
+		#map.map__object
 		.map__container.container
+			.map__addresses
+				a.map__close 
+					.map__icon 
+					| Свернуть
+				.map__w
+
+
+
+					.map__top
+						h2.map__title.title Адреса центров “Эксклюзив”
+					.map__list(data-simplebar data-simplebar-auto-hide="false")
+						.map__item.address
+							a.address__street(href="#" data-shop="0") ул. Краснопутиловская, д.46А
+							.address__phone
+								+icon('phone', true).address__phone-icon
+								| +7 (812) 320-91-40
+							.address__work
+								+icon('work', true).address__work-icon  
+								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
+							.address__buttons
+								button.address__button.button Маршрут
+								a.address__button.button(href="tel:+78123209140") Позвонить
+
+						.map__item.address
+							a.address__street(href="#" data-shop="1") Броневая улица, 6БК
+							.address__phone
+								+icon('phone', true).address__phone-icon
+								| +7 (812) 320-91-40
+							.address__work
+								+icon('work', true).address__work-icon  
+								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
+							.address__buttons
+								button.address__button.button Маршрут
+								a.address__button.button(href="tel:+78123209140") Позвонить
+
+						.map__item.address
+							a.address__street(href="#" data-shop="2") Краснопутиловская улица, 46к2
+							.address__phone
+								+icon('phone', true).address__phone-icon
+								| +7 (812) 320-91-40
+							.address__work
+								+icon('work', true).address__work-icon  
+								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
+							.address__buttons
+								button.address__button.button Маршрут
+								a.address__button.button(href="tel:+78123209140") Позвонить
+
+						.map__item.address
+							a.address__street(href="#" data-shop="3") Броневая улица, 6ВУ
+							.address__phone
+								+icon('phone', true).address__phone-icon
+								| +7 (812) 320-91-40
+							.address__work
+								+icon('work', true).address__work-icon  
+								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
+							.address__buttons
+								button.address__button.button Маршрут
+								a.address__button.button(href="tel:+78123209140") Позвонить
+
+						.map__item.address
+							a.address__street(href="#" data-shop="4") Кубинская улица, 42
+							.address__phone
+								+icon('phone', true).address__phone-icon
+								| +7 (812) 320-91-40
+							.address__work
+								+icon('work', true).address__work-icon  
+								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
+							.address__buttons
+								button.address__button.button Маршрут
+								a.address__button.button(href="tel:+78123209140") Позвонить
+
+
+
+
+
