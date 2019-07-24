@@ -112,7 +112,7 @@
     "require-dir": "^0.3.2",
     "rimraf": "^2.5.0",
     "run-sequence": "^1.2.2",
-    "select2": "^4.0.7",
+    "select2": "4.0.7",
     "simplebar": "^4.1.0",
     "slick-carousel": "^1.8.1",
     "source-map-loader": "^0.1.5",
@@ -133,6 +133,8 @@
   },
   "dependencies": {
     "jquery.scrollbar": "^0.2.11",
+    "nicescroll": "^3.7.4",
+    "selectize": "^0.12.6",
     "slick": "^1.12.2"
   }
 }

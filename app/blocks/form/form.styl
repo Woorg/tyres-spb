@@ -7,6 +7,97 @@
 		display flex
 		flex-shrink 1
 		flex-grow 1
+	
+	&__row
+		width 100%
+		display flex
+		flex-wrap wrap
+		justify-content flex-start
+		
+	&__row_checkbox
+		margin-top 5px
+		+rmin($md)
+			margin-right -10px
+			margin-left -10px
+			margin-bottom 10px
+			
+		+rmin($lg)
+			margin-left 0
+			margin-right 0
+		
+		.form__col
+			width 100%
+			+rmin($md)
+				padding-left 10px
+				padding-right 10px
+				width auto
+			
+				+rmin($lg)
+					padding-left 0
+					padding-right 0
+					
+				
+				
+
+		// .form__field_checkbox
+		// 	+rmin($md)
+		// 		width 31%
+
+
+	&__row_buttons
+		margin-top 5px
+		margin-right -5px
+		margin-left -5px
+		width auto
+		+rmin($md)
+			// margin-top 10px
+			margin-top 0
+		
+		+rmin($lg)
+			margin-top auto
+				
+		.form__col
+			+rmin($md)
+				padding-left 5px
+				padding-right 5px
+				width 20%
+			
+
+	&__row_select
+		margin-right -5px
+		margin-left -5px
+		width auto
+		+rmin($md)
+			margin-right -10px
+			margin-left -10px
+			
+	&__col
+		padding-left 5px
+		padding-right 5px
+		width 50%
+		
+		display flex
+		flex-wrap wrap
+	
+		+rmin($md)
+			padding-left 10px
+			padding-right 10px
+			width 25%
+			
+	&__col_full
+		padding-left 5px
+		padding-right 5px
+		width 100%
+		
+		display flex
+		flex-wrap wrap
+	
+		+rmin($md)
+			padding-left 10px
+			padding-right 10px
+			width 100%
+
+
 	&__field
 		position relative
 		width 100%
@@ -44,14 +135,205 @@
 			height 12px
 			fill #7f8fa4
 			transform translate(-50%, -50%)
+			
+	&__field_select
+		position relative
+		margin-bottom 10px
+		max-width 150px
+		flex-shrink 1
+		flex-basis 120px
+		flex-grow 1
+		display flex
+		+rmin($sm)
+			max-width 200px
+			
+		+rmin($md)
+			margin-bottom 19px
+		
+
+		.selectize-control
+			width 100%
+			flex-grow 1
+			&.single
+				.selectize-input
+					border 1px solid #cccccc
+					// padding-top 11px
+					padding-top 0
+					padding-bottom 0
+					padding-left 14px
+					height 40px 
+					background #FFF 
+					color #7F878E
+					font-size 14px
+					line-height 40px
+					// &:before
+					// 	position absolute
+					// 	top 0
+					// 	right 0
+					// 	content '' 
+					// 	width 30px
+					// 	height 100%
+					// 	background #FFF 
+					&:after
+						z-index 1
+						border none
+						retinaSprite($arrow_down_group)
+					
+
+
+		.selectize-dropdown
+			margin-top 5px
+			border 1px solid #eaeaea
+			overflow hidden
+			background-color #ffffff
+			border-radius 4px
+			box-shadow 0 4px 20px rgba(79, 86, 105, 0.16)				
+			.option	
+				padding-left 20px
+				padding-right 14px
+				background transparent 
+				color #555555
+				font-family $o
+				font-size 14px
+				font-weight 400
+				line-height 1.571
+					
+				
+				&.selected
+					&.active
+						background #f5f5f5
+						color #0D62AD
+
+				&:hover
+					background #f5f5f5
+					color #0D62AD
+	
+		.selectize-input
+			padding-right 30px
+			 white-space nowrap
+
+			.item 
+				// width 110px
+				display block
+				white-space nowrap
+				overflow hidden
+				text-overflow ellipsis
+				
+
+			& > * 
+				vertical-align middle
+
+			// &.focus
+			//     .item
+			// 		display -moz-inline-stack
+			// 		display inline-block
+
+	&__field_hide
+		display none
+	
+
+	&__field_checkbox
+		position relative
+		margin-bottom 10px
+		+rmin($lg)
+			margin-bottom 15px
+		.form__label
+			padding-left 26px
+			white-space nowrap
+			+rmin($lg)
+				padding-left 22px
+
+	
+	&__field_buttons
+		position relative
+		// border 1px solid #CCCCCC
+		border-width 0 1px 
+		margin-bottom 30px
+		display none
+		border-radius 4px 4px / 4px 4px
+		+rmin($lg)
+			margin-top 20px
+			margin-top 30px
+			display flex
+			justify-content space-between
+			
+	&__button
+		resetbutton()
+		margin-left -1px
+		border 1px solid #CCCCCC
+		border-width 1px 1px 1px 1px
+		padding-top 12px
+		padding-right 0
+		padding-bottom 8px
+		padding-left 0
+		height 40px
+
+		flex-shrink 1
+		flex-grow 1
+		flex-basis auto
+		
+		background #fff 
+		
+		color #5D5F63
+		text-align center
+		text-decoration none
+
+		// &:first-child
+		// 	border-radius 4px 0 0 4px
+			
+		&:nth-child(2)
+			border-radius 4px 0 0 4px
+			
+		&:last-child
+			border-radius 0 4px 4px 0px
+
+
+		&:hover
+			border 1px solid #CCCCCC
+			background #FAFAFA
+			
+		&.form__button_active
+			background rgba(38, 138, 225, 0.1)
+			border 1px solid rgba(38, 138, 225, 0.5)
+			box-sizing border-box
+			color #0D62AD 
+		
+
+	&__placeholder
+		position absolute
+		top calc(-100% + 18px)
+		left 0
+		width 100%
+		color #5D5F63 
+		font-family $o
+		font-size 14px
+		line-height 1.57142857142857
+		
 
 	&__label
+		position relative
 		display block
 		color #333333
 		font-family $a
 		font-size 16px
 		font-weight 600
 		line-height 1.375
+		cursor pointer
+		
+	&__label_out
+		position absolute
+		top calc(-100% + 18px)
+		left 0
+		display none
+		width 100%
+		color #5D5F63 
+		font-family $o
+		font-weight 400 
+		font-size 14px
+		line-height 1.57142857142857
+		+rmin($lg)
+			display block
+	
 
 	&__input
 		position relative
@@ -88,6 +370,48 @@
 		box-shadow 0 5px 20px rgba(0, 0, 0, 0.1)
 	&__input_hide
 		display none
+		
+	&__checkbox
+		position relative
+		display none
+		& + label
+			color #555555
+			font-family $o
+			font-size 12px
+			font-weight 400
+			line-height 1.142
+			&:after			
+			&:before
+				position absolute
+				top 50%
+				left 0
+				border 1px solid #CCCCCC
+				width 16px
+				height 16px
+				content '' 
+				border-radius 3px
+				transform translateY(-50%)
+				tr(all .3s ease)
+			&:after
+				border 1px solid #268ae1
+				background-color #268AE1
+				background-image url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOSA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMy4wNDIxMmUtMDcgMy45ODUxNEMtMC4wMDAxMDAxNjYgNC4xMTA0OSAwLjAyNDY4NjYgNC4yMzQ2MSAwLjA3MjkyMyA0LjM1MDMxQzAuMTIxMTU5IDQuNDY2MDEgMC4xOTE4ODYgNC41NzA5OCAwLjI4MSA0LjY1OTE0TDMuMDgxIDcuNDA3MTRMOC41ODggMS42NDIxNEM4LjY4MDQ3IDEuNTU1MiA4Ljc1NDU5IDEuNDUwNjEgOC44MDU5NiAxLjMzNDU1QzguODU3MzQgMS4yMTg0OSA4Ljg4NDk0IDEuMDkzMzIgOC44ODcxMyAwLjk2NjQxMkM4Ljg4OTMzIDAuODM5NTA4IDguODY2MDcgMC43MTM0NTEgOC44MTg3MyAwLjU5NTY4NkM4Ljc3MTM5IDAuNDc3OTIxIDguNzAwOTQgMC4zNzA4MzYgOC42MTE1MiAwLjI4MDc1NEM4LjUyMjExIDAuMTkwNjcyIDguNDE1NTUgMC4xMTk0MjEgOC4yOTgxNCAwLjA3MTIwODRDOC4xODA3MyAwLjAyMjk5NTQgOC4wNTQ4NSAtMC4wMDEyMDE4MSA3LjkyNzk0IDQuNTkwODRlLTA1QzcuODAxMDIgMC4wMDEyOTM2MiA3LjY3NTY0IDAuMDI3OTYwOCA3LjU1OTIgMC4wNzg0NzI3QzcuNDQyNzYgMC4xMjg5ODUgNy4zMzc2MyAwLjIwMjMxNyA3LjI1IDAuMjk0MTM5TDMuMDc2IDQuNzI5MTRMMS42MTggMy4zMTExNEMxLjQ4NDgxIDMuMTc5NDMgMS4zMTU2NiAzLjA5MDAzIDEuMTMxODEgMy4wNTQxOEMwLjk0Nzk1MyAzLjAxODMzIDAuNzU3NjA1IDMuMDM3NjQgMC41ODQ2OTIgMy4xMDk2NkMwLjQxMTc3OSAzLjE4MTY5IDAuMjY0MDE4IDMuMzAzMjMgMC4xNTk5ODUgMy40NTlDMC4wNTU5NTMgMy42MTQ3NyAwLjAwMDI5MjMwMiAzLjc5NzgyIDMuMDQyMTJlLTA3IDMuOTg1MTRaIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==')
+				background-repeat no-repeat
+				background-position 50%
+				opacity 0
+			&:before
+				background #FFF 
+					
+				
+		&:checked
+			& + label
+				&:before
+					opacity 0
+					tr(all .3s ease)
+				&:after
+					opacity 1
+					tr(all .3s ease)
+
 	&__submit
 		resetbutton()
 		position relative
@@ -116,6 +440,27 @@
 			height 16px
 			fill #fff
 
+	&__note 
+		margin-top 12px
+		display block
+		color #777777
+		font-size 12px
+		line-height 1.5
+		text-decoration none
+		+rmin($md)
+			margin-top 15px
+
+	&__note-icon
+		margin-right 4px
+		display inline-block
+		width 16px
+		height 16px
+		text-decoration none
+		text-align center
+		line-height 14px
+		border-radius 50%
+		border 1px solid #dadde0
+
 
 .form_auth
 	.form__w
@@ -136,3 +481,107 @@
 		text-indent 0
 		border-radius 4px
 		box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
+		
+
+.form_filter
+	flex-direction column
+	
+	.form__submit,
+	.form__reset
+		padding-top 11px
+		padding-right 0		
+		padding-bottom 9px
+		padding-left 0
+		
+		max-width 150px
+		height 40px
+
+		flex-grow 1
+		flex-shrink 1
+		flex-basis 120px
+		
+		font-size 12px
+		cursor pointer
+		text-transform uppercase
+		border-radius 4px
+		
+
+	.form__submit
+		width auto
+		background-color #268ae1
+		
+		color #ffffff
+		font-family $aB
+		font-size 12px
+		font-weight 700
+		text-indent 0
+		letter-spacing 0.96px
+		line-height 1
+		&:hover
+			box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
+			
+	.form__reset
+		font-weight 500 
+		letter-spacing 1.2px
+		
+
+.form_calc
+	padding-left 15px
+	padding-right 15px
+
+
+.select2-dropdown,
+.selectize-dropdown
+	margin-top 5px
+	border 1px solid #eaeaea
+	overflow hidden
+	background-color #ffffff
+	border-radius 4px
+	box-shadow 0 4px 20px rgba(79, 86, 105, 0.16)
+
+	
+
+.form_compute
+	.form__select
+		font-size 13px
+	
+
+
+
+
+
+
+
+
+
+
+
+// Style select2
+
+		
+.select2-container--default
+		
+	.select2-results__option
+		padding-left 20px
+		padding-right 14px
+		background transparent 
+		color #555555
+		font-family $o
+		font-size 14px
+		font-weight 400
+		line-height 1.571
+		&.select2-results__option--highlighted,
+		&.select2-results__option--highlighted[aria-selected]
+			background #f5f5f5
+			color #0D62AD
+			
+	.select2-results__option[aria-selected],
+	.select2-results__option[aria-selected=true]
+		background transparent 
+		
+
+
+
+.select2-container
+	width 100% !important
+	padding 0

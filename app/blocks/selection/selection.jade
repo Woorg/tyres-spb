@@ -1,0 +1,565 @@
+mixin selection()
+	// start selection
+	section.selection&attributes(attributes)
+		.selection__container.container
+				.row.selection__row
+
+					.col-12
+						h2.selection__title.selection__title_main.title Поиск шин и дисков
+
+
+					.col-12.col-lg-8.selection__col
+						.rwo.selection__block.selection__tabs.tabs.tabs_selection
+							ul.tabs__nav
+								li.tabs__item.active
+									a.tabs__link()
+										span Подбор шин
+
+								li.tabs__item
+									a.tabs__link()
+										span Подбор дисков
+							
+							.tabs__content
+
+								.tabs__tab.active.select-tires
+
+									.col-12.selection__col
+										h2.selection__title.selection__title_inner.title Подбор шин
+
+										.row.selection__filter
+
+											.col-12
+												.selection__block.selection__block_inner.tabs.tabs_selection.tabs_selection_inner
+													ul.tabs__nav
+														li.tabs__item.active
+															a.tabs__link()
+																span По параметрам
+
+														li.tabs__item
+															a.tabs__link()
+																span По авто
+
+													.tabs__content
+
+														.tabs__tab.active
+
+															form.selection__form.form.form_filter(action="", method="post")
+																.form__row.form__row_select
+																	.form__col
+																		.form__field.form__field_select
+																			.form__label.form__label_out(for="select-width") Ширина
+																			select#select-width.form__select(data-placeholder="Ширина")
+																				option(value="1") 185
+																				option(value="2") 185
+																				option(value="3") 185
+																				option(value="4") 185
+																				option(value="5") 185
+																				option(value="6") 185
+																				option(value="7") 185
+																				option(value="8") 185
+																				option(value="9") 185
+																				option(value="10") 185
+																			//- .form__placeholder
+		
+																	.form__col
+																		.form__field.form__field_select
+																			.form__label.form__label_out(for="select-diameter") Диаметр
+																			select#select-diameter.form__select(data-placeholder="Диаметр")
+																				option(value="1") 18
+																				option(value="2") 19
+																				option(value="3") 18 
+																				option(value="4") 18 
+																				option(value="5") 18 
+																				option(value="6") 18 
+																				option(value="7") 18 
+																				option(value="8") 18 
+																				option(value="9") 18 
+																				option(value="10") 18
+																			//- .form__placeholder
+
+																	.form__col
+																		.form__field.form__field_select
+																			.form__label.form__label_out(for="select-height") Высота
+																			select#select-height.form__select(data-placeholder="Высота")
+																				option(value="1") 85
+																				option(value="2") 85
+																				option(value="3") 85
+																				option(value="5") 85
+																				option(value="6") 85
+																				option(value="7") 85
+																				option(value="8") 85
+																				option(value="9") 85
+																				option(value="10") 85
+																				option(value="11") 85
+																			//- .form__placeholder
+
+																	.form__col.form__col_full
+																		.form__field.form__field_buttons(data-placeholder="Сезон")
+																			.form__label.form__label_out(for="select-season") Сезон
+																			//- .form__placeholder
+																			a.form__button(href='#') Лето
+																			a.form__button(href='#') Зима
+																			a.form__button.form__button_active(href='#') Всесезонный
+																			a.form__button(href='#') Все
+
+
+																	.form__col
+																		.form__field.form__field_select.form__field_hide
+																			select.form__select(data-placeholder="Сезон")
+																				option(value="1") Сезон 1
+																				option(value="2") Сезон 2
+																				option(value="3") Сезон 3
+																				option(value="4") Сезон 4
+																				option(value="5") Сезон 5
+																				option(value="6") Сезон 6
+																				option(value="7") Сезон 7
+																				option(value="8") Сезон 8
+																				option(value="9") Сезон 9
+																				option(value="10") Сезон 10
+
+																.form__row.form__row_buttons
+																	.form__col
+																		input.form__submit.button.button_biggest(type="submit", value="Подобрать")
+																	.form__col
+																		button.form__reset.button.button_disabled(type="reset") 
+																			span Сбросить
+
+																a.form__note(href="#")
+																	.form__note-icon ? 
+																	| Что означают эти цифры?
+
+														.tabs__tab
+
+															form.selection__form.form.form_filter(action="", method="post")
+																.form__row.form__row_select
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Марка")
+																				option Марка
+																				option(value="1") Acura
+																				option(value="2") Audi
+																				option(value="3") Bentley
+																				option(value="4") BMW
+																				option(value="5") Brilliance
+																				option(value="6") BYD
+																				option(value="7") Acura 1
+																				option(value="8") Acura 2
+																				option(value="9") Acura 3
+																				option(value="10") Acura 4
+
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Модель")
+																				option(value="1") Модель 1
+																				option(value="2") Модель 2
+																				option(value="3") Модель 3
+																				option(value="4") Модель 4
+																				option(value="5") Модель 5
+																				option(value="6") Модель 6
+																				option(value="7") Модель 7
+																				option(value="8") Модель 8
+																				option(value="9") Модель 9
+																				option(value="10") Модель 10
+
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Двигатель")
+																				option(value="1") Двигатель 1
+																				option(value="2") Двигатель 2
+																				option(value="3") Двигатель 3
+																				option(value="5") Двигатель 4
+																				option(value="6") Двигатель 5
+																				option(value="7") Двигатель 6
+																				option(value="8") Двигатель 7
+																				option(value="9") Двигатель 8
+																				option(value="10") Двигатель 9
+																				option(value="11") Двигатель 10
+
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Кузов")
+																				option(value="1") Кузов 1
+																				option(value="2") Кузов 2
+																				option(value="3") Кузов 3
+																				option(value="4") Кузов 4
+																				option(value="5") Кузов 5
+																				option(value="6") Кузов 6
+																				option(value="7") Кузов 7
+																				option(value="8") Кузов 8
+																				option(value="9") Кузов 9
+																				option(value="10") Кузов 10
+
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Год")
+																				option(value="1") 1980 
+																				option(value="2") 1981 
+																				option(value="3") 1982 
+																				option(value="4") 1983 
+																				option(value="5") 1984 
+																				option(value="6") 1985 
+																				option(value="7") 1986 
+																				option(value="8") 1987 
+																				option(value="9") 1988 
+																				option(value="10") 1989
+																				option(value="1") 1990 
+																				option(value="2") 1991 
+																				option(value="3") 1992 
+																				option(value="4") 1993 
+																				option(value="5") 1994 
+																				option(value="6") 1995 
+																				option(value="7") 1996 
+																				option(value="8") 1997 
+																				option(value="9") 1998 
+																				option(value="10") 1999
+
+
+																.form__row.form__row_buttons
+																	.form__col
+																		input.form__submit.button.button_biggest(type="submit", value="Подобрать")
+																	.form__col
+																		input.form__reset.button.button_disabled(type="reset", value="Сбросить")
+
+																a.form__note(href="#")
+																	.form__note-icon ?
+																	| Что означают эти цифры?
+
+
+
+									img.selection__image(src="assets/images/content/tires-image.png", alt="")
+
+								.tabs__tab.select-disks
+									.col-12.selection__col
+										h2.selection__title.title.selection__title_inner Подбор дисков
+									
+										.row.selection__filter
+
+											.col-12
+												.selection__block.selection__block_inner.tabs.tabs_selection.tabs_selection_inner
+													ul.tabs__nav
+														li.tabs__item.active
+															a.tabs__link()
+																span По параметрам
+
+														li.tabs__item
+															a.tabs__link()
+																span По авто
+
+													.tabs__content
+
+														.tabs__tab.active
+
+															form.selection__form.form.form_filter(action="", method="post")
+																.form__row.form__row_select
+
+																	.form__col
+
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Диаметр")
+																				option(value="1") Диаметр
+																				option(value="2") Диаметр
+																				option(value="3") Диаметр
+																				option(value="4") Диаметр
+																				option(value="5") Диаметр
+																				option(value="6") Диаметр
+																				option(value="7") Диаметр
+																				option(value="8") Диаметр
+																				option(value="9") Диаметр
+																				option(value="10") Диаметр
+
+																	.form__col
+
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Диаметр")
+																				option(value="1") PCD 1
+																				option(value="2") PCD 2
+																				option(value="3") PCD 3
+																				option(value="4") PCD 4
+																				option(value="5") PCD 5
+																				option(value="6") PCD 6
+																				option(value="7") PCD 7
+																				option(value="8") PCD 8
+																				option(value="9") PCD 9
+																				option(value="10") PCD 10
+																
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Ширина")
+																				option(value="1") Вылет от и до 
+																				option(value="2") Вылет от и до
+																				option(value="3") Вылет от и до
+																				option(value="4") Вылет от и до
+																				option(value="5") Вылет от и до
+																				option(value="6") Вылет от и до
+																				option(value="7") Вылет от и до
+																				option(value="8") Вылет от и до
+																				option(value="9") Вылет от и до
+																				option(value="10") Вылет от и до
+
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Ширина")
+																				option(value="1") Ширина от и до
+																				option(value="2") Ширина от и до
+																				option(value="3") Ширина от и до
+																				option(value="4") Ширина от и до
+																				option(value="5") Ширина от и до
+																				option(value="6") Ширина от и до
+																				option(value="7") Ширина от и до
+																				option(value="8") Ширина от и до
+																				option(value="9") Ширина от и до
+																				option(value="10") Ширина от и до
+
+																	.form__col
+
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Сезон")
+																				option(value="1") DIA (>=)
+																				option(value="2") DIA (>=)
+																				option(value="3") DIA (>=)
+																				option(value="4") DIA (>=)
+																				option(value="5") DIA (>=)
+																				option(value="6") DIA (>=)
+																				option(value="7") DIA (>=)
+																				option(value="8") DIA (>=)
+																				option(value="9") DIA (>=)
+																				option(value="10") DIA (>=)
+
+																.form__row.form__row_buttons
+																	.form__col
+																		input.form__submit.button.button_biggest(type="submit", value="Подобрать")
+																	.form__col
+																		input.form__reset.button.button_disabled(type="reset", value="Сбросить")
+
+																a.form__note(href="#")
+																	.form__note-icon ?
+																	| Что означают эти цифры?
+
+														.tabs__tab
+
+															form.selection__form.form.form_filter(action="", method="post")
+																.form__row.form__row_select
+
+																	.form__col
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Марка")
+																				option Марка
+																				option(value="1") Acura
+																				option(value="2") Audi
+																				option(value="3") Bentley
+																				option(value="4") BMW
+																				option(value="5") Brilliance
+																				option(value="6") BYD
+																				option(value="7") Acura 1
+																				option(value="8") Acura 2
+																				option(value="9") Acura 3
+																				option(value="10") Acura 4
+																	.form__col
+
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Модель")
+																				option(value="1") Модель 1
+																				option(value="2") Модель 2
+																				option(value="3") Модель 3
+																				option(value="4") Модель 4
+																				option(value="5") Модель 5
+																				option(value="6") Модель 6
+																				option(value="7") Модель 7
+																				option(value="8") Модель 8
+																				option(value="9") Модель 9
+																				option(value="10") Модель 10
+
+																	.form__col
+
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Двигатель")
+																				option(value="1") Двигатель 1
+																				option(value="2") Двигатель 2
+																				option(value="3") Двигатель 3
+																				option(value="5") Двигатель 4
+																				option(value="6") Двигатель 5
+																				option(value="7") Двигатель 6
+																				option(value="8") Двигатель 7
+																				option(value="9") Двигатель 8
+																				option(value="10") Двигатель 9
+																				option(value="11") Двигатель 10
+
+																	.form__col
+
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Кузов")
+																				option(value="1") Кузов 1
+																				option(value="2") Кузов 2
+																				option(value="3") Кузов 3
+																				option(value="4") Кузов 4
+																				option(value="5") Кузов 5
+																				option(value="6") Кузов 6
+																				option(value="7") Кузов 7
+																				option(value="8") Кузов 8
+																				option(value="9") Кузов 9
+																				option(value="10") Кузов 10
+
+
+																	.form__col
+
+																		.form__field.form__field_select
+																			select.form__select(placeholder="Год")
+																				option(value="1") 1980 
+																				option(value="2") 1981 
+																				option(value="3") 1982 
+																				option(value="4") 1983 
+																				option(value="5") 1984 
+																				option(value="6") 1985 
+																				option(value="7") 1986 
+																				option(value="8") 1987 
+																				option(value="9") 1988 
+																				option(value="10") 1989
+																				option(value="1") 1990 
+																				option(value="2") 1991 
+																				option(value="3") 1992 
+																				option(value="4") 1993 
+																				option(value="5") 1994 
+																				option(value="6") 1995 
+																				option(value="7") 1996 
+																				option(value="8") 1997 
+																				option(value="9") 1998 
+																				option(value="10") 1999
+
+
+																.form__row.form__row_buttons
+																	.form__col
+																		input.form__submit.button.button_biggest(type="submit", value="Подобрать")
+																	.form__col
+																		input.form__reset.button.button_disabled(type="reset", value="Сбросить")
+
+																a.form__note(href="", hef="#")
+																	.form__note-icon ?
+																	| Что означают эти цифры?
+
+									img.selection__image(src="assets/images/content/disk-image.png", alt="")
+
+					
+
+					.col-12.col-lg-4.selection__col 
+						h2.selection__title.title Расчет шиномонтажа
+
+						.selection__block.selection__block_compute
+							.row.selection__filter
+								.col-12
+									.selection__block.selection__block_inner
+
+										form.selection__form.form.form_filter.form_compute(action="", method="post")
+											.form__row.form__row_select
+
+												.form__col
+													.form__field.form__field_select
+														select.form__select(placeholder="Адрес")
+															option(value="1") Адрес 1 
+															option(value="2") Адрес 2
+															option(value="3") Адрес 3
+															option(value="4") Адрес 4
+															option(value="5") Адрес 5
+															option(value="6") Адрес 6
+															option(value="7") Адрес 7
+															option(value="8") Адрес 8
+															option(value="9") Адрес 9
+															option(value="10") Адрес 10
+
+												.form__col
+
+													.form__field.form__field_select
+														select.form__select(placeholder="Вид работ")
+															option(value="1") Вид работ 1
+															option(value="2") Вид работ 2
+															option(value="3") Вид работ 3
+															option(value="4") Вид работ 4
+															option(value="5") Вид работ 5
+															option(value="6") Вид работ 6
+															option(value="7") Вид работ 7
+															option(value="8") Вид работ 8
+															option(value="9") Вид работ 9
+															option(value="10") Вид работ 10
+
+												.form__col
+
+													.form__field.form__field_select
+														select.form__select(placeholder="Марка авто")
+															option(value="1") Марка авто 1
+															option(value="2") Марка авто 2
+															option(value="3") Марка авто 3
+															option(value="5") Марка авто 4
+															option(value="6") Марка авто 5
+															option(value="7") Марка авто 6
+															option(value="8") Марка авто 7
+															option(value="9") Марка авто 8
+															option(value="10") Марка авто 9
+															option(value="11") Марка авто 10
+													
+												.form__col
+
+													.form__field.form__field_select
+														select.form__select(placeholder="Модель авто")
+															option(value="1") Модель авто 1
+															option(value="2") Модель авто 2
+															option(value="3") Модель авто 3
+															option(value="4") Модель авто 4
+															option(value="5") Модель авто 5
+															option(value="6") Модель авто 6
+															option(value="7") Модель авто 7
+															option(value="8") Модель авто 8
+															option(value="9") Модель авто 9
+															option(value="10") Модель авто 10
+
+												.form__col
+	
+													.form__field.form__field_select
+														select.form__select(placeholder="Диаметр колес")
+															option(value="1") Диаметр колес 1
+															option(value="2") Диаметр колес 2
+															option(value="3") Диаметр колес 3
+															option(value="4") Диаметр колес 4
+															option(value="5") Диаметр колес 5
+															option(value="6") Диаметр колес 6
+															option(value="7") Диаметр колес 7
+															option(value="8") Диаметр колес 8
+															option(value="9") Диаметр колес 9
+															option(value="10") Диаметр колес 10
+
+												.form__col
+
+													.form__field.form__field_select
+														select.form__select(placeholder="Кол-во колес")
+															option(value="1") Кол-во колес 1
+															option(value="2") Кол-во колес 2
+															option(value="3") Кол-во колес 3
+															option(value="4") Кол-во колес 4
+															option(value="5") Кол-во колес 5
+															option(value="6") Кол-во колес 6
+															option(value="7") Кол-во колес 7
+															option(value="8") Кол-во колес 8
+															option(value="9") Кол-во колес 9
+															option(value="10") Кол-во колес 10
+
+											.form__row.form__row_checkbox
+												.form__col
+													.form__field.form__field_checkbox
+														input#low-profile.form__checkbox(type="checkbox", value="")
+														label.form__label(for="low-profile") RFT / низкий профиль
+
+												.form__col
+													.form__field.form__field_checkbox
+														input#valve-installation.form__checkbox(type="checkbox", value="")
+														label.form__label(for="valve-installation") Установка вентилей
+
+												.form__col
+													.form__field.form__field_checkbox
+														input#installing-chrome-ventel.form__checkbox(type="checkbox", value="")
+														label.form__label(for="installing-chrome-ventel") Установка хромированных вентелей
+													
+											.form__row.form__row_buttons
+												.form__col
+													input.form__submit.button.button_biggest(type="submit", value="Рассчитать")
+												.form__col
+													input.form__reset.button.button_border(type="reset", value="Сбросить")
+
+	// end selection

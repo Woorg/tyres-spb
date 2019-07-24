@@ -1,2 +1,215 @@
 .banner
-	display block
+	background #FFF
+	&__container
+		padding-top 30px
+		padding-bottom 30px
+		+rmin($md)
+			padding-top 40px
+			padding-bottom 40px
+			
+		+rmin($lg)
+			padding-top 50px
+			padding-bottom 50px
+		
+	&__slider
+		position relative
+		height 320px
+		border-radius 4px
+		
+		+rmin($md)
+			height 416px
+		
+		.slick-list
+			height 100%
+			
+
+	// &__col
+		
+	&__slide
+		position relative
+		border-radius 4px
+		height 320px
+		// background-size cover
+		+rmin($sm)
+			height 416px
+			
+		+rmin($lg)
+			background-size 100%
+			
+	&__slide_hide
+		display none
+		+rmin($sm)
+			db
+
+	&__image
+		object-fit cover
+		border-radius 4px
+		height 100%		
+	&__w
+		position absolute
+		top 50%
+		left 0
+		padding-top 10px
+		padding-right 14px
+		padding-bottom 60px
+		padding-left 20px
+		width 100%
+		color #FFF 
+		transform translateY(-50%)
+		+rmin($md)
+			top 70px
+			padding-right 50px
+			padding-left 50px
+			transform none
+			
+	&__title
+		margin-bottom 20px
+		color #FFF 
+		font-size 24px
+		font-weight 600
+		line-height 1.416
+		+rmin($md)
+			font-size 42px
+			line-height 1.238
+		
+	&__text
+		font-size 14px
+		font-weight 400
+		line-height 1.714
+		
+	&__link
+		position absolute
+		top 0
+		left 0
+		right 0
+		bottom 0
+		color #FFF
+		cursor pointer
+		text-decoration none 
+		
+	&__advantages
+		display none
+		
+		+rmin($md)
+			display block
+			
+	&__row 
+		position relative
+	
+	&__nav
+		position absolute
+		z-index 4
+		top calc(100% - 40px)
+		left 40px
+		width 90px
+		+rmin($md)
+			// top 376px
+			top 336px	
+			left 70px
+
+	&__dots
+		position absolute
+		z-index 3
+		top calc(100% - 0px)
+		left 110px
+		width 120px
+		
+		+rmin($md)
+			top 376px
+			left 240px
+			width 100%
+			text-align left	
+			
+
+	&__arrow 
+		resetbutton()
+		position absolute
+		z-index 1
+		top 0
+		width 40px
+		height 40px
+		box-shadow 0 6px 14px rgba(0, 0, 0, 0.08)
+		background-color #ffffff
+		border-radius 50%
+		transform translateY(-50%)
+		tr(all .3s ease)
+		+rmin($sm)
+			display none
+		&:hover
+			background-color #268ae1
+			tr(all .3s ease)
+			.banner__arrow-icon
+				stroke #fff
+				
+			
+	&__arrow-icon
+		position absolute
+		top 50%
+		left 50%
+		width 8px
+		height 12px
+		stroke #555
+		transform translate(-50%, -50%) 
+		
+	&__arrow_prev
+		left 0
+		+rmin($sm)
+			left -5px
+		.banner__arrow-icon
+			left calc(50% - 2px)
+			// left 50%
+	&__arrow_next
+		right 0
+		+rmin($sm)
+			right -5px
+		.banner__arrow-icon
+			left calc(50% + 2px)
+			// left 50%
+			transform translate(-50%, -50%) rotate(180deg) 
+			
+
+	.slick-dots
+		left calc(50% + 40px)
+		z-index 1
+		bottom 30px
+		max-width 120px
+		overflow hidden
+		text-align left	
+		white-space nowrap
+		transform translateX(-50%)
+		+rmin($md)
+			left calc(50% - 50px)
+			max-width 100%
+		li 
+			margin-right 8px
+			width 18px
+			height 18px
+			opacity .8
+			&:last-child
+				margin-right 0
+		
+			button
+				position relative
+				padding 0
+				width 18px
+				height 18px
+				border-radius 50%
+				&:before
+					top 50%
+					left 50%
+					content '' 
+					width 9px
+					height 9px
+					background #fff 
+					font-size 0
+					line-height 1
+					opacity 1
+					border-radius 50%
+					transform translate(-50%, -50%)
+					
+			&.slick-active
+				opacity 1
+				button
+					border 1px solid #fff
+					&:before
+						opacity 1

@@ -11,8 +11,9 @@
 		height 100%
 	&__container
 		position relative
-		padding-top 50px
 		z-index 1
+		+rmin($md)
+			padding-top 50px
 		
 	&__top
 		border-bottom 1px solid #dadadf
@@ -45,6 +46,7 @@
 		height 10px
 		
 	&__w
+		max-height 444px
 		display block
 		overflow hidden
 
@@ -97,10 +99,11 @@
 	// 	top 50%
 	// 	left 15px
 
-	&__title
+	.map__title
 		margin-bottom 15px
 		font-size 20px
 		line-height 1.5
+		
 	&__list
 		position relative
 		// margin-right 5px

@@ -1,2 +1,88 @@
 .advantages
-	display block
+	&__list
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		+rmin($md)
+			margin-top 20px
+		+rmin($lg)
+			margin-top 0
+	&__item
+		position relative
+		margin-bottom 16px
+		margin-left 25px
+		margin-right 22px
+		height 92px
+
+		display flex
+		justify-content center
+		align-items center
+
+		flex-shrink 0
+		flex-grow 0
+		flex-basis 288px
+		
+		color #ffffff
+		font-family $o
+		font-size 20px
+		font-weight 600
+		line-height 1
+		
+		+rmin($lg)
+			flex-grow 1	
+
+	&__item_1
+		background #268ae1
+		+rmin($md)
+			order -1
+		.advantages__icon-left,		
+		.advantages__icon-right
+			fill #268AE1
+	&__item_2
+		background #ffeb2c 
+		color #383d42
+		+rmin($md)
+			background #ff791b 
+			color #FFF 
+		.advantages__icon-left,		
+		.advantages__icon-right
+			fill #ffeb2c
+			+rmin($md)
+				fill #ff791b
+			
+	&__item_3
+		
+		background #ff791b 
+		+rmin($md)
+			order -1
+			background #ffeb2c 
+			color #383d42
+		.advantages__icon-left,		
+		.advantages__icon-right
+			fill #ff791b
+			+rmin($md)
+				fill #ffeb2c
+					
+	&__item_4
+		background #0d62ad 
+		.advantages__icon-left,		
+		.advantages__icon-right
+			fill #0d62ad
+
+	&__icon-left,		
+	&__icon-right
+		position absolute
+		top 0
+		height 92px
+		background transparent
+		 
+	&__icon-left
+		left -24px
+		width 25px
+		
+	&__icon-right
+		right -20px
+		width 22px
+
+
+		

@@ -8,7 +8,8 @@
 	&__item
 		position relative
 		margin-right 40px
-		&.tabs__item_active
+		// &.tabs__item_active,
+		&.active
 			.tabs__link
 				color #333333
 				font-weight 600
@@ -43,22 +44,27 @@
 			color #333333
 			text-decoration none
 			
-	&__content
-		overflow hidden
+	// &__content
+	// 	overflow hidden
 		
 	&__tab
 		display block
 		height 0
 		opacity 0
-		// visibility hidden
 		// opacity 0
 		tr(all .3s ease)
-	&__tab_active
-		// display block
-		height auto
-		// visibility visible
-		opacity 1
-		tr(all .3s ease)
+		&.active
+			height auto
+			opacity 1
+			tr(all .3s ease)
+			
+
+			
+	// &__tab_active
+	// 	height auto
+	// 	// visibility visible
+	// 	opacity 1
+	// 	tr(all .3s ease)
 
 // .tabs_popup
 
@@ -74,15 +80,16 @@
 		&:last-child
 			margin-right 0
 			
-	.tabs__item_active
-		
-		.tabs__link
-			padding-bottom 4px
-			color #268ae1
-			font-weight 400 
-			box-shadow inset 0 -2px 0 0 #268ae1
-			&:before
-				display none
+		// &.tabs__item_active,
+		&.active
+			
+			.tabs__link
+				padding-bottom 4px
+				color #268ae1
+				font-weight 400 
+				box-shadow inset 0 -2px 0 0 #268ae1
+				&:before
+					display none
 			
 	.tabs__link
 		+rmin($md)
@@ -93,9 +100,162 @@
 			
 			
 	.tabs__tab
-		&.tabs__tab_active
+		// &.tabs__tab_active,
+		&.active
 			// position relative
 			z-index 1
 			
 			.featured__nav
 				display block
+
+.tabs_selection
+
+	.tabs__nav
+		margin-bottom 0
+		border-bottom none
+		display flex
+		
+	
+	.tabs__item
+		margin-right 0
+		background-color #eaeaea
+		flex-shrink 0
+		flex-grow 1
+
+		font-size 14px
+		font-weight 400
+		text-align center
+		line-height 1.57142857142857	
+		// .tabs__item_active,
+		&.active
+			background #fff 
+			.tabs__link
+				font-weight 400 
+				color #212121
+
+
+	.tabs__link
+		padding-top 12px
+		padding-right 20px
+		padding-bottom 10px
+		padding-left 20px
+		font-family $o
+		font-weight 400 
+		color #5d5f63
+		span
+			border-bottom 1px dashed #4d4d4d
+			padding-bottom 2px
+		&:before
+			display none
+	
+
+	.tabs__nav
+		+rmin($md)
+			display none
+			
+	.tabs__content
+		+rmin($md)	
+			display flex
+			flex-direction row
+			flex-wrap nowrap
+			justify-content space-between
+
+		
+	.tabs__tab
+		display block
+		height 0
+		opacity 0
+		tr(all .3s ease)
+		+rmin($md)
+			height auto
+			opacity 1
+			
+		+rmin($lg)
+			width calc(50% - 15px)
+			
+		&.active
+			position relative
+			z-index 1
+			height auto
+			opacity 1
+			tr(all .3s ease)
+			
+	.tabs_selection_inner
+		.tabs__nav
+			display block
+			display flex
+			+rmin($md)
+				display flex
+
+		.tabs__tab
+			+rmin($md)
+				height 0
+				opacity 0
+			+rmin($lg)
+				width 100%
+				// height auto
+
+			&.active
+				+rmin($md)
+					position relative
+					z-index 1
+					height auto
+					opacity 1
+					tr(all .3s ease)
+				// +rmin($lg)
+				// 	height 100%
+
+
+
+.tabs_selection_inner
+	
+	.tabs__nav
+		margin-bottom 20px
+		border-radius 4px
+	
+	.tabs__item
+		
+		max-width 155px
+		+rmin($lg)
+			max-width 200px
+		
+		// &.tabs__item_active,
+		&.active
+			.tabs__link
+				border 1px solid #268AE1
+				background #268AE1
+				color #FFF 
+				border-radius 4px 0px 0px 4px
+				
+		&:first-child
+			.tabs__link
+				border-radius 4px 0 0 4px
+		&:last-child
+			.tabs__link
+				border-radius 0 4px 4px 0
+				
+
+	.tabs__link
+		border 1px solid #CCCCCC
+		padding-top 8px
+		padding-bottom 6px
+
+		background #fff 
+		font-family $o
+		font-weight 400 
+		box-sizing border-box
+		border-radius 4px
+		
+		span
+			border-bottom none
+			
+	.tabs__content
+		+rmin($lg)
+			flex-direction column
+
+	.tabs__tab
+		width 100%
+		// &.active
+			
+			
+		

@@ -3,7 +3,8 @@ extends /blocks/layout-default/layout-default
 include /blocks/icon/icon
 include /blocks/header/header
 
-
+include /blocks/selection/selection
+include /blocks/banner/banner
 include /blocks/map/map
 include /blocks/brands/brands
 include /blocks/featured/featured
@@ -28,6 +29,8 @@ block content
 
 		// start page inner
 		.page__inner
+			+selection()
+			+banner()
 			+map()
 			+brands()
 			+featured()

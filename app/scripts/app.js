@@ -1,10 +1,11 @@
 import svg4everybody from 'svg4everybody';
 // import $ from 'jquery';
 import slick from 'slick-carousel';
-import select2 from 'select2';
-// import scrollbar from 'jquery.scrollbar/jquery.scrollbar.min.js';
-import 'simplebar';
+// import select2 from 'select2';
+import SimpleBar from 'simplebar';
 import 'magnific-popup';
+import niceScroll from 'nicescroll';
+import 'selectize';
 
 
 (function ($) {
@@ -13,22 +14,88 @@ import 'magnific-popup';
 
 	$(function() {
 
-		let styles = [
-			'padding: 2px 9px',
-			'background: #82B93C',
-			'color: #fff',
-			'display: inline-block',
-			'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2)',
-			'box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 5px 3px -5px rgba(0, 0, 0, 0.5), 0 -13px 5px -10px rgba(255, 255, 255, 0.4) inset',
-			'line-height: 1.56',
-			'text-align: left',
-			'font-size: 16px',
-			'font-weight: 400'
-		].join(';');
+		// let styles = [
+		// 	'padding: 2px 9px',
+		// 	'background: #82B93C',
+		// 	'color: #fff',
+		// 	'display: inline-block',
+		// 	'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2)',
+		// 	'box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 5px 3px -5px rgba(0, 0, 0, 0.5), 0 -13px 5px -10px rgba(255, 255, 255, 0.4) inset',
+		// 	'line-height: 1.56',
+		// 	'text-align: left',
+		// 	'font-size: 16px',
+		// 	'font-weight: 400'
+		// ].join(';');
 
-		console.log('%c developed by igor gorlov https://webjeb.ru', styles);
+		// console.log('%c developed by igor gorlov https://webjeb.ru', styles);
 
-		
+
+		// Toggle buttons
+
+
+		$('.form__field_buttons .form__button').on('click', function () {
+			$(this).toggleClass('form__button_active');
+			$(this).siblings().removeClass('form__button_active');
+		});
+
+
+		// Placeholders
+
+		// $('.form__select, .form__field_buttons').each(function () {
+		// 	let placeholder = $(this).data('placeholder');
+		// 	$(this).next().text(placeholder);
+		// });
+
+		// $('.form__field_buttons').each(function () {
+		// 	let placeholder = $(this).data('placeholder');
+		// 	$(this).find('.form__placeholder').text(placeholder);
+		// });
+
+
+		// Style fields
+
+
+		$('.form__select').selectize({
+			maxItems: 1,
+			onDropdownOpen: function($dropdown) {
+				$('.selectize-dropdown-content').niceScroll({
+					cursorborder: "none",
+					cursorcolor: "#90A0B7",
+					cursorwidth: "4px",
+					autohidemode: false,
+					cursorborderradius: '4px',
+					hwacceleration: true, 
+					railpadding: { top: 0, right: 2, left: 0, bottom: 0 },
+					horizrailenabled: false,
+				})
+			}
+		});
+
+
+
+		// Tabs
+
+
+		$('.tabs__nav li').click(function(e) {
+			var a = $(this),
+			parent = a.parents('.tabs'),
+			nav = parent.children('.tabs__nav').children('li'),
+			box = parent.children('.tabs__content').children('div');
+
+			if (!a.hasClass('active')) {
+				a.addClass('active')
+					.siblings().removeClass('active');
+
+				box.eq(a.index()).addClass('active')
+					.siblings().removeClass('active');
+			}
+
+			e.preventDefault();
+
+			// $('.form__select').selectize.destroy().selectize();
+		});
+
+
 
 		// Trigger main menu
 
@@ -129,21 +196,11 @@ import 'magnific-popup';
 		});
 
 
-		// Tabs
+		
 
-		let $tabsNav = $('.tabs__nav');
 
-		$tabsNav.on('click', 'li:not(.tabs__item_active)', function(e) {
-			e.preventDefault();
-			$(this)
-				.addClass('tabs__item_active')
-				.siblings()
-				.removeClass('tabs__item_active')
-				.closest('.tabs')
-				.find('.tabs__tab')
-				.removeClass('tabs__tab_active').eq($(this).index())
-				.addClass('tabs__tab_active');
-		});
+		
+
 
 		// Popup
 
@@ -211,7 +268,8 @@ import 'magnific-popup';
 		const $popularSizesList = $('.popular-sizes__list');
 
 
-		$('.popular-sizes__more').on('click', function () {
+		$('.popular-sizes__more').on('click', function (e) {
+			e.preventDefault();
 			$(this).toggleClass('popular-sizes__more_true');
 			$popularSizesList.toggleClass('popular-sizes__list_full');
 		});
@@ -580,9 +638,6 @@ import 'magnific-popup';
 		}
 
 
-
-
-
 		var myMap;
 		var placemarkCollections = {};
 		var placemarkList = {};
@@ -815,7 +870,17 @@ import 'magnific-popup';
 		 
 
 		// Клик на адрес
-		$(document).on('click', '.address__street', function () {
+		$(document).on('click', '.address__street', function (e) {
+			e.preventDefault();
+		 
+			var cityId = $('select#cities').val();
+			var shopId = $(this).data('shop');
+		 
+			placemarkList[0][shopId].events.fire('click');
+		});
+
+		// Клик на кнопку
+		$(document).on('click', '.address__button_route', function () {
 		 
 			var cityId = $('select#cities').val();
 			var shopId = $(this).data('shop');
@@ -826,7 +891,6 @@ import 'magnific-popup';
 
 		// Hide addresses
 
-
 		$('.map__close').on( 'click', function () {
 			$(this).toggleClass('map__close_active');
 			// $(this).next('.map__w').toggleClass('map__w_hide');
@@ -836,10 +900,56 @@ import 'magnific-popup';
 		});
 
 
-		// Map scrollbar
+		// Banner slider
+
+		let $bannerSlider = $('.banner__slider');
+
+		if( $bannerSlider.length > 0 ) {
+			$bannerSlider.slick({
+				mobileFirst: true,
+				dots: true,
+				arrows: true,
+				infinite: false,
+				slidesToShow: 1,
+				speed: 300,
+				adaptiveHeight: false,
+				appendArrows: '.banner__nav',
+
+				prevArrow: '<button class="banner__arrow banner__arrow_prev"><svg class="banner__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+				nextArrow: '<button class="banner__arrow banner__arrow_next"><svg class="banner__arrow-icon" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 13L1 7L7 1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+
+				appendDots: '.banner__dots'
+
+				
+			}).on('setPosition', function (event, slick) {
+				slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+			});
+		}
 
 
 
+		// Select
+
+		// $.fn.select2.defaults.set( "width", "100%" );
+
+		// $('select').select2({
+		// 	width: 'element',
+		// 	minimumResultsForSearch: Infinity 
+		// })
+		// .on("select2:open", function () {
+		// 	$('.select2-results__options').niceScroll({
+		// 		cursorborder: "none",
+		// 		cursorcolor: "#90A0B7",
+		// 		cursorwidth: "4px",
+		// 		autohidemode: false,
+		// 		cursorborderradius: '4px',
+		// 		hwacceleration: true, 
+		// 		// railoffset: '5px',
+		// 		railpadding: { top: 0, right: 2, left: 0, bottom: 0 },
+		// 		// cursorborder: "1px solid #5fdfe8",
+		// 		horizrailenabled: false,
+		// 	});
+		// });
 
 
 

@@ -42,8 +42,8 @@
 	padding-right 15px
 	width 100%
 	+r($sm)
-		padding-left 0
-		padding-right 0
+		padding-left 15px
+		padding-right 15px
 		max-width 100%
 	+rmin($sm)
 		// max-width 540px
@@ -80,10 +80,10 @@
 			tr(all .3s ease)
 			
 			
-.title_small
-	color #000000
-	font-size 18px
-	line-height 1.555 
+	&.title_small
+		color #000000
+		font-size 18px
+		line-height 1.555 
 	
 
 img
@@ -101,6 +101,7 @@ img
 	font-weight 600
 	text-align center
 	text-decoration none
+	cursor pointer
 	border-radius 4px
 	tr(all .3s ease)
 	&:hover
@@ -148,6 +149,21 @@ img
 		background-color darken(#268ae1, 10)
 		box-shadow 0 4px 8px rgba(38, 138, 225, 0.15)
 		tr(all .3s ease)
+
+.button_border
+	resetbutton()
+	border 1px solid #268ae1
+	background-color #fff
+	color #268ae1
+	font-family $a
+	font-weight 500 
+	letter-spacing 0.96px
+	text-transform uppercase
+	&:hover
+		color #fff
+		background-color #268ae1
+
+
 
 .wysiwyg
 	color #555555
