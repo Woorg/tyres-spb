@@ -49,11 +49,13 @@
 		
 	&__tab
 		display block
+		// display none
 		height 0
 		opacity 0
 		// opacity 0
 		tr(all .3s ease)
 		&.active
+			display block
 			height auto
 			opacity 1
 			tr(all .3s ease)
@@ -71,12 +73,16 @@
 .tabs_featured
 	
 	.tabs__nav
-		margin-bottom 0
+		margin-bottom 8px
 		border-bottom none
 		flex-wrap wrap
 		
 	.tabs__item
 		margin-right 30px
+		
+		+rmin($md)
+			margin-right 31px
+
 		&:last-child
 			margin-right 0
 			
@@ -84,7 +90,7 @@
 		&.active
 			
 			.tabs__link
-				padding-bottom 4px
+				padding-bottom 0px
 				color #268ae1
 				font-weight 400 
 				box-shadow inset 0 -2px 0 0 #268ae1
@@ -92,9 +98,11 @@
 					display none
 			
 	.tabs__link
+		
 		+rmin($md)
 			padding-bottom 0
 			font-size 16px
+			
 		&:hover
 			color #268ae1
 			
@@ -126,13 +134,29 @@
 		font-weight 400
 		text-align center
 		line-height 1.57142857142857	
-		// .tabs__item_active,
+
+		+rmin($md)
+			max-width 155px
+
 		&.active
 			background #fff 
 			.tabs__link
 				font-weight 400 
 				color #212121
-
+				
+		&:first-child
+			border-radius 4px 0 0 0 
+			.tabs__link
+				border-radius 4px 0 0 0
+				padding-right 30px
+				padding-left 25px
+				
+		&:last-child
+			border-radius 0 4px 0 0
+			.tabs__link
+				border-radius 0 4px 0 0
+				padding-left 16px
+				
 
 	.tabs__link
 		padding-top 12px
@@ -150,11 +174,13 @@
 	
 
 	.tabs__nav
+		
 		+rmin($md)
 			display none
 			
 	.tabs__content
-		+rmin($md)	
+		
+		+rmin($lg)	
 			display flex
 			flex-direction row
 			flex-wrap nowrap
@@ -166,6 +192,7 @@
 		height 0
 		opacity 0
 		tr(all .3s ease)
+		
 		+rmin($md)
 			height auto
 			opacity 1
@@ -184,18 +211,22 @@
 		.tabs__nav
 			display block
 			display flex
+			
 			+rmin($md)
 				display flex
 
 		.tabs__tab
+			
 			+rmin($md)
 				height 0
 				opacity 0
+				
 			+rmin($lg)
 				width 100%
 				// height auto
 
 			&.active
+				
 				+rmin($md)
 					position relative
 					z-index 1
@@ -215,7 +246,7 @@
 	
 	.tabs__item
 		
-		max-width 155px
+		// max-width 155px
 		+rmin($lg)
 			max-width 200px
 		
@@ -230,6 +261,8 @@
 		&:first-child
 			.tabs__link
 				border-radius 4px 0 0 4px
+				padding-left 17px
+				padding-right 15px
 		&:last-child
 			.tabs__link
 				border-radius 0 4px 4px 0
@@ -237,8 +270,8 @@
 
 	.tabs__link
 		border 1px solid #CCCCCC
-		padding-top 8px
-		padding-bottom 6px
+		padding-top 7px
+		padding-bottom 8px
 
 		background #fff 
 		font-family $o
@@ -250,6 +283,7 @@
 			border-bottom none
 			
 	.tabs__content
+		
 		+rmin($lg)
 			flex-direction column
 

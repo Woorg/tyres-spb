@@ -4,34 +4,51 @@
 		position relative
 		padding-top 30px
 		padding-bottom 10px
+		// padding-top 57px
+
 		+rmin($md)
-			padding-top 40px
-			padding-bottom 20px
+			padding-top 17px
+			padding-bottom 10px
 		
 		+rmin($lg)
 			padding-top 50px
 			padding-bottom 30px
 
 	&__title
-		margin-bottom 14px
-		padding-right 110px
-		+rmin($sm)
-			margin-bottom 30px
+		padding-right 99px
+		font-size 18px
+		
+		+rmin($md)
+			margin-left 5px
+			font-size 24px
+
 		
 	&__brand
+		position relative
 		padding-left 3px
 		padding-right 3px
-		padding-bottom 20px
-		height 110px
+		padding-bottom 30px
+		height 128px
 		color #636a71
 		text-decoration none
-		+rmin($sm)
+		
+		+rmin($md)
 			padding-left 8px
 			padding-right 8px
+			
 		+rmin($lg)
 			padding-left 15px
 			padding-right 15px
 			height 120px
+			
+		// &:after
+		// 	position absolute
+		// 	top 0
+		// 	left 0
+		// 	right 0
+		// 	bottom 0
+		// 	content ""
+		// 	box-shadow 0 10px 36px rgba(64, 78, 84, 0.15) 
 
 		&:hover
 			.brands__w
@@ -69,15 +86,26 @@
 		line-height 1 
 		tr(all .3s ease)
 		
+	&__list
+		margin-top 14px
+		margin-left -3px
+		margin-right -3px
+		+rmin($sm)
+			margin-top 30px
+
+		+rmin($md)
+			margin-top 30px
 
 	&__list-nav
 		position absolute
 		top 30px
 		right 15px
 		width 82px
-		display flex 
-		+rmin($sm)
-			top 40px
+		display flex
+		
+		+rmin($md)
+			top 10px
+			right 20px
 
 	&__arrow 
 		resetbutton()
@@ -91,10 +119,12 @@
 		box-shadow 0 2px 2px rgba(0, 0, 0, 0.05)
 		background-color #ffffff
 		border-radius 4px
-		+rmin($sm)
+		
+		+rmin($md)
 			// width 40px
 			// height 40px
 			display none
+			
 		&:hover
 			.brands__arrow-icon
 				opacity 0.6
@@ -118,7 +148,6 @@
 		// 	left -5px
 		.brands__arrow-icon
 			left calc(50% - 2px)
-			// left 50%
 	&__arrow_next
 		right 0
 		border-radius 0 4px 4px 0
@@ -126,8 +155,4 @@
 		// 	right -5px
 		.brands__arrow-icon
 			left calc(50% + 2px)
-			// left 50%
-			transform translate(-50%, -50%) rotate(180deg) 
-			
-
-
+			transform translate(-50%, -50%) rotate(180deg)

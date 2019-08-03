@@ -3,23 +3,35 @@
 	z-index 4
 	background-color #fbfbfb 
 	&__container
-		@extends .in
-		padding-top 10px
-		padding-bottom 10px
+		// @extends .in
+		padding-top 18px
+		padding-bottom 18px
+		padding-left 0
+		padding-right 0
 		display flex
 		justify-content flex-start
 		align-items center
-		+r($sm)
-			padding-top 18px
-			padding-bottom 18px
+		// +r($sm)
+		// 	padding-top 18px
+		// 	padding-left 0
+		// 	padding-right 0
+		// 	padding-bottom 18px
+			
 		+rmin($sm)
+			padding-left 15px
+			padding-right 15px
+			
+		+rmin($md)
 			padding-top 0px
 			padding-bottom 0px
 			padding-left 0
-		+rmin($xl)
+			padding-right 15px
+			
+		+rmin($lg)
 			padding-top 10px
 			padding-bottom 10px
-
+			padding-left 15px
+			padding-right 15px
 
 	// &__col
 	// 	display flex
@@ -44,9 +56,17 @@
 		line-height 1.571
 		white-space nowrap 
 		// overflow hidden
-		+rmin($sm)
+			
+		// +rmin($sm)
+		// 	max-width 100%
+		// 	margin-left 18px
+		// 	margin-right 40px
+
+		+rmin($md)
 			margin-left 18px
-			margin-right 40px
+			margin-right 24px
+			min-width 150px 
+			max-width 162px 
 		+rmin($lg)
 			min-width 200px 
 			max-width 370px
@@ -57,23 +77,31 @@
 		position absolute
 		top 50%
 		left 0
+		// margin-right 9px
+		margin-right 6px
+		margin-left 4px
 		width 16px
 		height 20px
 		fill #adaead
 		transform translateY(-50%)
-		+r($sm)
-			margin-right 9px
 		
+		// +rmin($sm)
+		// 	margin-right 0
+		// 	margin-left 0
+		
+		+rmin($md)
+			margin-right 0
+			margin-left 0
+
 	&__city-text
+		display none
 		padding-right 5px
 		color #787878
 		font-weight 400
-		+r($sm)
-			display none
-		+rmin($sm)
-			display none
+		// +rmin($sm)
+		// 	display none
 			
-		+rmin($xl)
+		+rmin($lg)
 			display block
 		
 	&__city-link
@@ -90,11 +118,13 @@
 			overflow hidden
 			text-overflow ellipsis
 			
-			+rmin($sm)
-				padding-bottom 2px
+			+rmin($md)
+				padding-bottom 4px
 				height 100%
 				overflow inherit
 				display block
+				
+
 			&:after
 				position absolute
 				content '' 
@@ -105,7 +135,8 @@
 				display none
 				background #ced3d7
 				tr(background .3s ease)
-				+rmin($sm)
+				
+				+rmin($md)
 					top auto
 					bottom 0
 					display block
@@ -123,6 +154,7 @@
 		height 6px
 		fill #000000
 		transform translateY(-50%)
+		
 		+rmin($xl)
 			display none
 				
@@ -132,6 +164,7 @@
 	&__phone
 		position relative
 		margin-left auto
+		padding-right 17px
 		color #222223
 		font-family $a
 		font-size 16px
@@ -141,15 +174,14 @@
 		text-decoration none
 		text-overflow ellipsis
 		overflow hidden
-		+r($sm)
-			padding-right 17px
-			
-
 		
+		// +rmin($md)
+		// 	display none
+
 	&__phone_state
-		display none
-		+r($sm)
-			display flex
+		
+		+rmin($md)
+			display none
 			
 	&__phone-icon
 		position absolute
@@ -162,40 +194,53 @@
 		
 
 	&__nav
-		+r($sm)
-			display none
-		+rmin($sm)
+		display none
+
+		+rmin($md)
+			display flex
 			order -1
 			
-		+rmin($xl)
+		+rmin($lg)
 			order unset
 
 
 	&__social
 		display none
-		+rmin($sm)
-			margin-right 20px
+		
+		+rmin($md)
+			margin-right 10px
 			display flex	
+			
 		+rmin($xl)
 			display none
 
 
 	&__personal-w
 		margin-left auto
-		display flex
+		display none
 		align-items center
-		+r($sm)
-			display none
 		
+		+rmin($md)
+			display flex
+		
+
 	&__button
 		margin-right 22px
 		padding-top 11px
 		padding-right 17px
 		padding-bottom 8px
 		padding-left 17px
+		display none
 		white-space nowrap
-		+r($sm)
-			display none
+		
+		+rmin($md)
+			margin-right 0
+			padding-top 13px
+			padding-right 12px
+			padding-bottom 8px  
+			padding-left 11px
+			display flex
+			font-size 13px
 
 	&__personal
 		display flex
@@ -204,16 +249,25 @@
 		font-family $r
 		font-size 14px
 		
+		+rmin($md)
+			margin-right 0
+			margin-left 14px
+		
 	&__user
 		position relative
 		padding-right 15px	
 		padding-left 32px
+		display none
 		color #0d62ad
 		font-weight 500
 		text-decoration none
-		+rmin($sm)
-			padding-right 0	
-		+rmin($xl)
+		
+		+rmin($md)
+			padding-right 6px
+			padding-left 33px
+			display flex
+				
+		+rmin($lg)
 			padding-right 15px
 
 		&:after
@@ -225,9 +279,11 @@
 			height 20px
 			background-color #c4c4c4
 			transform translateY(-50%)
-			+rmin($sm)
+			
+			+rmin($md)
 				display none
-			+rmin($xl)
+			
+			+rmin($lg)
 				display block
 				
 	&__user-icon
@@ -239,14 +295,21 @@
 		fill #616365
 		transform translateY(-50%)		
 		
+		+rmin($md)
+			width 24px
+			height 24px
+			
+
 	&__user-logout
 		padding-left 15px
+		display none
 		color #333333
 		text-decoration none
-		+rmin($sm)	
+		
+		+rmin($md)	
 			display none
 		
-		+rmin($xl)
+		+rmin($lg)
 			display block
 		
 		

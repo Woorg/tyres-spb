@@ -1,12 +1,15 @@
 .article
 	position relative
 	&:hover
+		
 		.article__inner
 			box-shadow 0 10px 30px rgba(70, 76, 82, 0.1)
 			tr(all .3s ease)
+			
 		.article__title
 			color #268ae1
 			tr(all .3s ease)
+			
 	&__link
 		position absolute
 		z-index 1
@@ -17,8 +20,6 @@
 		cursor pointer
 		
 	&__inner
-		// margin-left 10px
-		// margin-right 10px
 		display flex
 		flex-direction column
 		height 100%
@@ -28,7 +29,6 @@
 		
 	&__image
 		margin auto
-		
 		
 	&__w
 		padding 20px

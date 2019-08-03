@@ -1,22 +1,42 @@
 .news
 	background-color #f9fafb
 	&__container
-		padding-top 40px
+		padding-top 28px
 		padding-bottom 40px
+		
+		+rmin($md)
+			padding-top 44px
+
+		
+
 		+rmin($lg)
 			padding-top 50px
 			padding-bottom 50px
+			
 	&__title
-		margin-bottom 20px
+		margin-bottom 19px
+		
+		+rmin($md)
+			margin-left 5px			
+
+		+rmin($lg)
+			margin-bottom 20px
 		
 	&__articles
 		position relative
 		
+		margin-left -7px
+		margin-right -2px
+
 	&__article
 		margin-bottom 30px
 		height 370px
 		background transparent 
-		+rmin($sm)
+		
+		padding-left 10px
+		padding-right 10px
+
+		+rmin($md)
 			height 380px
 		
 		+rmin($lg)
@@ -27,9 +47,9 @@
 
 	&__button
 		padding-top 16px
-		padding-right 25px
+		padding-right 13px
 		padding-bottom 10px
-		padding-left 25px
+		padding-left 16px
 		font-family $a
 		font-size 16px
 		font-weight 500
@@ -47,10 +67,10 @@
 		background-color #ffffff
 		border-radius 50%
 		transform translateY(-50%)
-		+rmin($sm)
-			// width 40px
-			// height 40px
+		
+		+rmin($md)
 			display none
+			
 	&__arrow-icon
 		position absolute
 		top 50%
@@ -63,10 +83,8 @@
 		left 0
 		.news__arrow-icon
 			left calc(50% - 2px)
-			// left 50%
 	&__arrow_next
 		right 0
 		.news__arrow-icon
 			left calc(50% + 2px)
-			// left 50%
 			transform translate(-50%, -50%) rotate(180deg) 

@@ -19,7 +19,7 @@
 	&__nav-bg
 		position absolute
 		content "" 
-		z-index 0
+		z-index 2
 		top 0
 		left 0
 		width 100%
@@ -44,15 +44,17 @@
 	+r($sm)
 		padding-left 15px
 		padding-right 15px
+		// max-width 320px
 		max-width 100%
 	+rmin($sm)
 		// max-width 540px
 		padding-left 15px
 		padding-right 15px
+		// max-width 320px
 		max-width 100%
 	+rmin($md)
-		// max-width 720px 
-		max-width 100%
+		max-width 758px 
+		// max-width 100%
 			
 	+rmin($lg)
 		max-width 960px
@@ -179,7 +181,14 @@ img
 		font-weight 600
 		line-height 1.4
 		
-	// h2,
+	h2
+		margin-bottom 18px
+		color #333333
+		font-family $a
+		font-size 20px
+		font-weight 600
+		line-height 1.4
+		
 	// h3
 	// 	margin-top 60px
 
@@ -197,7 +206,8 @@ img
 		text-decoration none
 		
 	p
-		margin-bottom 18px
+		margin-bottom 22px
+		line-height 1.58
 
 	// ul
 	// 	margin-top 30px

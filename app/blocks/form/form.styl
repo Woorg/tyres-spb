@@ -15,7 +15,9 @@
 		justify-content flex-start
 		
 	&__row_checkbox
-		margin-top 5px
+		margin-top 9px
+		margin-left -5px
+		
 		+rmin($md)
 			margin-right -10px
 			margin-left -10px
@@ -27,6 +29,7 @@
 		
 		.form__col
 			width 100%
+			
 			+rmin($md)
 				padding-left 10px
 				padding-right 10px
@@ -35,8 +38,6 @@
 				+rmin($lg)
 					padding-left 0
 					padding-right 0
-					
-				
 				
 
 		// .form__field_checkbox
@@ -46,12 +47,12 @@
 
 	&__row_buttons
 		margin-top 5px
-		margin-right -5px
-		margin-left -5px
+		// margin-right -5px
+		// margin-left -5px
 		width auto
+		
 		+rmin($md)
-			// margin-top 10px
-			margin-top 0
+			margin-top 10px
 		
 		+rmin($lg)
 			margin-top auto
@@ -62,11 +63,16 @@
 				padding-right 5px
 				width 20%
 			
+	&__row_buttons_compute
+		margin-top 0
+		.form__col
+			width 46%
 
 	&__row_select
 		margin-right -5px
 		margin-left -5px
 		width auto
+		
 		+rmin($md)
 			margin-right -10px
 			margin-left -10px
@@ -82,13 +88,12 @@
 		+rmin($md)
 			padding-left 10px
 			padding-right 10px
-			width 25%
+			width 24.8%
 			
 	&__col_full
 		padding-left 5px
 		padding-right 5px
 		width 100%
-		
 		display flex
 		flex-wrap wrap
 	
@@ -96,6 +101,7 @@
 			padding-left 10px
 			padding-right 10px
 			width 100%
+			display none
 
 
 	&__field
@@ -116,16 +122,18 @@
 			z-index 2
 			right 0
 			display none
-			+rmin($sm)
+			
+			+rmin($md)
 				border 2px solid #e1e1e1
 				border-width 2px 0 2px 2px 
-				width 40px
+				width 44px
 				height 44px
 				display block
 				background-color #ffffff
 				cursor pointer
 				border-radius 0 0 0 0
-			+rmin($xl)
+				
+			+rmin($lg)
 				width 48px
 				
 		.form__drop-icon
@@ -139,17 +147,21 @@
 	&__field_select
 		position relative
 		margin-bottom 10px
-		max-width 150px
+		// max-width 150px
 		flex-shrink 1
 		flex-basis 120px
 		flex-grow 1
 		display flex
-		+rmin($sm)
+		
+		+rmin($md)
 			max-width 200px
 			
-		+rmin($md)
+		+rmin($lg)
 			margin-bottom 19px
 		
+		&.form__field_hide
+			+rmin($md)
+				display flex
 
 		.selectize-control
 			width 100%
@@ -234,12 +246,16 @@
 
 	&__field_checkbox
 		position relative
-		margin-bottom 10px
+		margin-bottom 13px
+		
 		+rmin($lg)
 			margin-bottom 15px
+			
 		.form__label
+			// margin-bottom 3px
 			padding-left 26px
 			white-space nowrap
+			
 			+rmin($lg)
 				padding-left 22px
 
@@ -251,12 +267,32 @@
 		margin-bottom 30px
 		display none
 		border-radius 4px 4px / 4px 4px
+		
 		+rmin($lg)
 			margin-top 20px
 			margin-top 30px
 			display flex
 			justify-content space-between
 			
+	&__select
+		// margin 0
+		border 1px solid #cccccc
+		padding-top 0
+		padding-bottom 0
+		padding-right 12px
+		padding-left 12px
+		width 100%
+		height 40px 
+		flex-grow 1
+		background #FFF 
+		color #7F878E
+		font-family $o
+		font-weight 400
+		font-size 14px
+		line-height 40px
+		overflow hidden
+		border-radius 4px
+		
 	&__button
 		resetbutton()
 		margin-left -1px
@@ -309,7 +345,6 @@
 		font-size 14px
 		line-height 1.57142857142857
 		
-
 	&__label
 		position relative
 		display block
@@ -331,9 +366,9 @@
 		font-weight 400 
 		font-size 14px
 		line-height 1.57142857142857
+		
 		+rmin($lg)
 			display block
-	
 
 	&__input
 		position relative
@@ -354,20 +389,24 @@
 		+placeholder()
 			color #5d5f63
 			
-		+rmin($sm)
+		+rmin($md)
 			border-width 2px 0 2px 2px 
 			padding-left 18px
 			padding-right 18px
 			height 44px
 			border-radius 4px 0 0 4px
-			
-
 
 	&__input_drop
 		z-index 0
 		margin-top -2px
 		border-radius 0 0 4px 4px   
 		box-shadow 0 5px 20px rgba(0, 0, 0, 0.1)
+		
+		+rmin($md)
+			margin-right -2px
+			border-width 0 2px 2px 2px 
+			
+
 	&__input_hide
 		display none
 		
@@ -383,7 +422,7 @@
 			&:after			
 			&:before
 				position absolute
-				top 50%
+				top calc(50% - 3px)
 				left 0
 				border 1px solid #CCCCCC
 				width 16px
@@ -402,7 +441,6 @@
 			&:before
 				background #FFF 
 					
-				
 		&:checked
 			& + label
 				&:before
@@ -421,12 +459,15 @@
 		border-radius 0 5px 5px 0
 		tr(background-color .3s ease)
 		&:hover
-			+rmin($sm)
+			
+			+rmin($md)
 				background-color darken(#268ae1, 10)
 				tr(background-color .3s ease)
-		+rmin($sm)
+				
+		+rmin($md)
 			background-color #268ae1
 			height 44px
+			
 	&__submit-icon
 		position absolute
 		top 50%
@@ -435,7 +476,8 @@
 		height 18px
 		fill #268ae1
 		transform translate(-50%, -50%)
-		+rmin($sm)
+		
+		+rmin($md)
 			width 16px
 			height 16px
 			fill #fff
@@ -447,8 +489,9 @@
 		font-size 12px
 		line-height 1.5
 		text-decoration none
+		
 		+rmin($md)
-			margin-top 15px
+			margin-top 17px
 
 	&__note-icon
 		margin-right 4px
@@ -460,7 +503,14 @@
 		line-height 14px
 		border-radius 50%
 		border 1px solid #dadde0
+		
+		+rmin($md)
+			margin-right 7px
 
+	&__button_1
+		margin-right 8px
+
+	
 
 .form_auth
 	.form__w
@@ -505,6 +555,8 @@
 		text-transform uppercase
 		border-radius 4px
 		
+		+rmin($md)
+			max-width 120px
 
 	.form__submit
 		width auto
@@ -523,6 +575,10 @@
 	.form__reset
 		font-weight 500 
 		letter-spacing 1.2px
+		
+		+rmin($md)
+			max-width 120px
+
 		
 
 .form_calc
@@ -545,13 +601,6 @@
 	.form__select
 		font-size 13px
 	
-
-
-
-
-
-
-
 
 
 

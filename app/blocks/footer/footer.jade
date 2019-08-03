@@ -2,7 +2,7 @@ mixin footer()
 	// start footer
 	footer.footer&attributes(attributes)
 		.footer__body
-			.footer__container
+			.footer__container.container
 				nav.footer__nav
 					h3.footer__title.title.title_small Каталог
 					ul.footer__list
@@ -79,10 +79,11 @@ mixin footer()
 					a.contacts__button.button.button_biggest(href="mailto:shop@tyres.spb.ru") Написать нам
 
 		.footer__bottom
-			.footer__container
+			.footer__container.container
 				.footer__copyright &copy; 2005 – 2019 ООО «Эксклюзив»
 
-				a.footer__privacy(href="#") Политика обработки персональных данных
+				a.footer__privacy(href="#") 
+					span Политика обработки персональных данных
 
 				.footer__payments.payments
 					span.payments__text Принимаем к оплате:

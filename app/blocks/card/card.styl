@@ -1,25 +1,24 @@
 .card
-	// margin-left 10px
-	// margin-right 10px
-	// padding-top 15px
 	padding-bottom 30px
-	padding-left 0
-	padding-right 0
-	// height 360px
-	+rmin($sm)
+	padding-left 1px
+	padding-right 1px
+
+	+rmin($md)
 		padding-left 0
 		padding-right 0
+		
 	&:hover
 		.card__inner
 			position relative
 			z-index 1
 			box-shadow 0 10px 36px rgba(64, 78, 84, 0.15)
 			tr(all .3s ease)
+			
 	&__inner
 		position relative
-		// margin-left 10px
-		// margin-right 10px
-		padding-top 15px
+		// margin-left -1px
+		// margin-right -1px
+		padding-top 22px
 		padding-right 25px
 		padding-bottom 20px
 		padding-left 25px
@@ -31,27 +30,39 @@
 		background-color #ffffff
 		box-shadow none
 		tr(all .3s ease)
-		+rmin($sm)
+		
+		+rmin($md)
 			padding-top 25px
 			padding-left 15px
 			padding-right 15px
 			padding-bottom 15px
 			box-shadow none
+			
 	&__size
 		position absolute
 		top 15px
 		right 25px
 		color #7f878e
 		font-weight 600 
+		
+		+rmin($md)
+			top 16px
+			right 14px
+		
 	&__meta
 		position absolute
-		top 60px
+		top 55px
 		right 25px
+		
+		+rmin($md)
+			top 56px
+			right 14px
 
 	&__fav
-		margin-bottom 18px
+		margin-bottom 12px
 		display block
 		cursor pointer
+		
 	&__fav_active
 		.card__fav-icon
 			stroke #268AE1
@@ -62,13 +73,15 @@
 		height 20px
 		fill transparent
 		stroke #93A2AD
+		
 	&__views
 		margin-bottom 12px
 		display block
-		cursor pointer		
+		cursor pointer
+			
 	&__views-icon
-		width 18px
-		height 13px
+		width 20px
+		height 16px
 		fill transparent
 			
 	&__compare
@@ -76,7 +89,6 @@
 		cursor pointer
 		
 	&__compare-icon
-		
 		width 20px
 		height 20px
 
@@ -86,16 +98,21 @@
 		
 	&__season
 		position absolute
-		top calc(50% - 10px)
+		top calc(50% + 3px)
 		left 25px
 		width 21px
 		height 18px
 		transform translateY(-50%)
+		
+		+rmin($md)
+			top calc(50% + 3px)
+			left 12px
+			
+		
 		&:hover
 			.card__season-text
 				visibility visible
 				opacity 1
-				// transform translateX(0%)
 				tr(all .3s ease)
 		
 	&__season-icon
@@ -117,6 +134,7 @@
 		opacity 0
 		transform translateY(-50%)
 		tr(all .3s ease)
+		
 		&:after
 			position absolute
 			top 50%
@@ -136,7 +154,7 @@
 		max-width 96px
 
 	&__badge
-		margin-bottom 5px
+		margin-bottom 6px
 
 	&__title
 		margin-bottom 10px
@@ -147,6 +165,10 @@
 		line-height 1.5
 		text-decoration none
 		tr(all .3s ease)
+		
+		+rmin($md)
+			margin-bottom 7px
+
 		span
 			padding-bottom 2px
 			box-shadow none
@@ -176,10 +198,12 @@
 		color #ff9d0a
 		&:after
 			retinaSprite($presence_low_group)
+			
 	&__availability_high
 		color #6bbe38
 		&:after
 			retinaSprite($presence_high_group)
+			
 	&__availability_none
 		color #ff4e4e
 		&:after
@@ -197,16 +221,16 @@
 		font-size 18px
 		font-weight 600
 		white-space nowrap
-		// line-height 24px
 			
 	&__button
 		padding-top 15px
 		padding-right 20px
 		padding-bottom 8px
-		padding-left 20px
+		padding-left 16px
 		font-size 11px
 		white-space nowrap
-		+rmin($sm)
+		
+		+rmin($md)
 			padding-left 13px
 			padding-right 12px
 		

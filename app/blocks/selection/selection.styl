@@ -5,8 +5,11 @@
 	&__container
 		padding-top 20px
 		padding-bottom 0
-		+rmin($sm)
-			padding-bottom 30px
+		
+		+rmin($md)
+			padding-top 31px
+			padding-bottom 41px
+			
 		+rmin($lg)
 			padding-top 50px
 			padding-bottom 50px	
@@ -14,11 +17,30 @@
 	// &__row
 		
 	&__col 
-		margin-bottom 30px
+		margin-bottom 20px
+		
 		+rmin($lg)
 			margin-bottom 0
+			
+	&__col_compute
+		position relative
+		z-index 2
+		margin-bottom 36px
+		padding-top 8px
+		
+		+rmin($md)
+			margin-bottom 0
+			padding-top 10px
+		
+
+		.selection__title
+			margin-bottom 10px
+			
+			+rmin($md)
+				margin-left 4px
+		
 	&__title	
-		margin-bottom 10px
+		margin-bottom 6px
 		
 		+rmin($md)
 			font-size 18px
@@ -27,11 +49,13 @@
 			margin-bottom 20px
 
 	&__title_main
+		
 		+rmin($md)
 			display none
 
 	&__title_inner
 		display none
+		
 		+rmin($md)
 			display block
 			
@@ -41,9 +65,12 @@
 	// 	box-shadow 0 4px 10px rgba(78, 88, 98, 0.1)
 			
 	&__filter
+		
 		+rmin($md)
 			border 1px solid #dadadf
-			padding-bottom 20px
+			margin-left -7px
+			margin-right -5px
+			padding-bottom 14px
 			background-color #ffffff
 			border-radius 4px
 			box-shadow 0 4px 10px rgba(78, 88, 98, 0.1)
@@ -54,6 +81,7 @@
 			height 350px
 		
 		&:hover
+			
 			+rmin($md)
 				box-shadow 0 12px 24px rgba(73, 91, 106, 0.06)
 				tr(all .3s ease)
@@ -68,6 +96,7 @@
 		border-radius 4px
 		border 1px solid #dadadf
 		box-shadow 0 4px 10px rgba(78, 88, 98, 0.1)
+		
 		+rmin($md)
 			border none
 			padding-left 0
@@ -79,30 +108,54 @@
 		// 	min-height 306px
 		
 		&.selection__tabs
+			margin-left -4px
+			margin-right -4px
 			padding-bottom 0
 			
 	&__block_compute
-		padding-left 15px
-		padding-right 15px
+		margin-left -4px
+		margin-right -4px
+
+		+rmin($md)
+			margin-left 0
+			margin-right 0
+			padding-bottom 0
+			
+			
+
+		.selection__filter
+			+rmin($md)
+				margin-left 4px
+				margin-right 7px
+				padding-bottom 23px
 		
 		.selection__block_inner
-			padding-top 20px
+			padding-top 18px
+			padding-left 28px
+			padding-right 28px
+			background transparent 
+			
 			+rmin($md)
-				padding-top 30px
+				padding-top 29px
+				
 			+rmin($lg)
 				padding-top 20px
 				padding-bottom 0
 				
 		.form__col
+			
 			+rmin($md)
-				width 33%
+				margin-bottom 10px
+				width 32.2%
 			
 		.form__field_select
+			
 			+rmin($md)
 				max-width 200px
 			
 		.form__row_select
 			.form__col
+				
 				+rmin($lg)
 					width 50%
 			
@@ -110,34 +163,77 @@
 			// +rmin($md)
 			// 	margin-top 0
 			.form__col
+				
 				+rmin($md)
 					padding-left 5px
 					padding-right 5px
 					width 25%
+					
 				+rmin($lg)
 					width 45%
 
 		.form__row_checkbox
+			
+			+rmin($md)
+				margin-top 1px
+				width 104%
+			
 			+rmin($lg)
 				margin-right -10px
 				justify-content space-between
 				
 			.form__col
+				
 				+rmin($md)
-					width 30%
+					// width 29.7%
+					width auto
+					
 				+rmin($lg)
 					width auto
 					width 50%
-
-				
-		
 			
-	
+			.form__checkbox
+				
+				& + label
+					
+					+rmin($md)
+						font-size 14px
+						
+					&:after,
+					&:before
+						+rmin($md)
+							top 50%
+							
+
+		
+		.form__field_checkbox
+			+rmin($md)
+				margin-bottom 0
+				
+		.form__row_buttons_compute
+			
+			.form__submit,				
+			.form__reset
+				
+				+rmin($md)
+					max-width 141px
+				
+			.form__reset
+				
+				+rmin($md)
+				
+					max-width 122px
+
+
 			
 	&__block_inner
 		border none
 		margin-bottom 0
-		padding-top 30px
+		padding-top 21px
+		
+		padding-left 22px
+		padding-right 22px
+
 		padding-bottom 0px
 		box-shadow none
 		+rmin($md)
@@ -151,19 +247,23 @@
 .select-disks
 	position relative
 	// padding-bottom 20px
+		
 	+rmin($md)
 		z-index 1
 	
 	.selection__title
+		
 		+rmin($md)
-			margin-left -15px	
+			margin-left -6px
+			margin-bottom 10px
 
 	.selection__image
 		position absolute
-		bottom -30px
+		bottom -20px
 		right 0
 		width 32px
 		height 44px
+		
 		+rmin($md)
 			// right -15px
 			bottom 1px
@@ -177,7 +277,17 @@
 	.selection__block
 		padding-bottom 0
 		
+		+rmin($md)
+			margin-left 0
+			margin-right 0
+
 	.selection__block_inner
+		+rmin($md)
+			padding-top 29px
+			padding-left 29px
+			padding-right 29px
+			
+		
 		+rmin($lg)
 			padding-left 0
 			padding-right 0
@@ -186,67 +296,84 @@
 .select-tires
 	
 	.selection__image
+		
+		+rmin($md)
+			right 11px
+
 		+rmin($lg)
 			bottom 30px
 			bottom 1px
 	
 	.selection__filter
+		
 		+rmin($lg)
 			margin-top 58px
-			// height 348px
-			// height 332px
 			height 312px
 	
 	.tabs__nav
+		
 		+rmin($lg)
 			position absolute
 			top -37px
 			left 0
 			right 0
 			border-radius 6px 6px 0 0  
+			
 		.tabs__item
 			&.active
 				.tabs__link
+					
 					+rmin($lg)
 						background #FFF
 						color #212121
 						
 			&:last-child
+				
 				+rmin($lg)
-					border-radius 0 6px 0 0  
+					border-radius 0 6px 0 0
+					
 				.tabs__link
+					
 					+rmin($lg)
 						background #EAEAEA
 						border-radius 0px 6px 0 0px
 						
 				&.active
 					.tabs__link
+						
 						+rmin($lg)
 							border none
 							background #fff
 							border-radius 0px 6px 0 0px
+							
 			&:first-child
+				
 				+rmin($lg)
 					border-radius 6px 0 0 6px  
 					
 				.tabs__link
+					
 					+rmin($lg)
 						background #EAEAEA
 						border-radius 6px 0 0 0
+						
 				&.active
 					.tabs__link
+						
 						+rmin($lg)
 							border none
 							background #fff 
 							border-radius 6px 0 0 0
 
 		.tabs__link
+			
 			+rmin($lg)
 				border none
 				padding-bottom 10px
 				background #EAEAEA
 
 			span
+				
 				+rmin($lg)
 					border-bottom 1px dotted #212121
 	
@@ -254,6 +381,7 @@
 
 
 	.selection__block_inner
+		
 		+rmin($lg)
 			padding-top 57px
 			padding-top 40px
@@ -264,10 +392,12 @@
 			
 	.form__row_select
 		.form__col
+			
 			+rmin($lg)
 				width 33%
 				
 		.form__col_full
+			
 			+rmin($lg)
 				width 100%
 				
@@ -275,15 +405,18 @@
 				
 		.selectize-control.single 
 			.selectize-input
+				
 				+rmin($lg)
 					box-shadow 0px 4px 10px rgba(78, 88, 98, 0.1)
 				&:focus
+					
 					+rmin($lg)
 						border 2px solid #268AE1
 						border-radius 4px
 				
 	.form__row_buttons
 		.form__col
+			
 			+rmin($lg)
 				// width 50%
 				margin-top 24px
@@ -292,6 +425,7 @@
 				
 	.form__label
 		display none
+		
 		+rmin($lg)
 			display block
 			
@@ -307,11 +441,13 @@
 			text-decoration none
 			text-transform none
 		span
+			
 			+rmin($lg)
 				border-bottom 1px dotted #5D5F63
 				display inline-block
 		&:after
 			display none
+			
 			+rmin($lg)
 				position absolute
 				top calc(50% + 1px)
@@ -326,41 +462,49 @@
 
 
 .select-disks
+	
 	+rmin($md)
 		z-index 1
-	.tabs__item
 		
-		+rmin($md)
-			max-width 330px
+	.tabs__nav
+		
+		.tabs__item
+		
+			+rmin($md)
+				max-width 165px
 		
 	.selection__col
 		
 		+rmin($md)
 			margin-bottom 0
+			padding-top 11px
 
 	.selection__image
 		width 32px
 		height 44px
+		
 		+rmin($md)
+			right 11px
 			width 80px
 			height 109px
+			
 		+rmin($lg)
 			bottom 40px
 			bottom 1px
 		
 	.selection__block_inner
-		+rmin($md)
-			padding-left 0
-			padding-right 150px
-			
 		
+		+rmin($md)
+			padding-left 19px
+			padding-right 195px
+			
 		+rmin($lg)
 			padding-top 20px
-			
 			padding-right 0
 			
 
 	.form__col
+		
 		+rmin($md)
 			width 33%
 		
@@ -368,9 +512,12 @@
 			width 50%
 			
 	.form__row_buttons
+		
 		+rmin($md)
 			margin-top 0
+			
 		.form__col
+			
 			+rmin($md)
 				padding-left 5px
 				padding-right 5px
@@ -379,12 +526,15 @@
 			+rmin($lg)
 				width 45%
 				
-	// .form__field_select
-	// 	+rmin($md)
-	// 		z-index 0
+	.form__field_select
+		
+		+rmin($md)
+			margin-bottom 20px
+			
 		
 
 	.form__reset
+		
 		+rmin($md)
 			border 1px solid #268ae1
 			background-color #fff
@@ -396,3 +546,10 @@
 			&:hover
 				color #fff
 				background-color #268ae1
+				
+
+	.form__note
+		
+		+rmin($md)
+			margin-top 13px
+		

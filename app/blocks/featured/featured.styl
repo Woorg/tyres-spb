@@ -4,8 +4,9 @@
 		position relative
 		padding-top 30px
 		padding-bottom 10px
-		+rmin($sm)
-			padding-top 40px
+		
+		+rmin($md)
+			padding-top 41px
 		
 		+rmin($lg)
 			padding-top 50px
@@ -13,30 +14,32 @@
 
 	&__title
 		margin-bottom 10px
-		+rmin($sm)
+		
+		+rmin($md)
 			margin-bottom 20px
+			margin-left 4px
 			display flex
-		+rmiт($md)
-			display flex
+			
 		+rmin($lg)
 			margin-bottom 30px
 
 	&__tabs
 		.tabs__nav
+			margin-bottom 8px
+			
 			+rmin($md)
 				position absolute
-				top 40px
-				right 15px
+				top 44px
+				right 21px
 				
 			+rmin($lg)
 				top 54px
 				
+	&__list
 		
-		// .tabs__content
-		// 	position relative
-
-
-	// &__card
+		// +rmin($md)
+		// 	margin-left 3px
+		// 	margin-right 2px
 		
 	&__nav
 		margin-left -20px
@@ -47,17 +50,18 @@
 		resetbutton()
 		position absolute
 		z-index 1
-		top calc(50% - 20px)
+		top calc(50% + 48px)
 		width 40px
 		height 40px
 		box-shadow 0 6px 14px rgba(0, 0, 0, 0.08)
 		background-color #ffffff
 		border-radius 50%
 		transform translateY(-50%)
-		+rmin($sm)
-			// width 40px
-			// height 40px
+		
+		+rmin($md)
+			top calc(50% + 28px)
 			display none
+			
 	&__arrow-icon
 		position absolute
 		top 50%
@@ -68,15 +72,19 @@
 		
 	&__arrow_prev
 		left 0
-		+rmin($sm)
-			left -5px
+		
+		+rmin($md)
+			left 1px
+			
 		.featured__arrow-icon
 			left calc(50% - 2px)
-			// left 50%
+			
 	&__arrow_next
 		right 0
-		+rmin($sm)
-			right -5px
+		
+		+rmin($md)
+			right 1px
+			
 		.featured__arrow-icon
 			left calc(50% + 2px)
 			// left 50%

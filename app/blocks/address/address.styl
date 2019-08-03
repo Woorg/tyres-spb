@@ -5,7 +5,14 @@
 	padding-bottom 20px
 	display block
 	border-radius 5px
-	background #FFF 
+	background #FFF
+	
+	&:nth-child(even)
+		padding-top 20px
+		padding-left 17px
+		padding-bottom 22px
+		padding-right 10px
+
 	
 	&__street
 		position relative
@@ -16,6 +23,7 @@
 		font-weight 600
 		line-height 1.5
 		text-decoration none
+		
 	&__phone
 		position relative
 		margin-bottom 7px
@@ -25,11 +33,13 @@
 		font-weight 400
 		line-height 1.5
 		text-decoration none
+		
 	&__phone-icon
 		position absolute
 		top 50%
 		left 0
 		fill transparent
+		
 	&__work
 		position relative
 		margin-bottom 15px
@@ -56,10 +66,10 @@
 		
 	&__button
 		margin-right 20px
-		padding-top 11px
-		padding-right 18px
+		padding-top 9px
+		padding-right 24px
 		padding-bottom 8px
-		padding-left 18px
+		padding-left 26px
 		font-size 12px
 		letter-spacing 0.96px
 		color #667887
@@ -72,28 +82,44 @@
 			color #268ae1
 			
 			
+	&__button_second
+		padding-top 12px 
+		padding-left 16px
+		padding-right 16px
+
+
 
 .address_balloon
 	position static
 	border 1px solid #dadadf
-	padding-top 10px
-	width 330px
-	min-height 180px
+	padding-top 9px
+	padding-right 14px
+	padding-bottom 10px
+	padding-left 14px
+	// width 300px
+	
+	width 300px
+	min-height 170px
 	display flex
 	flex-shrink 1
 	flex-direction column
 	background-color #ffffff
 	box-shadow 0 8px 16px rgba(0, 0, 0, 0.1)
+	
 	// +rmin($md)
-	// 	width 350px
+	// 	padding-top 10px
+	// 	padding-left 14px
+	// 	width 349px
+		
 	// +rmin($lg)
 	// 	width 370px 
 	
 	.address__close
 		position absolute
 		z-index 1
-		top 0
-		right 0
+		top -6px
+		right 4px
+		right -10px
 		// width 20px
 		// height 20px
 		color #8B9095
@@ -101,41 +127,99 @@
 		font-weight 600  
 		font-size 14px
 		text-decoration none
+		
+
+		
 	.address__close-icon
 		width 20px
 		height 20px
+		
+	.address__phone
+		margin-bottom 5px
+		padding-left 24px
+		
+		// +rmin($md)
+		// 	margin-left 6px
+		// 	margin-bottom 7px
+		// 	padding-left 33px
+			
+	.address__phone-icon
+		
+		// +rmin($md)
+		// 	width 20px
+		// 	height 20px
+
+	.address__work
+		margin-bottom 0
+		padding-left 24px
+		font-size 12px
+		
+		// +rmin($md)
+		// 	margin-left 6px
+		// 	margin-right -40px
+		// 	padding-left 34px
+		// 	font-size 13px
+
+	.address__work-icon
+		
+		// +rmin($md)
+		// 	width 20px
+		// 	height 20px
+
+
 
 	.address__street
+		// margin-right 20px
 		padding-bottom 10px
 		border-bottom 1px solid #dadadf
 
+		// +rmin($md)
+		// 	margin-left 6px
+		// 	margin-bottom 21px
+		// 	padding-top 9px
+		// 	padding-bottom 21px
+
+
 	.address__w
 		position relative
-		margin auto
+		margin-left 0
+		margin-right 0
 		flex-grow 1
+
 		// +rmin($lg)
 	.address__arrow
 		position absolute
 		// right 40px
-		left 90px
+		left 17px
 		// bottom -10px
-		bottom -28px
+		bottom -20px
 		width 0
 		height 0
 		border-style solid
 		border-width 10px 10px 0 10px
 		border-color #ffffff transparent transparent transparent
-		+rmin($sm)
-			left 78px
-		+rmin($lg)
-			left 68px
+		
+		// +rmin($md)
+		// 	left 78px
+			
+		// +rmin($lg)
+		// 	left 68px
 		
 	.address__buttons
-		margin-top auto
+		margin-top 12px
+		padding-right 22px
 
 	.address__button
+		margin-right 8px
+		padding-top 10px
+		padding-right 22px  
+		padding-left 24px
 		flex-grow 1
 		&:hover
 			background-color #268ae1
 			color #FFF 
 			
+		&:last-child
+			margin-right 0
+			padding-right 16px  
+			padding-left 14px

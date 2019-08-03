@@ -14,20 +14,20 @@ import 'selectize';
 
 	$(function() {
 
-		// let styles = [
-		// 	'padding: 2px 9px',
-		// 	'background: #82B93C',
-		// 	'color: #fff',
-		// 	'display: inline-block',
-		// 	'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2)',
-		// 	'box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 5px 3px -5px rgba(0, 0, 0, 0.5), 0 -13px 5px -10px rgba(255, 255, 255, 0.4) inset',
-		// 	'line-height: 1.56',
-		// 	'text-align: left',
-		// 	'font-size: 16px',
-		// 	'font-weight: 400'
-		// ].join(';');
+		let styles = [
+			'padding: 2px 9px',
+			'background: #82B93C',
+			'color: #fff',
+			'display: inline-block',
+			'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2)',
+			'box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) inset, 0 5px 3px -5px rgba(0, 0, 0, 0.5), 0 -13px 5px -10px rgba(255, 255, 255, 0.4) inset',
+			'line-height: 1.56',
+			'text-align: left',
+			'font-size: 16px',
+			'font-weight: 400'
+		].join(';');
 
-		// console.log('%c developed by igor gorlov https://webjeb.ru', styles);
+		console.log('%c developed by igor gorlov https://webjeb.ru', styles);
 
 
 		// Toggle buttons
@@ -42,20 +42,19 @@ import 'selectize';
 		// Placeholders
 
 		// $('.form__select, .form__field_buttons').each(function () {
-		// 	let placeholder = $(this).data('placeholder');
-		// 	$(this).next().text(placeholder);
+		//  let placeholder = $(this).data('placeholder');
+		//  $(this).next().text(placeholder);
 		// });
 
 		// $('.form__field_buttons').each(function () {
-		// 	let placeholder = $(this).data('placeholder');
-		// 	$(this).find('.form__placeholder').text(placeholder);
+		//  let placeholder = $(this).data('placeholder');
+		//  $(this).find('.form__placeholder').text(placeholder);
 		// });
 
 
 		// Style fields
 
-
-		$('.form__select').selectize({
+		let $select = $('.form__select').selectize({
 			maxItems: 1,
 			onDropdownOpen: function($dropdown) {
 				$('.selectize-dropdown-content').niceScroll({
@@ -70,6 +69,28 @@ import 'selectize';
 				})
 			}
 		});
+
+		// fetch the instance
+		// let selectize = $select.selectize.destroy();
+
+		let selectize = $select.each(function () { // do this for every select with the 'combobox' class
+			$(this)[0].selectize.destroy(); // destroys selectize()
+	   });
+
+
+
+		$('.map__list').niceScroll({
+			cursorborder: "none",
+			cursorcolor: "#268AE1",
+			cursorwidth: "4px",
+			background:"#EEEEEE",
+			autohidemode: false,
+			cursorborderradius: '4px',
+			hwacceleration: true, 
+			railpadding: { top: -2, right: -2, left: 0, bottom: 0 },
+			horizrailenabled: false,
+		});
+
 
 
 
@@ -214,35 +235,35 @@ import 'selectize';
 
 		// Fixed header
 
-		let $header = $('.header');
-		let $page = $('.page');
-		let $windowWidth = $(window).width();
+		// let $header = $('.header');
+		// let $page = $('.page');
+		// let $windowWidth = $(window).width();
 
-		if ( $windowWidth <= 576 )  {
-			$page.css({
-				'padding-top': $('.header').outerHeight()
-			});
-			$header.addClass('header_fixed_true');
-		} else {
-			$page.css({
-				'padding-top': 0
-			});
-			$header.removeClass('header_fixed_true');
-		}
+		// if ( $windowWidth <= 576 )  {
+		//  $page.css({
+		//      'padding-top': $('.header').outerHeight()
+		//  });
+		//  $header.addClass('header_fixed_true');
+		// } else {
+		//  $page.css({
+		//      'padding-top': 0
+		//  });
+		//  $header.removeClass('header_fixed_true');
+		// }
 
-		$(window).resize(function() {
-			if ( $(window).width() <= 576 )  {
-				$page.css({
-					'padding-top': $('.header').outerHeight()
-				});
-				$header.addClass('header_fixed_true');
-			} else {
-				$page.css({
-					'padding-top': 0
-				});
-				$header.removeClass('header_fixed_true');
-			}
-		});
+		// $(window).resize(function() {
+		//  if ( $(window).width() <= 576 )  {
+		//      $page.css({
+		//          'padding-top': $('.header').outerHeight()
+		//      });
+		//      $header.addClass('header_fixed_true');
+		//  } else {
+		//      $page.css({
+		//          'padding-top': 0
+		//      });
+		//      $header.removeClass('header_fixed_true');
+		//  }
+		// });
 
 
 		// Search input
@@ -331,14 +352,21 @@ import 'selectize';
 				responsive: [{
 					breakpoint: 321,
 					settings: {
-						slidesToShow: 1,
+						slidesToShow: 2,
 					}
 				},
 				{
 					breakpoint: 576,
 					settings: {
+						slidesToShow: 2,
+						// arrows: false
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
 						slidesToShow: 3,
-						arrows: false
+						// arrows: false
 					}
 				},
 				{
@@ -637,7 +665,6 @@ import 'selectize';
 			});
 		}
 
-
 		var myMap;
 		var placemarkCollections = {};
 		var placemarkList = {};
@@ -648,10 +675,10 @@ import 'selectize';
 				// 'cityName': 'Санкт-Петербург',
 				'shops': [
 					{'coordinates': [59.861446, 30.287999], 'name': 'Краснопутиловская улица, 46А', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
-					{'coordinates': [59.862227, 30.287230], 'name': 'Броневая улица, 6БК', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
-					{'coordinates': [59.862033, 30.289065], 'name': 'Краснопутиловская улица, 46к2', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
-					{'coordinates': [59.863123, 30.288736], 'name': 'Броневая улица, 6ВУ', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
-					{'coordinates': [59.860261, 30.294834], 'name': 'Кубинская улица, 42', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'}
+					{'coordinates': [59.894119, 30.301628], 'name': 'Митрофаньевское шоссе, 20В', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
+					{'coordinates': [59.901983, 30.282529], 'name': 'улица Ивана Черных, 16', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
+					{'coordinates': [59.904629, 30.269219], 'name': 'Бумажная улица, 10', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'},
+					{'coordinates': [59.908481, 30.260225], 'name': 'Лифляндская улица, 3М', 'phone': '+7 (812) 320-91-40', 'hours': 'пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00'}
 
 				]
 			}
@@ -666,13 +693,14 @@ import 'selectize';
 				center: [59.861446, 30.287999],
 				zoom: 13,
 				controls: [ 'smallMapDefaultSet'],
-				zoomMargin: [20]
+				// zoomMargin: [20],
+				behaviors: ['default', 'scrollZoom']
 			});
 
 			// Создание макета балуна
 			var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
 				'<div class="address address_balloon"><div class="address__w">' +
-				'<a class="address__close" href="#"><svg class="address__close-icon"><use xlink:href="assets/images/icon.svg#icon_close-icon"></use></svg></a><div class="address__arrow"></div>' +			
+				'<a class="address__close" href="#"><svg class="address__close-icon"><use xlink:href="assets/images/icon.svg#icon_close-icon"></use></svg></a><div class="address__arrow"></div>' +         
 				 '$[[options.contentLayout observeSize ]]' +
 				 '' +
 				'</div></div>', {
@@ -793,11 +821,11 @@ import 'selectize';
 				for (var c = 0; c < shopList[i].shops.length; c++) {
 					var shopInfo = shopList[i].shops[c];
 		 
-				 	var	shopPhone = shopInfo.phone.replace(/[-+()\s]/g, '');
+					var shopPhone = shopInfo.phone.replace(/[-+()\s]/g, '');
 
-					var shopPlacemark = new ymaps.Placemark(
-						shopInfo.coordinates,
-						{
+					// shopInfo.coordinates
+
+					var shopPlacemark = new ymaps.Placemark(shopInfo.coordinates, {
 							balloonContentHeader: '<a href="#" class="address__street">' + shopInfo.name + '</a>',
 
 							// Зададим содержимое основной части балуна.
@@ -819,16 +847,20 @@ import 'selectize';
 							iconLayout: 'default#imageWithContent',
 							// Своё изображение иконки метки.
 							iconImageHref: 'assets/images/general/marker-icon.png', // картинка иконки
-							iconImageSize: [39, 39], // размеры картинки
-							iconImageOffset: [-6, -10], // смещение картинки
+							iconImageSize: [52, 52], // размеры картинки
+							iconImageOffset: [-52, -52], // смещение картинки
 							balloonShadow: false,
 							balloonLayout: MyBalloonLayout,
 							balloonContentLayout: MyBalloonContentLayout,
+							// balloonContentSize: [300, 170],
+							balloonOffset: [-70, -238],
+							// balloonImageSize: [282, 170],
 							balloonPanelMaxMapArea: 0,
+							// balloonAutoPan: true,
+
 							// Не скрываем иконку при открытом балуне.
 							hideIconOnBalloonOpen: false,
 							// И дополнительно смещаем балун, для открытия над иконкой.
-							balloonOffset: [-100, -230]
 
 						}
 					);
@@ -845,6 +877,17 @@ import 'selectize';
 		 
 				// Добавляем коллекцию на карту
 				myMap.geoObjects.add(cityCollection);
+
+				myMap.geoObjects.events.add('click', function (e) {
+
+					var geoObject = e.get('target');
+					var projection = myMap.options.get('projection');
+					var position = geoObject.geometry.getCoordinates();
+					var position_global_px = myMap.converter.pageToGlobal(projection.fromGlobalPixels(position, myMap.getZoom()));
+					var position_local_px = myMap.converter.globalToPage(projection.toGlobalPixels(position,myMap.getZoom()));
+					myMap.setGlobalPixelCenter([position_global_px[0] + position_local_px[0]  , position_global_px[1] + position_local_px[1]   ]);
+				}, this);
+
 		 
 			}
 		 
@@ -873,6 +916,11 @@ import 'selectize';
 		$(document).on('click', '.address__street', function (e) {
 			e.preventDefault();
 		 
+			$('.map__close').toggleClass('map__close_active');
+			$('.map__addresses').toggleClass('map__addresses_hide');
+			$('.map__close').text('Развернуть');
+
+
 			var cityId = $('select#cities').val();
 			var shopId = $(this).data('shop');
 		 
@@ -881,6 +929,11 @@ import 'selectize';
 
 		// Клик на кнопку
 		$(document).on('click', '.address__button_route', function () {
+
+			$('.map__close').toggleClass('map__close_active');
+			$('.map__addresses').toggleClass('map__addresses_hide');
+			$('.map__close').text('Развернуть');
+
 		 
 			var cityId = $('select#cities').val();
 			var shopId = $(this).data('shop');
@@ -925,32 +978,6 @@ import 'selectize';
 				slick.$slides.css('height', slick.$slideTrack.height() + 'px');
 			});
 		}
-
-
-
-		// Select
-
-		// $.fn.select2.defaults.set( "width", "100%" );
-
-		// $('select').select2({
-		// 	width: 'element',
-		// 	minimumResultsForSearch: Infinity 
-		// })
-		// .on("select2:open", function () {
-		// 	$('.select2-results__options').niceScroll({
-		// 		cursorborder: "none",
-		// 		cursorcolor: "#90A0B7",
-		// 		cursorwidth: "4px",
-		// 		autohidemode: false,
-		// 		cursorborderradius: '4px',
-		// 		hwacceleration: true, 
-		// 		// railoffset: '5px',
-		// 		railpadding: { top: 0, right: 2, left: 0, bottom: 0 },
-		// 		// cursorborder: "1px solid #5fdfe8",
-		// 		horizrailenabled: false,
-		// 	});
-		// });
-
 
 
 

@@ -4,16 +4,21 @@
 	&__body
 		padding-top 30px
 		padding-bottom 30px
-		+rmin($lg)
+		
+		+rmin($md)
 			padding-top 40px
 			padding-bottom 20px
+			
 	&__container
-		@extends .in
 		padding-left 15px
 		padding-right 15px
 		display flex
 		flex-flow wrap
 		justify-content space-between
+		
+		// +rmin($lg)
+		// 	align-items flex-start
+			
 		+rmin($lg)
 			align-items flex-start
 		
@@ -24,20 +29,29 @@
 		flex-shrink 0
 		flex-basis 130px
 		max-width 160px 
-		+rmin($sm)
+		
+		+rmin($md)
 			max-width 200px
+			
 		+rmin($lg)
 			margin-bottom 0
 
+	&__nav
+		margin-bottom 10px
+
 	&__title
 		margin-bottom 10px
-		+rmin($sm)
+		
+		+rmin($md)
 			margin-bottom 20px
 
 	// &__list
 		
 	&__item
-		margin-bottom 10px
+		margin-bottom 11px
+		&:last-child
+			margin-bottom 0
+			
 	&__link
 		position relative
 		
@@ -54,7 +68,8 @@
 			
 
 	&__contacts
-		+rmin($sm)
+		
+		+rmin($md)
 			margin-bottom 0 
 			max-width 100%
 			flex-basis 100%
@@ -62,21 +77,24 @@
 		+rmin($lg)
 			flex-basis 130px
 
-
 	&__bottom
 		background-color #fafafa
 		padding-top 20px
 		padding-bottom 25px
 		color #6d7378
 		font-family $a
-		font-weight 500  
+		font-weight 500
 		line-height 1.714
-		+rmin($xl)
+		
+		+rmin($lg)
 			padding-top 30px
 			padding-bottom 30px
+		
 		.footer__container
-			+rmin($sm)
+		
+			+rmin($md)
 				justify-content flex-start
+		
 			+rmin($lg)
 				position relative
 				align-items center
@@ -88,7 +106,7 @@
 		
 	&__copyright
 		position relative
-		margin-bottom 20px
+		margin-bottom 12px
 		&:after
 			position absolute
 			content ''
@@ -98,10 +116,11 @@
 			height 20px
 			background-color #eeeeee
 			transform translateY(-50%)
+			
 			+rmin($lg)
 				right -30px
 			
-		+rmin($sm)
+		+rmin($md)
 			margin-right 20px
 		
 		+rmin($lg)
@@ -110,17 +129,21 @@
 
 	&__privacy
 		margin-bottom 20px
-		+rmin($sm)
+		
+		+rmin($md)
 			margin-left 20px
+			
 		+rmin($lg)
 			margin-left 30px
 			margin-bottom 0
+			
 		&:hover
-			box-shadow inset 0 -1px 0 0 #6d7378
-
+			span
+				box-shadow inset 0 -1px 0 0 #6d7378
 		
 	&__payments
-		+rmin($sm)
+		
+		+rmin($md)
 			width 100%
 			
 		+rmin($lg)
@@ -133,5 +156,3 @@
 		+rmin($xl)
 			margin-top 0
 			margin-left auto
-
-

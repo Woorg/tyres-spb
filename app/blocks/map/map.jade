@@ -14,7 +14,7 @@ mixin map()
 
 					.map__top
 						h2.map__title.title Адреса центров “Эксклюзив”
-					.map__list(data-simplebar data-simplebar-auto-hide="false")
+					.map__list
 						.map__item.address
 							a.address__street(href="#" data-shop="0") ул. Краснопутиловская, д.46А
 							.address__phone
@@ -25,10 +25,10 @@ mixin map()
 								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
 							.address__buttons
 								button.address__button.address__button_route.button( data-shop="0") Маршрут
-								a.address__button.button(href="tel:+78123209140") Позвонить
+								a.address__button.address__button_second.button(href="tel:+78123209140") Позвонить
 
 						.map__item.address
-							a.address__street(href="#" data-shop="1") Броневая улица, 6БК
+							a.address__street(href="#" data-shop="1") Митрофаньевское шоссе, 20В
 							.address__phone
 								+icon('phone', true).address__phone-icon
 								| +7 (812) 320-91-40
@@ -37,10 +37,10 @@ mixin map()
 								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
 							.address__buttons
 								button.address__button.address__button_route.button( data-shop="1") Маршрут
-								a.address__button.button(href="tel:+78123209140") Позвонить
+								a.address__button.address__button_second.button(href="tel:+78123209140") Позвонить
 
 						.map__item.address
-							a.address__street(href="#" data-shop="2") Краснопутиловская улица, 46к2
+							a.address__street(href="#" data-shop="2") улица Ивана Черных, 16
 							.address__phone
 								+icon('phone', true).address__phone-icon
 								| +7 (812) 320-91-40
@@ -49,10 +49,10 @@ mixin map()
 								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
 							.address__buttons
 								button.address__button.address__button_route.button( data-shop="2") Маршрут
-								a.address__button.button(href="tel:+78123209140") Позвонить
+								a.address__button.address__button_second.button(href="tel:+78123209140") Позвонить
 
 						.map__item.address
-							a.address__street(href="#" data-shop="3") Броневая улица, 6ВУ
+							a.address__street(href="#" data-shop="3") Бумажная улица, 10
 							.address__phone
 								+icon('phone', true).address__phone-icon
 								| +7 (812) 320-91-40
@@ -61,10 +61,10 @@ mixin map()
 								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
 							.address__buttons
 								button.address__button.address__button_route.button( data-shop="3") Маршрут
-								a.address__button.button(href="tel:+78123209140") Позвонить
+								a.address__button.address__button_second.button(href="tel:+78123209140") Позвонить
 
 						.map__item.address
-							a.address__street(href="#" data-shop="4") Кубинская улица, 42
+							a.address__street(href="#" data-shop="4") Лифляндская улица, 3М
 							.address__phone
 								+icon('phone', true).address__phone-icon
 								| +7 (812) 320-91-40
@@ -73,7 +73,7 @@ mixin map()
 								| пн.-пт. 09:00 - 21:00, сб.-вс. 10:00 - 20:00
 							.address__buttons
 								button.address__button.address__button_route.button(data-shop="4") Маршрут
-								a.address__button.button(href="tel:+78123209140") Позвонить
+								a.address__button.address__button_second.button(href="tel:+78123209140") Позвонить
 
 
 	// end map

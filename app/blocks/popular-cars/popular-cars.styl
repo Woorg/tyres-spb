@@ -3,15 +3,19 @@
 	&__container
 		padding-top 30px
 		padding-bottom 30px
-		+rmin($sm)
+		
+		+rmin($md)
 			padding-top 40px
 			padding-bottom 40px
+			
 		+rmin($lg)
 			padding-top 50px
 			padding-bottom 50px
 		
 	&__title
 		margin-bottom 20px
+		padding-left 4px
+		
 		+rmin($lg)
 			margin-bottom 30px
 
@@ -32,8 +36,10 @@
 		text-decoration none
 		box-shadow none
 		tr(all .3s ease)
-		+rmin($sm)
+		
+		+rmin($md)
 			height 140px
+			
 		&:hover
 			z-index 1
 			box-shadow 0 10px 36px rgba(64, 78, 84, 0.08)
@@ -52,27 +58,23 @@
 		align-items center
 		flex-direction column
 		flex-wrap nowrap
-		+rmin($sm)
+		
+		+rmin($md)
 			padding-bottom 20px
+			
 	&__brand
-		// position absolute
-		// top 50%
-		// left 50%
 		padding-top 15px
 		display flex
 		justify-content center
 		align-items flex-start
-		// transform translate(-50%, -50%)
-		+rmin($sm)
+		
+		+rmin($md)
 			padding-top 30px
 		
 		img
 			max-width 80%
-			+rmin($sm)
+			+rmin($md)
 				max-width 100%
-
-	// &__logo
-	// 	margin-bottom 15px
 
 	&__name
 		margin-top auto 
@@ -89,24 +91,28 @@
 		background-color #ffffff
 		border-radius 50%
 		transform translateY(-50%)
-		+rmin($sm)
+		
+		+rmin($md)
 			width 40px
 			height 40px
+			
 	&__arrow-icon
 		position absolute
 		top 50%
 		left 50%
 		width 8px
 		height 12px
-		
 		transform translate(-50%, -50%) 
 		
 	&__arrow_prev
 		left -15px
+		
 		.popular-cars__arrow-icon
 			left calc(50% - 2px)
+			
 	&__arrow_next
 		right -15px
+		
 		.popular-cars__arrow-icon
 			left calc(50% + 2px)
 			transform translate(-50%, -50%)  rotate(180deg) 

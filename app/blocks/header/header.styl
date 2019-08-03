@@ -1,14 +1,17 @@
 .header
 	position relative
-	z-index 4
+	z-index 5
 	background-color #ffffff
 	box-shadow 0 0 16px rgba(0, 0, 0, 0.08)
 	&__topline
 		padding-left 15px
 		padding-right 15px
-		+rmin($sm)
+		
+		+rmin($md)
 			padding-left 0
 			padding-right 0
+			
+
 	&__body
 		position relative
 		z-index 3
@@ -16,27 +19,41 @@
 		border-bottom 1px solid #E1E1E1
 		// padding-left 15px
 		// padding-right 15px 
-		height 58px
-		+r($sm)
-			padding-top 0
-			padding-bottom 0 
-		+rmin($sm)
+		padding-top 0
+		padding-bottom 0 
+		height 53px
+
+		+rmin($md)
 			padding-top 15px
 			padding-bottom 0
 			height auto
-		+rmin($xl)
+			
+		+rmin($lg)
 			padding-top 12px
+			padding-left 15px
 
 	&__container
-		@extends .in
+		// @extends .in
+		padding-left 0
+		padding-right 0
 		display flex
-		+rmin($sm)
+		
+		+rmin($md)
+			padding-left 15px
+			padding-right 15px
 			flex-wrap wrap
+			
+		+rmin($lg)
+			padding-left 20px
+			padding-right 20px
 		
 	&__logo
-		margin-top 14px
+		// margin-top 14px
+		margin-top -5px
+		
 		margin-right 10px
-		margin-bottom 10px
+		// margin-bottom 10px
+		margin-bottom 0
 		margin-left 10px
 		max-width 128px
 		display flex
@@ -45,37 +62,43 @@
 		flex-basis 128px
 		width 100%
 		display block
-		+rmin($sm)
+		
+		+rmin($md)
 			margin-top 0
 			margin-right 20px
 			margin-bottom 0
 			margin-left 0
-			max-width 206px
+			max-width 210px
+			
 		+rmin($xl)
 			max-width 245px
 	
 	&__search
+		margin-top -5px
 		min-width 104px
-		+rmin($sm)
-			margin-right 26px
-			min-width 170px
-			max-width 240px
-			height 44px
+		
 		+rmin($md)
-			max-width 400px
-		+rmin($xl)
+			margin-top 2px 
+			margin-right 26px
+			max-width 270px
+			height 44px
+			
+		+rmin($lg)
 			max-width 400px
 		
 	&__social
 		display none
 	&__social_show
-		+rmin($xl)
+		
+		+rmin($lg)
 			display flex
 
 	&__contacts
 		display none
-		+rmin($sm)
+		
+		+rmin($md)
 			margin-left auto
+			margin-right 10px
 			display block
 			
 
@@ -83,25 +106,30 @@
 		display flex
 		flex-grow 1
 		align-items center
-		+rmin($sm)
+		
+		+rmin($md)
 			position relative
 			z-index 1
 			flex-wrap nowrap
 
 	&__nav
 		order -1
-		+rmin($sm)
-			margin-top 18px
+		
+		+rmin($md)
+			margin-top 14px
+			margin-left 5px
 			order unset
-		+rmin($xl)
+			
+		+rmin($lg)
 			margin-top 12px
 		
 	&__button
 		margin-bottom 20px
 		padding-top 12px
-		padding-right 10px
+		padding-right 12px
 		padding-bottom 9px
-		padding-left 10px
+		padding-left 12px
+		font-size 13px
 
 
 .header_fixed_true

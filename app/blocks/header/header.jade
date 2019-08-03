@@ -6,7 +6,7 @@ mixin header()
 	// start header
 	header.header&attributes(attributes)
 		.header__topline.topline
-			.topline__container
+			.topline__container.container
 				.topline__city
 					+icon('city-icon', true).topline__city-icon
 					.topline__city-text Ваш город:
@@ -57,8 +57,7 @@ mixin header()
 						a.topline__user-logout(href="#") Выход
 		
 		.header__body
-			.header__container
-
+			.header__container.container
 				.header__w
 
 					a.header__logo(href="#")
