@@ -6,8 +6,8 @@
 		padding-bottom 30px
 		
 		+rmin($md)
-			padding-top 40px
-			padding-bottom 20px
+			padding-top 31px
+			padding-bottom 14px
 			
 	&__container
 		padding-left 15px
@@ -16,8 +16,9 @@
 		flex-flow wrap
 		justify-content space-between
 		
-		// +rmin($lg)
-		// 	align-items flex-start
+		+rmin($md)
+			padding-left 19px
+			justify-content flex-start
 			
 		+rmin($lg)
 			align-items flex-start
@@ -38,6 +39,37 @@
 
 	&__nav
 		margin-bottom 10px
+		
+		&:nth-child(1)
+
+			+rmin($md)
+				max-width 153px
+				flex-basis auto
+				
+		&:nth-child(2)
+
+			+rmin($md)
+				max-width 202px
+				flex-basis auto
+				
+		&:nth-child(3)
+
+			+rmin($md)
+				max-width 112px
+				flex-basis auto
+
+		&:nth-child(4)
+
+			+rmin($md)
+				max-width 132px
+				flex-basis auto
+				
+		&:nth-child(5)
+
+			+rmin($md)
+				max-width 135px
+				flex-basis auto
+
 
 	&__title
 		margin-bottom 10px
@@ -70,6 +102,7 @@
 	&__contacts
 		
 		+rmin($md)
+			margin-top 25px
 			margin-bottom 0 
 			max-width 100%
 			flex-basis 100%
