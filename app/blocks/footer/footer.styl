@@ -9,6 +9,10 @@
 			padding-top 31px
 			padding-bottom 14px
 			
+		+rmin($lg)
+			padding-top 41px
+			padding-bottom 0
+			
 	&__container
 		padding-left 15px
 		padding-right 15px
@@ -21,6 +25,7 @@
 			justify-content flex-start
 			
 		+rmin($lg)
+			padding-left 16px
 			align-items flex-start
 		
 	&__nav,
@@ -46,17 +51,28 @@
 				max-width 153px
 				flex-basis auto
 				
+			+rmin($lg)
+				max-width 185px
+			
+
+
 		&:nth-child(2)
 
 			+rmin($md)
 				max-width 202px
 				flex-basis auto
 				
+			+rmin($lg)
+				max-width 240px
+
 		&:nth-child(3)
 
 			+rmin($md)
 				max-width 112px
 				flex-basis auto
+			
+			+rmin($lg)
+				max-width 148px
 
 		&:nth-child(4)
 
@@ -64,11 +80,17 @@
 				max-width 132px
 				flex-basis auto
 				
+			+rmin($lg)
+				max-width 175px
+				
 		&:nth-child(5)
 
 			+rmin($md)
 				max-width 135px
 				flex-basis auto
+				
+			+rmin($lg)
+				max-width 171px
 
 
 	&__title
@@ -102,12 +124,13 @@
 	&__contacts
 		
 		+rmin($md)
-			margin-top 25px
+			margin-top 8px
 			margin-bottom 0 
 			max-width 100%
 			flex-basis 100%
 			
 		+rmin($lg)
+			margin-top -1px
 			flex-basis 130px
 
 	&__bottom
@@ -120,7 +143,7 @@
 		line-height 1.714
 		
 		+rmin($lg)
-			padding-top 30px
+			padding-top 22px
 			padding-bottom 30px
 		
 		.footer__container

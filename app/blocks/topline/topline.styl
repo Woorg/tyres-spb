@@ -22,8 +22,8 @@
 			padding-right 15px
 			
 		+rmin($md)
-			padding-top 0px
-			padding-bottom 0px
+			padding-top 3px
+			padding-bottom 3px
 			padding-left 0
 			padding-right 15px
 			
@@ -67,8 +67,11 @@
 			margin-right 24px
 			min-width 150px 
 			max-width 162px 
+			
 		+rmin($lg)
-			min-width 200px 
+			margin-left 3px
+			padding-left 32px
+			min-width 246px 
 			max-width 370px
 			flex-grow 0
 			flex-basis auto
@@ -123,6 +126,9 @@
 				height 100%
 				overflow inherit
 				display block
+				
+			+rmin($lg)
+				padding-bottom 1px
 				
 
 			&:after
@@ -241,6 +247,12 @@
 			padding-left 11px
 			display flex
 			font-size 13px
+		
+		+rmin($lg)
+			padding-top 10px
+			padding-right 18px
+			padding-left 18px
+			font-size 14px	
 
 	&__personal
 		display flex
@@ -251,7 +263,10 @@
 		
 		+rmin($md)
 			margin-right 0
-			margin-left 14px
+			margin-left 12px
+			
+		+rmin($lg)
+			margin-left 21px
 		
 	&__user
 		position relative
@@ -264,7 +279,7 @@
 		
 		+rmin($md)
 			padding-right 6px
-			padding-left 33px
+			padding-left 34px
 			display flex
 				
 		+rmin($lg)
@@ -310,6 +325,7 @@
 			display none
 		
 		+rmin($lg)
+			padding-left 17px
 			display block
 		
 		

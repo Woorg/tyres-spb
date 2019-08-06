@@ -60,11 +60,14 @@
 			display block
 		
 	&__list
+		margin-bottom 0
 		display flex
 		
 		+rmin($md)
 			flex-flow row nowrap
 			justify-content space-between
+		
+		
 
 	&__item
 		position relative
@@ -77,6 +80,8 @@
 			
 			+rmin($md)
 				margin-left 0
+				
+				
 			
 	&__item_active
 		.nav__link
@@ -211,6 +216,9 @@
 			line-height 1.6
 			white-space nowrap
 			
+		+rmin($lg)
+			padding-top 16px
+			
 		&:hover
 			color #268AE1
 			tr(color .3s ease)
@@ -293,6 +301,10 @@
 			display flex
 			flex-flow row nowrap
 			
+		+rmin($lg)
+			margin-left -3px
+			padding-right 13px
+			
 
 .nav_open
 	.nav__burger
@@ -355,6 +367,41 @@
 		&:hover
 			.subnav__list
 				display block
+				
+	.nav__item_more
+		
+		.nav__link
+			
+			+r($md)
+				display none
+		
+		ul
+			+r($md)
+				padding-top 0
+				padding-right 0  
+				padding-bottom 0
+				padding-left 0
+				display block
+				box-shadow none 
+
+			.nav__item
+				
+				+r($md)
+					margin-bottom 15px
+					border-bottom none 
+					padding-left 0
+
+			.nav__link
+				
+				+r($md)
+					padding 0
+					display block
+					text-transform none
+				
+				&:hover
+					
+					+r($md)
+						color #383D42	
 			
 	.nav__link
 		color #383d42

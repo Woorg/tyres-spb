@@ -59,7 +59,7 @@ import 'selectize';
 			onDropdownOpen: function($dropdown) {
 				$('.selectize-dropdown-content').niceScroll({
 					cursorborder: "none",
-					cursorcolor: "#90A0B7",
+					cursorcolor: "#268AE1",
 					cursorwidth: "4px",
 					autohidemode: false,
 					cursorborderradius: '4px',
@@ -73,9 +73,25 @@ import 'selectize';
 		// fetch the instance
 		// let selectize = $select.selectize.destroy();
 
-		let selectize = $select.each(function () { // do this for every select with the 'combobox' class
-			$(this)[0].selectize.destroy(); // destroys selectize()
-	   });
+		$(window).on('resize load',function(){
+			if ( $(window).width() < 768 )  {
+
+				let selectize = $select.each(function () { // do this for every select with the 'combobox' class
+					$(this)[0].selectize.destroy(); // destroys selectize()
+				});
+				
+			}
+		});
+
+
+		// if ( $(window).width() > 576 )  {
+
+		// 	let selectize = $select.each(function () { // do this for every select with the 'combobox' class
+		// 		$(this)[0].selectize.destroy(); // destroys selectize()
+		// 	});
+				
+		// }
+
 
 
 
@@ -235,35 +251,35 @@ import 'selectize';
 
 		// Fixed header
 
-		// let $header = $('.header');
-		// let $page = $('.page');
-		// let $windowWidth = $(window).width();
+		let $header = $('.header');
+		let $page = $('.page');
+		let $windowWidth = $(window).width();
 
-		// if ( $windowWidth <= 576 )  {
-		//  $page.css({
-		//      'padding-top': $('.header').outerHeight()
-		//  });
-		//  $header.addClass('header_fixed_true');
-		// } else {
-		//  $page.css({
-		//      'padding-top': 0
-		//  });
-		//  $header.removeClass('header_fixed_true');
-		// }
+		if ( $windowWidth <= 576 )  {
+		 $page.css({
+		     'padding-top': $('.header').outerHeight()
+		 });
+		 $header.addClass('header_fixed_true');
+		} else {
+		 $page.css({
+		     'padding-top': 0
+		 });
+		 $header.removeClass('header_fixed_true');
+		}
 
-		// $(window).resize(function() {
-		//  if ( $(window).width() <= 576 )  {
-		//      $page.css({
-		//          'padding-top': $('.header').outerHeight()
-		//      });
-		//      $header.addClass('header_fixed_true');
-		//  } else {
-		//      $page.css({
-		//          'padding-top': 0
-		//      });
-		//      $header.removeClass('header_fixed_true');
-		//  }
-		// });
+		$(window).resize(function() {
+		 if ( $(window).width() <= 576 )  {
+		     $page.css({
+		         'padding-top': $('.header').outerHeight()
+		     });
+		     $header.addClass('header_fixed_true');
+		 } else {
+		     $page.css({
+		         'padding-top': 0
+		     });
+		     $header.removeClass('header_fixed_true');
+		 }
+		});
 
 
 		// Search input
@@ -913,7 +929,7 @@ import 'selectize';
 		 
 
 		// Клик на адрес
-		$(document).on('click', '.address__street', function (e) {
+		$(document).on('click', '.map__addresses .address__street', function (e) {
 			e.preventDefault();
 		 
 			$('.map__close').toggleClass('map__close_active');
@@ -928,7 +944,7 @@ import 'selectize';
 		});
 
 		// Клик на кнопку
-		$(document).on('click', '.address__button_route', function () {
+		$(document).on('click', '.map__addresses .address__button_route', function () {
 
 			$('.map__close').toggleClass('map__close_active');
 			$('.map__addresses').toggleClass('map__addresses_hide');
@@ -940,6 +956,15 @@ import 'selectize';
 		 
 			placemarkList[0][shopId].events.fire('click');
 		});
+
+
+		$(document).on('click', '.address_balloon .address__street', function (e) {
+			
+			e.preventDefault();
+
+		});
+
+
 
 
 		// Hide addresses

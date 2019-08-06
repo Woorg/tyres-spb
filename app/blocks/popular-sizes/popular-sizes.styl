@@ -8,14 +8,22 @@
 			padding-top 40px
 			padding-bottom 30px
 
+		+rmin($lg)
+			padding-top 49px
+			padding-bottom 43px
+
 	&__col
 		position relative
 
 	&__title
 		margin-bottom 20px
 		padding-left 4px
+		
+		+rmin($lg)
+			padding-left 1px
 
 	&__list
+		margin-bottom 0
 		max-height 100px
 		overflow hidden
 		
@@ -23,6 +31,10 @@
 			margin-left 4px
 			margin-right 6px
 			max-height 100%
+			
+		+rmin($lg)
+			margin-left 1px
+			margin-right 1px
 			
 	&__list_full
 		max-height 100%
@@ -103,7 +115,8 @@
 
 	&__more
 		resetbutton()
-		margin-left -15px
+		// margin-left -15px
+		margin-left 0
 		padding-top 20px
 		padding-bottom 20px
 		width 100%
@@ -157,5 +170,8 @@
 			position absolute
 			top 80px
 			right 51px
+			
+		+rmin($lg)
+			top 62px
 		
 

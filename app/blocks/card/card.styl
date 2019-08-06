@@ -1,4 +1,5 @@
 .card
+	border none
 	padding-bottom 30px
 	padding-left 1px
 	padding-right 1px
@@ -35,8 +36,15 @@
 			padding-top 25px
 			padding-left 15px
 			padding-right 15px
-			padding-bottom 15px
+			padding-bottom 20px
 			box-shadow none
+			
+		+rmin($lg)
+			margin-right 15px
+			margin-left 15px
+			padding-left 24px
+			padding-right 16px
+		
 			
 	&__size
 		position absolute
@@ -48,6 +56,10 @@
 		+rmin($md)
 			top 16px
 			right 14px
+			
+		+rmin($lg)
+			top 17px
+			right 18px
 		
 	&__meta
 		position absolute
@@ -57,6 +69,9 @@
 		+rmin($md)
 			top 56px
 			right 14px
+			
+		+rmin($lg)
+			right 18px
 
 	&__fav
 		margin-bottom 12px
@@ -108,6 +123,8 @@
 			top calc(50% + 3px)
 			left 12px
 			
+		+rmin($lg)
+			left 25px
 		
 		&:hover
 			.card__season-text
@@ -150,11 +167,12 @@
 	&__badges
 		position absolute
 		top 20px
-		left 0
+		left -1px
 		max-width 96px
 
 	&__badge
 		margin-bottom 6px
+		padding 0
 
 	&__title
 		margin-bottom 10px
@@ -233,4 +251,11 @@
 		+rmin($md)
 			padding-left 13px
 			padding-right 12px
+			
+		+rmin($lg)
+			padding-top 13px
+			padding-left 18px
+			padding-right 15px
+			font-size 12px
+
 		

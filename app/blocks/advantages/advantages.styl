@@ -1,5 +1,6 @@
 .advantages
 	&__list
+		margin-bottom 0
 		display flex
 		flex-wrap wrap
 		justify-content space-between
@@ -11,6 +12,8 @@
 		
 		+rmin($lg)
 			margin-top 0
+			padding-left 0
+			padding-right 0
 	
 	&__item
 		position relative
@@ -25,7 +28,8 @@
 
 		flex-shrink 0
 		flex-grow 0
-		flex-basis 288px
+		// flex-basis 288px
+		flex-basis 284px 
 		
 		color #ffffff
 		font-family $o
@@ -34,7 +38,8 @@
 		line-height 1
 		
 		+rmin($md)
-			flex-basis 307px
+			flex-basis 308px
+			// flex-basis 284px
 
 		+rmin($lg)
 			flex-grow 1	
